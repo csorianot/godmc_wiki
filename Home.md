@@ -1,8 +1,6 @@
 # GoDMC pipeline
 
-This wiki will guide you through using the GoDMC pipeline. 
-
-The objectives of the pipeline are:
+This wiki will guide you through using the GoDMC pipeline. The full analysis plan can be found [here](), but briefly the objectives of the pipeline are:
 
 ### Perform an meQTL analysis
 Perform a GWAS on every methylation probe available in the sample. Variations of this analysis will be performed, including a standard meQTL using bestguess imputed SNPs, a CNV-mQTL analysis using CNVs inferred from methylation arrays, and a var-meQTL analysis which looks for SNPs that influence the variance of a probe. 
@@ -12,3 +10,5 @@ We will be performing a GWAS on age accelerated residuals (AAR), smoking status 
 
 ### EWAS of complex traits
 Focussing initially on height and BMI.
+
+We aim to have meta analysed at least 10,000 samples by the end of 2015.
