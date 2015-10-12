@@ -1,11 +1,11 @@
-## Pre-requisites
+### Pre-requisites
 - [Imputed genetic data]()
 - [Normalised methylation data]()
 - [Phenotype and covariate data]()
 - [Structural variant data]()
 - [System requirements]()
 
-## Phase 1
+### Phase 1
 1. [Setup and installation]()
 2. [System check]()
 3. [Processing SNP data]()
@@ -18,6 +18,6 @@
 10. [Performing EWAS]()
 11. [Transferring first stage results to Bristol]()
 
-## Phase 2
+### Phase 2
 
 *Still to come...*
