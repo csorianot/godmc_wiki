@@ -1,5 +1,3 @@
-## Methylation data:
-
 ### Option 1 (preferred)
 
 Ideally, we would prefer it if you normalise and QC your data using the `R/meffil` package. This has been optimised for speed and memory, and instructions on how to do this can be found here:
