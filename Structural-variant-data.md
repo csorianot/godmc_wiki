@@ -1,6 +1,4 @@
-## Generating copy number variants from Ilumina 450k methylation arrays
-
-To do this you will need the original `.idat` files for your samples because copy number variation is estimated from array intensities. The functions to generate these data are provided in the `R/meffil` package, and it should be a relatively quick process (can run in parallel) with a relatively small memory footprint.
+To generate copy number variants from Ilumina 450k methylation arrays you will need the original `.idat` files for your samples because copy number variation is estimated from array intensities. The functions to generate these data are provided in the `R/meffil` package, and it should be a relatively quick process (can run in parallel) with a relatively small memory footprint.
 
 
 To install in R:
