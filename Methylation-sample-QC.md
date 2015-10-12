@@ -80,7 +80,7 @@ writeLines(meffil.get.snp.probes(), con="snp-names.txt")
 command shell > 
 
 ```
-plink --bfile dataset --extract snp-names.txt --recodeA --out genotypes.raw --noweb
+plink --bfile dataset --extract snp-names.txt --recode A --out genotypes.raw
 ```
 
 In R:
@@ -121,7 +121,7 @@ meffil.qc.report(qc.summary, output.file="qc-report.html")
 
 This creates the file "qc-report.html" in the current work directory. The file should open up in your web browser.
 
-- After checking the qc report you can select bad samples to remove.
+- After checking the qc report you can select bad samples to remove. I wouldn't remove outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which is captured by the normalisation probes ((normC + normG)/(normA + normT)).
 
 ```
 outlier<-qc.summary$bad.samples
@@ -137,4 +137,22 @@ length(qc.objects)
 qc.objects <- meffil.remove.samples(qc.objects, outlier)
 length(qc.objects)
 save(qc.objects,file="qc.objects.clean.Robj")
+```
+
+- Rerun qc summary on clean dataset
+```
+qc.summary <- meffil.qc.summary(qc.objects,parameters=qc.parameters,genotypes=genotypes)
+save(qc.summary, file=”qcsummary.clean.Robj")
+```
+
+- Rerun qc report on clean dataset
+
+meffil.qc.report(qc.summary, output.file="qc-report.clean.html")
+
+-Extract cell counts on clean dataset. It gives you 7 cell counts (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells).
+
+```
+counts <- t(sapply(qc.objects, meffil.estimate.cell.counts, cell.type.reference="blood gse35069 complete", verbose = T))
+cell.counts<-data.frame(IID=row.names(cell.counts),cell.counts)
+write.table(cell.counts,"cellcounts.txt",sep="\t",quote=F,row.names=F,col.names=T)
 ```
