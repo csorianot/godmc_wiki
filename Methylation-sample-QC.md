@@ -1,6 +1,4 @@
-# GoDMC- QC protocol- Josine Min 17/06/15
-
-We have developed a Rpackage called [meffil](https://github.com/perishky/meffil) to perform QC for data measured with Illumina 450k arrays. It is using parallelization and reads idat files directly. It is therefore much faster than minfi. Please email [josine.min@bristol.ac.uk] or [g.hemani@bristol.ac.uk] if you have any questions.
+We have developed a R package called [meffil](https://github.com/perishky/meffil) to perform QC for data measured with Illumina 450k arrays. It is using parallelization and reads `.idat` files directly. It is therefore much faster than minfi. Please email [josine.min@bristol.ac.uk] or [g.hemani@bristol.ac.uk] if you have any questions.
 
 - Install the meffil R package for the first time 
 
