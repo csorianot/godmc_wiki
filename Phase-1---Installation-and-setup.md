@@ -1,4 +1,4 @@
-## Download the scripts
+### Download the scripts
 
 To download the scripts you will need to run the following git command:
 
@@ -24,7 +24,7 @@ Because this is a `git` repository it means that it is very easy for you to upda
 Please note it is assumed that you won't change any files in the repository itself.
 
 
-## Setup
+### Setup
 
 The first thing to do is create your `config` file:
 
@@ -56,7 +56,7 @@ The folder `godmc/input_data` can be used to put input data. This will include:
 - Phenotypes and covariates stored as plain text files. Please see [here]() for more info.
 
 
-## Cellcount options
+### Cellcount options
 
 You do not need to provide cellcounts, as they can be predicted using the Houseman reference method by the pipeline. If you do not have cellcounts pre-calculated, and you know that you have heterogeneous cell types in your methylation samples, then please set the following variables:
 
@@ -83,7 +83,7 @@ Note that you can copy the cellcounts to the `input_data` directory and specify 
 *i.e.* An `IID` column for the sample IDs, and then one column for each cell type that has been counted (or estimated).
 
 
-## Relatedness
+### Relatedness
 
 If you have family relationships in your data (i.e. twin or family study design) then please specify this by setting the parameter:
 
@@ -96,7 +96,7 @@ Otherwise set the parameter:
 In this case the pipeline will attempt to find any cryptic related individuals and remove them.
 
 
-## Computation
+### Computation
 
 The pipeline uses `plink1.90` and `gcta64` which both have multi-threading capabilities. It also uses the `R/parallel` package to speed up R calculations. For some of the scripts in the pipeline these multi-threading options will be used. Please specify how many threads you have available with the following variable (e.g. if you have 16 threads available):
 
@@ -109,6 +109,6 @@ In addition, some of the computationally slower processes can be parallelised ac
 The default is to split large jobs into 100 jobs.
 
 
-## Other options
+### Other options
 
 Other options are also modifiable, but for most cohorts the default settings should be fine. Please contact us if you are unsure.
