@@ -46,7 +46,7 @@ For example if you are in the `godmc` folder then type
 and it will give you the full path to your current directory. Set the `home_directory` variable to be this path.
 
 
-## Input data
+### Input data
 
 The folder `godmc/input_data` can be used to put input data. This will include:
 
