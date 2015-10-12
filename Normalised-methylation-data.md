@@ -2,7 +2,7 @@
 
 Ideally, we would prefer it if you normalise and QC your data using the `R/meffil` package. This has been optimised for speed and memory, and instructions on how to do this can be found here:
 
-1. [Perform sample QC](Methylation-sample-QC)
+1. [Perform sample QC](Methylation sample QC)
 2. [Normalise QC'd samples](Methylation-normalisation)
 
 
