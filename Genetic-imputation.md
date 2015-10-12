@@ -1,18 +1,20 @@
-# 1000G imputation protocol
-### Based on GIANT/DIAGRAM/MAGIC analysis plan
+This guide is based on GIANT/DIAGRAM/MAGIC analysis plan
 
-### 1.1 1000G Imputation reference haplotype panel
+---
+# 1. Setup
+
+## 1.1 1000G Imputation reference haplotype panel
 Please use haplotypes excluding monomorphic and singleton sites for chromosomes 1-22. from the phase one integrated variant release v3, to enable the best overall imputation quality. Cohorts with overlapping GWAS should contact us before proceeding.
 
-### 1.2 Initial sample and variant quality control
+## 1.2 Initial sample and variant quality control
 Each study will be responsible for their sample and variant quality control and should apply their own filters as appropriate. Typically, samples with low call rate, extreme heterozygosity, gender mismatch with chromosome X variants, duplicates, first or second degree relatives (unless by design), or outlying ethnic ancestry are removed. After sample quality, perform SNV qulatiy control by using exclusion cut-offs for SNPs call rate, HWE and MAF. The choice of MAF cut-point should reflect the genotyping accuracy of lower frequency SNPs.
 
 A good source describing data quality assessment and control can be found in [Anderson et al] (http://www.ncbi.nlm.nih.gov/pubmed/21085122). 
 
-### 1.3 Convert your genotype data to NCBI Build 37 (hg19).
+## 1.3 Convert your genotype data to NCBI Build 37 (hg19).
 Current releases of 1000G Project Data use NCBI build37 (hg19) and, before you start imputation you need to ensure that all your genotypes are reported using build37 coordinates and on the forward strand of the reference genome (see 1.4 below). Additional information on how to convert data from earlier genome builds to build 37 can be found on the [liftover] (http://genome.sph.umich.edu/wiki/LiftOver) page.
 
-### 1.4 Align your SNP alleles to the forward (“+”) strand of the reference genome. 
+## 1.4 Align your SNP alleles to the forward (“+”) strand of the reference genome. 
 All of the 1000 Genomes reference panels have had their SNP alleles annotated to the + strand of the human genome reference sequence and so genotype data from study samples will also need alleles expressed relative to the + strand.
 
 The following link contains [strand] (http://www.well.ox.ac.uk/~wrayner/strand/) files for the common genotyping chips. 
