@@ -1,4 +1,4 @@
-# GoDMC- normalization and post normalization QC protocol- Josine Min 14/09/15
+This page will show you how to use `R/meffil` for normalisation and post-normalisation QC after you have used it for sample QC.
 
 [Meffil](https://github.com/perishky/meffil) performs normalization and post normalization QC for data measured with Illumina 450k arrays. It is using parallelization and reads idat files directly. It is therefore much faster than minfi. Please email [josine.min@bristol.ac.uk] or [g.hemani@bristol.ac.uk] if you have any questions.
 
