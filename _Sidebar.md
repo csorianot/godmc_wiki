@@ -6,17 +6,17 @@
 - [System requirements](System requirements)
 
 ### Phase 1
-1. [Setup and installation](Setup and installation)
+1. [Install and setup](Install and setup)
 2. [System check](System check)
-3. [Processing SNP data](Processing SNP data)
-4. [Processing methylation data](Processing methylation data)
-5. [Processing phenotypes and covariates](Processing phenotypes and covariates)
-6. [Running meQTL analysis](Running meQTL analysis)
-7. [Running CNV meQTL analysis](Running CNV meQTL analysis)
-8. [Running variance meQTL analysis](Running variance meQTL analysis)
-9. [Performing GWAS](Performing GWAS)
-10. [Performing EWAS](Performing EWAS)
-11. [Uploading first stage results](Uploading first stage results)
+3. [Process SNP data](Processing SNP data)
+4. [Process methylation data](Processing methylation data)
+5. [Process phenotypes and covariates](Processing phenotypes and covariates)
+6. [Run meQTL analysis](Running meQTL analysis)
+7. [Run CNV meQTL analysis](Running CNV meQTL analysis)
+8. [Run variance meQTL analysis](Running variance meQTL analysis)
+9. [Run GWAS](Performing GWAS)
+10. [Run EWAS](Performing EWAS)
+11. [Upload first stage results](Uploading first stage results)
 
 ### Phase 2
 
