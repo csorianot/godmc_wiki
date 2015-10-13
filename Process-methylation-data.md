@@ -34,7 +34,7 @@ In order to perform this normalisation perform the following. To perform steps 1
 
     ./04b-methylation_adjustment1.sh
 
-This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 15 minutes. See [here]() for instructions on how to parallelise this analysis across multiple nodes on a cluster.
+This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 2 hours. See the last section on this page for instructions on how to parallelise this analysis across multiple nodes on a cluster.
 
 In order to perform steps 3 and 4, run:
 
@@ -46,7 +46,7 @@ In order to run step 5, run the following:
 
     ./04d-methylation_adjustment2.sh
 
-This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script, unless you have related data, in which case this will be much faster. Again, it can be split across multiple nodes on a cluster, see [here]() for instructions.
+This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script, unless you have related data, in which case this will be much faster. Again, it can be split across multiple nodes on a cluster, see below for instructions.
 
 Finally we need to turn the methylation data into the correct format for MatrixeQTL analysis, to do this:
 
