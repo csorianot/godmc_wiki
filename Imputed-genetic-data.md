@@ -10,7 +10,8 @@ Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2
 
 It is highly recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
-```
+```bash
+
 #!/bin/bash
 
 for i in {1..22}
