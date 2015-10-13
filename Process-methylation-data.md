@@ -11,7 +11,7 @@ First we will generate the following:
 
 To do this simply run
 
-    04a-methylation_variables.sh
+    ./04a-methylation_variables.sh
 
 This script should run very quickly, and generate the necessary files in the `processed_data/methylation_data` folder.
 
