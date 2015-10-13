@@ -2,7 +2,7 @@
 ## Covariates
 Your covariates file should be a text file (white space separated) with `IID` in the first column followed by headed columns for covariates. The following covariates are **required**:
 
-- `Sex`: A column of `1`s for males and `2`s for females
+- `Sex`: A column of `M`s for males and `F`s for females
 - `Age`: In years
 
 The following covariates are strongly recommended (but not necessary):
@@ -13,9 +13,11 @@ The following covariates are strongly recommended (but not necessary):
 The pipeline will create genetic and methylation principal components for you so you don’t need to add PCs to this file. An example of what your file should look like is below:
 
     IID Sex Age Slide
-    id1 2 30 12345678
-    id2 1 42 12345678
-    id3 1 76 87654321
+    id1 F 30 12345678
+    id2 M 42 12345678
+    id3 M 76 87654321
+
+Please ensure there are no missing values in the `Sex` and `Age` columns, even if your data is all the same age or all the same sex. Please also ensure that the capitalisation of column headers in the example above is followed.
 
 ## Phenotypes
 
