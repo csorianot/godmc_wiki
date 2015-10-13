@@ -19,12 +19,15 @@ The pipeline will create genetic and methylation principal components for you so
 
 ## Phenotypes
 
-We are expecting that you will provide `height` and `BMI` phenotypes. Please provide them in the same format as the covariates, e.g.:
+We are expecting that you will provide `Height` and `BMI` phenotypes. Please provide them in the same format as the covariates, e.g.:
 
     IID Height BMI
     id1 1.62 23.1
     id2 1.89 20.6
     id4 1.70 22.7
 
+Note the capitalisation!!
+
+We are expecting height in metres and BMI in kg/m2 units.
 
 **IMPORTANT NOTE:** Any missing values for covariates or phenotypes will lead to the individual being excluded. Please ensure that this is kept to a minimum!
