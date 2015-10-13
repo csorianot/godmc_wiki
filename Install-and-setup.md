@@ -35,7 +35,7 @@ You can now modify the `config` file (**not** the `config.example` file!) to spe
 Open the file in a text editor, and change the entries for the following variables:
 
 - `study_name`
-- `analyist_name`
+- `analyst_name`
 - `analyst_email`
 - `home_directory`
 
@@ -44,6 +44,14 @@ For example if you are in the `godmc` folder then type
     pwd
 
 and it will give you the full path to your current directory. Set the `home_directory` variable to be this path.
+
+### Phenotype options
+
+If you are providing phenotypes for EWAS analysis then this can be specified in the `config` file by setting the following lines to `yes` where appropriate:
+
+   EWAS_phenotypes="no"
+   height="no"
+   bmi="no"
 
 
 ### Input data
