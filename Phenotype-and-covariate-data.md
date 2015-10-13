@@ -2,7 +2,7 @@
 ## Covariates
 Your covariates file should be a text file (white space separated) with `IID` in the first column followed by headed columns for covariates. The following covariates are **required**:
 
-- `Sex`: A column of `M`s for males and `F`s for females
+- `Sex`: A column of `M`'s for males and `F`'s for females
 - `Age`: In years
 
 The following covariates are strongly recommended (but not necessary):
