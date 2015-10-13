@@ -7,16 +7,15 @@
 
 ### Phase 1
 1. [Install and setup](Install and setup)
-2. [System check](System check)
+2. [Process phenotypes and covariates](Process phenotypes and covariates)
 3. [Process SNP data](Process SNP data)
 4. [Process methylation data](Process methylation data)
-5. [Process phenotypes and covariates](Process phenotypes and covariates)
-6. [Run meQTL analysis](Run meQTL analysis)
-7. [Run CNV meQTL analysis](Run CNV meQTL analysis)
-8. [Run variance meQTL analysis](Run variance meQTL analysis)
-9. [Run GWAS](Perform GWAS)
-10. [Run EWAS](Perform EWAS)
-11. [Upload first stage results](Upload first stage results)
+5. [Run meQTL analysis](Run meQTL analysis)
+6. [Run CNV meQTL analysis](Run CNV meQTL analysis)
+7. [Run variance meQTL analysis](Run variance meQTL analysis)
+8. [Run GWAS](Perform GWAS)
+9. [Run EWAS](Perform EWAS)
+10. [Upload first stage results](Upload first stage results)
 
 ### Phase 2
 
