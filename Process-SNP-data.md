@@ -20,4 +20,4 @@ Next, we need to generate the correct format for the MeQTL analysis software (Ma
 
     ./04a-convert_snp_format.sh
 
-The required files will be saved in `processed_data/genetic_data`.
+The required files will be saved in `processed_data/genetic_data`. This script takes a few minutes to run for sample size of 100.
