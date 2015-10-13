@@ -1,14 +1,14 @@
-We have now performed the standard meQTL analysis. We are now going to perform the same kind of analysis again except this time we will look for genetic effects against the squared residuals of the methylation probes, hence testing for genetic influences on the variance of methylation. 
+We have now performed the standard meQTL analysis and the variance-meQTL analysis. We will now perform a CNV-meQTL analysis, whereby we are testing for associations between genetic copy number variants and methylation levels. 
 
-The procedure is exactly the same, the SNPs have been split into `meth_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_vmqtl.sh`) would be:
+Again, the procedure is exactly the same except it should be somewhat faster as there are only ~480000 CNV positions to evaluate. The CNV data have been split into `meth_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_cnvmqtl.sh`) would be:
 
 ```bash
 
 #!/bin/bash
 
-#PBS -N vmqtl
-#PBS -o job_reports/vmqtl-output
-#PBS -e job_reports/vmqtl-error
+#PBS -N cnvmqtl
+#PBS -o job_reports/cnvmqtl-output
+#PBS -e job_reports/cnvmqtl-error
 #PBS -l walltime=12:00:00
 #PBS -t 1-100
 #PBS -l nodes=1:ppn=16
@@ -19,12 +19,12 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./06-vmqtl.sh ${PBS_ARRAYID}
+./07-cnvmqtl.sh ${PBS_ARRAYID}
 
 ```
 
 then to submit to the cluster:
 
-    qsub submit_vmqtl.sh
+    qsub submit_cnvmqtl.sh
 
 And this will distribute the entire surface across 100 nodes, each node parallelising across 16 cores.
