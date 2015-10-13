@@ -38,4 +38,4 @@ Then, when this is submitted:
 
     qsub submit_mqtl.sh
 
-it will create a batch of 100 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-100, and each specific job using 16 threads. 
+it will create a batch of 100 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-100, and each individual job further parallelised across 16 threads. 
