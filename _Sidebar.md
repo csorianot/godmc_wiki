@@ -7,7 +7,7 @@
 
 ### Phase 1
 1. [Install and setup](Install and setup)
-2. [Process phenotypes and covariates](Process phenotypes and covariates)
+2. [Process phenotypes](Process phenotypes)
 3. [Process SNP data](Process SNP data)
 4. [Process methylation data](Process methylation data)
 5. [Run meQTL analysis](Run meQTL analysis)
