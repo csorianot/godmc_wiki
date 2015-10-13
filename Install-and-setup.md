@@ -1,3 +1,13 @@
+### Read the code of conduct
+
+Please read the code of conduct here:
+
+[http://www.godmc.org.uk/codesofconduct.pdf](http://www.godmc.org.uk/codesofconduct.pdf)
+
+### Updating the study information
+
+Now please visit [this Google Docs spreadsheet](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) and enter your cohort's information. Make sure to specify that you have read the code of conduct!
+
 ### Download the scripts
 
 To download the scripts you will need to run the following git command:
@@ -130,3 +140,5 @@ We have created a script which will check the data you have submitted to make su
     ./01-check_data.sh
 
 **PLEASE NOTE:** It is important to monitor this script as it runs - it will stop with errors if it encounters problems. Please fix any errors that are encountered, and re-run the script until it completes without errors.
+
+The script produces a plot to show the number of SNPs per chromosome. At the end of the script you should be able to visually check that this looks as expected, located in `processed_data/datacheck`. 
