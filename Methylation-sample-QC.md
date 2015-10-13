@@ -38,7 +38,7 @@ samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 - Perform the background correction, dye bias correction, sex prediction and cell count estimates. This function loads all your idat files and returns a qc.object for each sample. 
 
 ```
-qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069", verbose=TRUE)
+qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069 complete", verbose=TRUE)
 save(qc.objects,file="qc.objects.Robj")
 ```
 
