@@ -19,8 +19,9 @@ do
 
     # First extract the info scores
     # e.g. If using the output from the -snp-stats flag in qctool:
-    
     awk '{ print $2, $19 }' data_chr${i}.snp-stats | sed 1d > data_chr${i}.info
+    # or if you are using the output from the -summary_stats_only flag in snptest
+    awk '{ print $2, $9 }' data_chr${i}.summary_stats | sed 1d > data_chr${i}.info
 
     plink1.90 --bgen data_chr${i}.bgen --sample data.sample --make-bed --qual-scores data_chr${i}.info --qual-threshold 0.8 --maf 0.01 --out data_chr${i}_filtered
 
@@ -58,6 +59,8 @@ done > mergefile.txt
 plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out data_filtered
 
 ```
+
+If the last step crashes, resulting in a file called `data_filtered.missnp`, then this suggests there is an issue with your data. Please check that you have the same individuals present in each chromosome, and run the analysis again.
 
 The result should be three files: `data_filtered.bed`, `data_filtered.bim`, `data_filtered.fam`. Copy them to `godmc/input_data` and set the following variable in your `config` file:
 
