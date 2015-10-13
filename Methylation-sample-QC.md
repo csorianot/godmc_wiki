@@ -149,7 +149,7 @@ save(qc.summary, file=”qcsummary.clean.Robj")
 
 meffil.qc.report(qc.summary, output.file="qc-report.clean.html")
 
--Extract cell counts on clean dataset. It gives you 7 cell counts (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells).
+- Extract cell counts on clean dataset. It gives you 7 cell counts (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells).
 
 ```
 counts <- t(sapply(qc.objects, meffil.estimate.cell.counts, cell.type.reference="blood gse35069 complete", verbose = T))
