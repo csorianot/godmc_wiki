@@ -17,10 +17,11 @@ length(qc.objects)
 load("qcsummary.clean.Robj")
 ```
 
-- Set number of pcs to regressed out from control matrix. 
+- Plot residuals remaining after fitting control matrix to decide on the number PCs to include in the normalization below. The residuals should consistently decrease with increasing numbers of components.  For ARIES there was a dramatic drop around 10 PCs.
 
 ```
-pc=15
+y<-meffil.plot.pc.fit(qc.objects)
+ggsave(y$plot,filename="pc.fit.pdf",height=6,width=6)
 ```
 
 -And now perform quantile normalization. Bad CpGs due to poor detection scores which we identified in the qc.summary are removed.
@@ -52,5 +53,4 @@ meffil.normalization.report(norm.summary, output.file="normalization-report.html
 3. Control probe associations with measured batch variables: The plots show anova test statistics which can be used to identify possible associations between a PC and a batch. For example in ALSPAC, we found significant associations for plate and slide.
 The linear model can be used to identify a possible association between a PC and a batch level.
 4. Normalized probe associations with measured batch variables: The anova test is used to identify possible associations between a PC and a batch. The linear model can be used to identify a possible association between a PC and a batch level. Are there any levels of a batch significant? For ALSPAC, we found one slide significantly associated with several PCs. We removed this slide from the normalization matrix. The associations could also inform you which batch variables you should include in your downstream methQTL analysis.
-
 
