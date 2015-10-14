@@ -15,7 +15,6 @@ install.packages("knitr")
 install.packages("devtools")
 library(devtools)
 install_github("perishky/meffil")
-library(meffil)
 ```
 
 - Load meffil and set how many cores to use for parallelization
