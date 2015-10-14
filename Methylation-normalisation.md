@@ -9,12 +9,15 @@ library(meffil)
 options(mc.cores=16)
 ```
 
-- Load qc.objects and qc.summary you have generated during the sample QC process.
+- Load qc.objects and qc.summary you have generated during the sample QC process 
 
 ```
 load("qc.objects.clean.Robj")
 length(qc.objects)
 load("qcsummary.clean.Robj")
+```
+or generate qc.objects with the code below:
+```
 ```
 
 - Plot residuals remaining after fitting control matrix to decide on the number PCs to include in the normalization below. The residuals should consistently decrease with increasing numbers of components.  For ARIES there was a dramatic drop around 10 PCs.
