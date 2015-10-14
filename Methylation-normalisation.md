@@ -34,7 +34,7 @@ norm.beta <- meffil.normalize.samples(norm.objects, cpglist.remove=qc.summary$ba
 save(norm.objects,file=paste(norm.obj.pc",pc,".Robj",sep=""))
 ```
 
--In the normalization report, principal components analysis will be performed on the control matrix and on the most variable probes. In addition associations will be calculated between the first 10 PCs and the batch variables using anova and a linear model (t-test). The t-test can be used to identify possible outliers. For example, if Slide is one of your batch variables, it gives a pvalue for each Slide rather than an overall p-value. Poor slides can be identified and removed post-normalization. In the norm.parameters variable, you can set your batch variables eg. Slide, plate, and tissue etc., the number of extracted PCs in the control matrix, the number of extracted PCs from the normalized betas, number of variable probes and the p value threshold used for the association testing. 
+- In the normalization report, principal components analysis will be performed on the control matrix and on the most variable probes. In addition associations will be calculated between the first 10 PCs and the batch variables using anova and a linear model (t-test). The t-test can be used to identify possible outliers. For example, if Slide is one of your batch variables, it gives a pvalue for each Slide rather than an overall p-value. Poor slides can be identified and removed post-normalization. In the norm.parameters variable, you can set your batch variables eg. Slide, plate, and tissue etc., the number of extracted PCs in the control matrix, the number of extracted PCs from the normalized betas, number of variable probes and the p value threshold used for the association testing. 
 
 ```
 batch_var<-c(mybatchvariables)
@@ -46,12 +46,12 @@ norm.parameters<-meffil.normalization.parameters(norm.objects,variables=batch_va
 norm.summary <- meffil.normalization.summary(norm.beta, norm.objects)
 meffil.normalization.report(norm.summary, output.file="normalization-report.html")
 ```
--Please check the following:
-1. Control probe scree plots: how many PCs do you need to explain at least 99% of the variance? From which PC is less than 1% of the variance explained?
-2. PCAplots of control probes: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
-3. Control probe associations of PCs with measured batch variables: The plots show anova test statistics which can be used to identify possible associations between a PC and a batch. For example in ALSPAC, we found significant associations for plate and slide.
-4. The linear model can be used to identify a possible association between a PC extracted from the control probes and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
-5. PCAplots of normalized betas: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
-6. Normalized probe associations with measured batch variables: The anova test is used to identify possible associations between a PC and a batch. 
-7. The linear model can be used to identify a possible association between a PC extracted from normalised betas and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
+- Please check the following:
+- Control probe scree plots: how many PCs do you need to explain at least 99% of the variance? From which PC is less than 1% of the variance explained?
+- PCAplots of control probes: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
+- Control probe associations of PCs with measured batch variables: The plots show anova test statistics which can be used to identify possible associations between a PC and a batch. For example in ALSPAC, we found significant associations for plate and slide.
+- The linear model can be used to identify a possible association between a PC extracted from the control probes and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
+- PCAplots of normalized betas: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
+- Normalized probe associations with measured batch variables: The anova test is used to identify possible associations between a PC and a batch. 
+- The linear model can be used to identify a possible association between a PC extracted from normalised betas and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
 For ALSPAC, we found one slide significantly associated with several PCs. We removed this slide from the normalization matrix. The associations could also inform you which batch variables you should include in your downstream methQTL analysis.
