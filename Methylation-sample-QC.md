@@ -5,21 +5,17 @@ We have developed a R package called [meffil](https://github.com/perishky/meffil
 On the command line:
 
 ```
-mkdir meffil
-cd meffil
-wget https://github.com/perishky/meffil/archive/master.zip
-unzip master.zip
-mv meffil-master meffil
-R CMD INSTALL meffil
-```
-
-- Please make sure you update meffil to the latest version.
-
-In R:
-
-```
+source("http://bioconductor.org/biocLite.R")
+biocLite("illuminaio")
+biocLite("limma")
+biocLite("IlluminaHumanMethylation450kmanifest")
+biocLite("IlluminaHumanMethylation450kanno.ilmn12.hg19")
+install.packages("markdown")
+install.packages("knitr")
+install.packages("devtools")
 library(devtools)
 install_github("perishky/meffil")
+library(meffil)
 ```
 
 - Load meffil and set how many cores to use for parallelization
