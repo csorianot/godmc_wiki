@@ -23,7 +23,8 @@ qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069 complet
 save(qc.objects,file="qc.objects.clean.Robj")
 ```
 
-- Plot residuals remaining after fitting control matrix to decide on the number PCs to include in the normalization below. The residuals should consistently decrease with increasing numbers of components.  For ARIES there was a dramatic drop around 10 PCs.
+- Plot residuals remaining after fitting control matrix to decide on the number PCs to include in the normalization below. The data will be splitted in 10 subsets of which 9 datasets were used to predict the 10th subset using the factor loadings of the 9 subsets.
+The residuals should consistently decrease with increasing numbers of components. For ARIES there was a dramatic drop around 10 PCs.
 
 ```
 y<-meffil.plot.pc.fit(qc.objects)
