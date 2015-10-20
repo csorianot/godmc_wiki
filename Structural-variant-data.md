@@ -39,4 +39,4 @@ Please save this object to the `godmc/input_data` folder:
 ```
     save(cnv, file="/path/to/godmc/input_data/cnv.RData")
 ```
-and make sure that the object name that you are saving is `cnv`, as this is the name that the pipeline will be expecting.
+and make sure that the object name that you are saving is `cnv`, as this is the name that the pipeline will be expecting. For ARIES comprising 5469 samples, it took 30 hrs to extract cnvs using 6 cores. It takes about 30seconds for each sample. 
