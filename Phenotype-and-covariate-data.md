@@ -34,10 +34,12 @@ We are expecting height in metres and BMI in kg/m2 units.
 
 ## Cell counts
 
-Ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). These cell counts can be either estimated using meffil or directly measured. iii) not provided and will be calculated from betas 
+Ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). Please note that we separated Granulocytes in neutrophils and eosinophils. These cell counts can be either estimated using meffil or directly measured.  iii) not provided and will be calculated from betas 
 ```
+library(meffil)
+options(mc.cores=8)
 load("qc.objects.clean.Robj")
-counts <- t(sapply(qc.objects, meffil.estimate.cell.counts, cell.type.reference="blood gse35069 complete", verbose = T))
-cell.counts<-data.frame(IID=row.names(cell.counts),cell.counts)
-write.table(cell.counts,"cellcounts.txt",sep="\t",quote=F,row.names=F,col.names=T)
+cc<-mclapply(qc.objects,function (qc.object) meffil.estimate.cell.counts(qc.object,cell.type.reference="blood gse35069 complete")$counts)
+cc2<-data.frame(IID=names(cc),t(do.call(cbind,cc)))
+write.table(cc2,"cellcounts.txt",sep="\t",quote=F,row.names=F,col.names=T)
 ```
