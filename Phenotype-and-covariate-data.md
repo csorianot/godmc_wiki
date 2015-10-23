@@ -34,11 +34,13 @@ We are expecting height in metres and BMI in kg/m2 units.
 
 ## Cell counts
 
-Ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). Please note that we separated Granulocytes in neutrophils and eosinophils. These cell counts can be either estimated using meffil or directly measured.  iii) not provided and will be calculated from betas 
+Ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). Please note that we separated Granulocytes in neutrophils and eosinophils. These cell counts can be either estimated using meffil if you have access to idat files or directly measured. If you don't have access to idat files and don't have directly measured cell counts the pipeline will estimate cell counts from betas by setting "provided cellcounts" to "NULL". Please find below some code to estimate cell counts from idat files.
 ```
 library(meffil)
 options(mc.cores=8)
-load("qc.objects.clean.Robj")
+samplesheet <- meffil.create.samplesheet(path_to_idat_files) ##please edit
+qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069 complete", verbose=TRUE)
+save(qc.objects,file="qc.objects.Robj")
 cc<-mclapply(qc.objects,function (qc.object) meffil.estimate.cell.counts(qc.object,cell.type.reference="blood gse35069 complete")$counts)
 cc2<-data.frame(IID=names(cc),t(do.call(cbind,cc)))
 write.table(cc2,"cellcounts.txt",sep="\t",quote=F,row.names=F,col.names=T)
