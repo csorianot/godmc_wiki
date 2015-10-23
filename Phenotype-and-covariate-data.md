@@ -31,3 +31,13 @@ We are expecting that you will provide `Height` and `BMI` phenotypes. Please pro
 Note the capitalisation!!
 
 We are expecting height in metres and BMI in kg/m2 units.
+
+## Cell counts
+
+Ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). These cell counts can be either estimated using meffil or directly measured. iii) not provided and will be calculated from betas 
+```
+load("qc.objects.clean.Robj")
+counts <- t(sapply(qc.objects, meffil.estimate.cell.counts, cell.type.reference="blood gse35069 complete", verbose = T))
+cell.counts<-data.frame(IID=row.names(cell.counts),cell.counts)
+write.table(cell.counts,"cellcounts.txt",sep="\t",quote=F,row.names=F,col.names=T)
+```
