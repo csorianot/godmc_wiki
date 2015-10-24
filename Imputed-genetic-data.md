@@ -40,12 +40,12 @@ do
     cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig2
     awk '{
         if (++dup[$2] > 1) { 
-            print $1, $2".duplicate".dup[$2], $3, $4, $5, $6 
+            print $1, $2".duplicate."dup[$2], $3, $4, $5, $6 
         } else { 
             print $0 }
     }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.txt
-    plink1.90 --bfile data_chr${i}_filtered --remove duplicates.txt --make-bed --out data_chr${i}_filtered
+    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.txt --make-bed --out data_chr${i}_filtered
 
 done
 
