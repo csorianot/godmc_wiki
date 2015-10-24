@@ -17,11 +17,18 @@ It is highly recommended that you use `plink1.90` to do this, available for down
 for i in {1..22}
 do
 
-    # First extract the info scores
+    # First extract the info scores (renaming any duplicated SNP IDs)
     # e.g. If using the output from the -snp-stats flag in qctool:
-    awk '{ print $2, $19 }' data_chr${i}.snp-stats | sed 1d > data_chr${i}.info
-    # or if you are using the output from the -summary_stats_only flag in snptest
-    awk '{ print $2, $9 }' data_chr${i}.summary_stats | sed 1d > data_chr${i}.info
+
+    sed 1d data_chr${i}.snp-stats | awk '{
+        if (++dup[$2] > 1) {
+            print $2".duplicate."dup[$2], $19 
+        } else { 
+            print $2, $19 
+        }
+    }' > data_chr${i}.info
+
+    # Now extract the best guess data from the bgen files, filtering on info score and MAF
 
     plink1.90 --bgen data_chr${i}.bgen --sample data.sample --make-bed --qual-scores data_chr${i}.info --qual-threshold 0.8 --maf 0.01 --out data_chr${i}_filtered
 
