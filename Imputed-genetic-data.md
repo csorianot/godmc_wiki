@@ -59,21 +59,11 @@ do
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.txt
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.txt --make-bed --out data_chr${i}_filtered
 
-    # Get the final info scores
-
-    awk '{ print $2 }' data_chr${i}_filtered.bim.orig > chr${i}_filtered.snplist
-    fgrep -wf chr${i}_filtered.snplist data_chr${i}.snp-stats | awk '{ print $2, $15, $19 }' > chr${i}_filtered.info
 
 done
 
 # Merge them into one dataset
 
-
-cp chr1_filtered.info data_filtered.info
-for i in {2..22}
-do
-    sed 1d chr${i}_filtered.info >> data_filtered.info
-done
 for i in {2..22}
 do 
     echo "data_chr${i}_filtered"
@@ -90,6 +80,50 @@ The result should be three files: `data_filtered.bed`, `data_filtered.bim`, `dat
     bfile_raw="${home_directory}/input_data/data_filtered"
 
 
-## Sample IDs
+To get the info scores from `.snp-stats` files, as output from `qctool` using the -snp-stats option, we need to extract the relevant SNPs and rename the SNP IDs accordingly.
+
+```bash
+
+for i in {1..22}
+do
+    # Extract the relevant SNPs
+    # Assumes column 2 is the SNP ID
+
+    awk '{ print $2 }' data_chr${i}_filtered.bim.orig > chr${i}_filtered.snplist
+    fgrep -wf chr${i}_filtered.snplist data_chr${i}.snp-stats > chr${i}_filtered.snp-stats
+
+
+    # Relabel the SNP IDs and extract relevant columns
+    # Assumes column 2 is the SNP ID
+    # Assumes column 4 is the position
+    # Assumes columns 7 and 8 are the allele names
+    # Assumes column 15 is the MAF
+    # Assumes columns 19 is the info score
+
+    awk -v chr=$i '{
+        if (length($7) == "1" && length($8) == "1") 
+            print "chr"chr":"$4":SNP", $15, $19;
+        else 
+            print "chr"chr":"$4":INDEL", $15, $19;
+    }' chr${i}_filtered.snp-stats > chr${i}_filtered.info
+
+    # Remove duplicates
+
+    awk '{ if (++dup[$1] == 1) { print $0 }}' > temp${i}
+    mv temp${i} chr${i}_filtered.info
+
+done
+
+cp chr1_filtered.info data_filtered.info
+for i in {2..22}
+do
+    sed 1d chr${i}_filtered.info >> data_filtered.info
+done
+
+
+```
+
+
+#### Sample IDs
 
 **IMPORTANT:** Please ensure that the second column of the `.fam` file (individual IDs) contains unique sample IDs. These sample IDs should be the IDs that are used in the phenotype, covariate, methylation and structural variants data. The first column of the `.fam` file (family IDs) is not important for these analysis. e.g. They can just be the same as the second column. Please also ensure that the individual IDs don't contain any underscores.
