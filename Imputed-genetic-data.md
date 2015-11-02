@@ -6,9 +6,14 @@ The genetic data must be
 - Filtered to have MAF > 0.01 and imputation quality score > 0.8
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
 
-Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, then the last three steps can be performed using the following bash script:
+We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
-It is highly recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
+
+#### `Impute2` imputed data 
+
+Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, then the last three steps can be performed using the following bash script.
+
+It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
 ```bash
 
@@ -54,10 +59,21 @@ do
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.txt
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.txt --make-bed --out data_chr${i}_filtered
 
+    # Get the final info scores
+
+    awk '{ print $2 }' data_chr${i}_filtered.bim.orig > chr${i}_filtered.snplist
+    fgrep -wf chr${i}_filtered.snplist data_chr${i}.snp-stats | awk '{ print $2, $15, $19 }' > chr${i}_filtered.info
+
 done
 
 # Merge them into one dataset
 
+
+cp chr1_filtered.info data_filtered.info
+for i in {2..22}
+do
+    sed 1d chr${i}_filtered.info >> data_filtered.info
+done
 for i in {2..22}
 do 
     echo "data_chr${i}_filtered"
