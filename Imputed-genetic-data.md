@@ -59,7 +59,6 @@ do
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.txt
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.txt --make-bed --out data_chr${i}_filtered
 
-
 done
 
 # Merge them into one dataset
@@ -71,18 +70,11 @@ done > mergefile.txt
 
 plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out data_filtered
 
-```
 
-If the last step crashes, resulting in a file called `data_filtered.missnp`, then this suggests there is an issue with your data. Please check that you have the same individuals present in each chromosome, and run the analysis again.
-
-The result should be three files: `data_filtered.bed`, `data_filtered.bim`, `data_filtered.fam`. Copy them to `godmc/input_data` and set the following variable in your `config` file:
-
-    bfile_raw="${home_directory}/input_data/data_filtered"
-
-
-To get the info scores from `.snp-stats` files, as output from `qctool` using the -snp-stats option, we need to extract the relevant SNPs and rename the SNP IDs accordingly.
-
-```bash
+# Create the correct info score format
+# Column 1: SNP ID
+# Column 2: MAF
+# Column 3: Quality score
 
 for i in {1..22}
 do
@@ -114,14 +106,24 @@ do
 
 done
 
-cp chr1_filtered.info data_filtered.info
-for i in {2..22}
-do
-    sed 1d chr${i}_filtered.info >> data_filtered.info
-done
+# Combine into a single file
 
+for i in {1..22}
+do
+    cat chr${i}_filtered.info
+done > data_filtered.info
 
 ```
+
+
+The result should be three plink files: `data_filtered.bed`, `data_filtered.bim`, `data_filtered.fam`, and the info file: `data_filtered.info`. Copy them to `godmc/input_data` and set the following variable in your `config` file:
+
+    bfile_raw="${home_directory}/input_data/data_filtered"
+
+and
+
+    quality_scores="${home_directory}/input_data/data_filtered.info"
+    quality_type="impute2"
 
 
 #### Sample IDs
