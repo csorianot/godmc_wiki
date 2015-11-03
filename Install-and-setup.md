@@ -18,7 +18,7 @@ This will create a new directory called `godmc` which will contain the files nee
 
 Ideally you should clone the scripts to a location on your server which you can interact with and which is visible to your cluster nodes. Please contact us if you have any concerns about this.
 
-Once clones, in the `godmc` directory you will see the following files and folders:
+Once cloned, in the `godmc` directory you will see the following files and folders:
 
 - `config.example` file: Your first task in setting up the pipeline is to create a `config` file. The `config.example` is a template for this and you can modify this file to point to your input data files. You can also change the various settings and parameters used for the analysis here.
 - `input_data` directory: You can deposit your input data files (genotypes, methylation data, CNV data, covariates, phenotypes) into this directory. 
