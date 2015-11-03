@@ -4,26 +4,27 @@ Once the imputed genetic data is in the [correct format](Imputed genetic data) a
 - HWE and MAF QC
 - Re-code SNP IDs
 - Construct kinship matrices
-- Calculate principal components
 - Remove PC outliers
 - Remove any cryptic relatedness for 'unrelated' data
 - Create a pedigree matrix for 'related' samples
+- Calculate principal components
 
 To do this, run the following script:
 
-    ./03a-snp_data.sh
+    ./02a-snp_data.sh
 
-For a sample size of 100 this script takes less than 5 minutes to run on our computers. The relevant files should have been generated and saved in `processed_data/genetic_data`
+For a sample size of 100 this script takes less than 5 minutes to run on our computers. The relevant files should have been generated and saved in `processed_data/genetic_data`.
 
+Note that for 'unrelated' samples we are generating PCs by removing long LD tracts, extracting HapMap3 SNPs, LD pruning, and then calculating PCs on the data after cryptic relateds have been removed. For 'related' samples we are using a general method for estimating PCs that accounts for any relatedness. This involves estimating a kinship matrix that is robust to population structure and relatedness ([Manichaikil et al 2010](http://bioinformatics.oxfordjournals.org/content/26/22/2867.long)), estimating principal components on an unrelated subset, and then projecting principal components onto the related subset based on estimated kinships ([Conomos et al 2015](http://onlinelibrary.wiley.com/doi/10.1002/gepi.21896/abstract)).
 
 Next, we need to generate the correct format for the MeQTL analysis software (MatrixeQTL). To do this run the following script:
 
-    ./03b-convert_snp_format.sh
+    ./02b-convert_snp_format.sh
 
-This script will split the genetic dataset into a number of smaller chunks. The number of chunks is determined by the `meth_chunks` variable in the `config` file. For example:
+This script will split the genetic dataset into a number of smaller chunks. The number of chunks is determined by the `genetic_chunks` variable in the `config` file. For example:
 
-    meth_chunks="100"
+    genetic_chunks="1000"
 
-is the default and will split all the SNP data into 100 subsets (e.g. for 8 million SNPs each chunk will have 80000 SNPs). The required files will be saved in `processed_data/genetic_data`. In addition, this script will do the same for the CNV data.
+is the default and will split all the SNP data into 1000 subsets (e.g. for 8 million SNPs each chunk will have 8000 SNPs). The required files will be saved in `processed_data/genetic_data/tabfile/`. In addition, this script will do the same for the CNV data.
 
 This script takes a few minutes to run for sample size of 100.
