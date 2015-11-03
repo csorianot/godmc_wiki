@@ -1,7 +1,7 @@
 ### Genetic data
 
 The genetic data must be
-- Imputed to 1000 genomes reference panel, ideally phase 3 (phased haplotypes available [here](https://mathgen.stats.ox.ac.uk/impute/1000GP_Phase3.html). For guidelines on how to perform imputation see [here](http://genome.sph.umich.edu/wiki/IMPUTE2:_1000_Genomes_Imputation_Cookbook) and [here](https://github.com/explodecomputer/godmc/wiki/Genetic-imputation). A pipeline is also available [here](https://github.com/explodecomputer/imputePipePBS). Please contact us if you have any queries about this.
+- Imputed to 1000 genomes reference panel, ideally phase 3. Phased haplotypes available [here](https://mathgen.stats.ox.ac.uk/impute/1000GP_Phase3.html). For guidelines on how to perform imputation see [here](http://genome.sph.umich.edu/wiki/IMPUTE2:_1000_Genomes_Imputation_Cookbook) and [here](https://github.com/explodecomputer/godmc/wiki/Genetic-imputation). A pipeline is also available [here](https://github.com/explodecomputer/imputePipePBS). Please contact us if you have any queries about this.
 - Converted to best guess binary plink format
 - Filtered to have MAF > 0.01 and imputation quality score > 0.8
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
@@ -11,7 +11,7 @@ We also require imputation quality scores for each SNP. Some instructions on how
 
 #### `Impute2` imputed data 
 
-Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, then the last three steps can be performed using the following bash script.
+Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, and generated info scores using the `-snp-stats` flag in [qctool](http://www.well.ox.ac.uk/~gav/qctool/#overview), then the last three steps can be performed using the following bash script.
 
 It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
