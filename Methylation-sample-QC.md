@@ -4,7 +4,7 @@ We have developed an R package called [meffil](https://github.com/perishky/meffi
 
 Install the `meffil` R package for the first time. On the command line:
 
-```
+```r
 source("http://bioconductor.org/biocLite.R")
 biocLite("illuminaio")
 biocLite("limma")
@@ -23,13 +23,14 @@ install_github("perishky/meffil")
 
 Load meffil and set how many cores to use for parallelization
 
-```
+```r
 library(meffil)
 options(mc.cores=16)
 ```
+
 Generate a samplesheet with your samples. The samplesheet can be generated automatically from the `idat` basenames by giving the directory with `idat` files or it can be done manually. It should contain at least the following necessary columns: `SampleName`, `Sex` (possible values "M","F" or "NA") and `Basename`. It tries to parse the basenames to guess if the Sentrix plate and positions are present.
 
-```
+```r
 samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 ```
 
@@ -37,26 +38,26 @@ At this point it is worthwhile to manually modify the samplesheet data frame to 
 
 Next perform the background correction, dye bias correction, sex prediction and cell count estimates. This function processes your `idat` files and returns a qc.object for each sample. 
 
-```
+```r
 qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069 complete", verbose=TRUE)
 save(qc.objects,file="qc.objects.Robj")
 ```
 
 You can check if your samples are there by checking the number of samples and extracting the sample names.
 
-```
+```r
 length(qc.objects)
 ```
 
 Sample names can be checked like this
 
-```
+```r
 names(qc.objects)
 ```
 
 You can check data for the first sample
 
-```
+```r
 names(qc.objects[[1]])
 qc.objects[[1]]$sample.name
 ```
@@ -67,30 +68,28 @@ It is important that the SNPs in your genotype data and the methylation levels i
 
 In R:
 
-```
+```r
 writeLines(meffil.get.snp.probes(), con="snp-names.txt")
 ```
 
 In the UNIX command shell (you will need `plink1.90`, available [here](https://www.cog-genomics.org/plink2))
 
-```
+```r
 plink --bfile dataset --extract snp-names.txt --recode A --out genotypes
-
 ```
 
 In R:
 
-```
+```r
 genotypes <- meffil.extract.genotypes("genotypes.raw")
 genotypes <- genotypes[,match(samplesheet$Sample_Name, colnames(genotypes))]
-
 ```
 
 ### Generating a QC report
 
 We can now set some parameters for the QC of the raw data.
 
-```
+```r
 qc.parameters <- meffil.qc.parameters(
 	beadnum.samples.threshold             = 0.1,
 	detectionp.samples.threshold          = 0.1,
@@ -100,7 +99,6 @@ qc.parameters <- meffil.qc.parameters(
 	snp.concordance.threshold             = 0.95,
 	sample.genotype.concordance.threshold = 0.8
 )
-
 ```
 
 `beadnum.samples.threshold` = fraction of probes that failed the threshold of 3 beads.
@@ -113,7 +111,7 @@ qc.parameters <- meffil.qc.parameters(
 
 We can now summarise the QC analysis of the raw data. 
 
-```
+```r
 qc.summary <- meffil.qc.summary(
 	qc.objects,
 	parameters = qc.parameters,
@@ -121,14 +119,12 @@ qc.summary <- meffil.qc.summary(
 )
 
 save(qc.summary, file="qcsummary.Robj")
-
 ```
 
 We can also make a `qc.report`.
 
-```
+```r
 meffil.qc.report(qc.summary, output.file="qc-report.html")
-
 ```
 
 This creates the file `qc-report.html` in the current work directory. The file should open up in your web browser.
@@ -138,7 +134,7 @@ This creates the file `qc-report.html` in the current work directory. The file s
 
 After checking the qc report you can select bad samples to remove. I wouldn't remove outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which is captured by the normalisation probes `(normC + normG)/(normA + normT)`.
 
-```
+```r
 outlier <- qc.summary$bad.samples
 table(outlier$issue)
 index <- outlier$issue %in% c("Control probe (dye.bias)", 
@@ -149,30 +145,27 @@ index <- outlier$issue %in% c("Control probe (dye.bias)",
                               "Sex mismatch",
                               "Genotype mismatch")
 outlier <- outlier[index,]
-
 ```
 
 You can remove bad samples prior to performing quantile normalization. Bad probes can be removed later on.
 
-```
+```r
 length(qc.objects)
 qc.objects <- meffil.remove.samples(qc.objects, outlier)
 length(qc.objects)
 save(qc.objects,file="qc.objects.clean.Robj")
-
 ```
 
 Rerun QC summary on clean dataset
 
-```
+```r
 qc.summary <- meffil.qc.summary(qc.objects,parameters=qc.parameters,genotypes=genotypes)
 save(qc.summary, file=”qcsummary.clean.Robj")
-
 ```
 
 Rerun QC report on clean dataset
 
-```
+```r
 meffil.qc.report(qc.summary, output.file="qc-report.clean.html")
-
 ```
+
