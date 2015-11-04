@@ -1,6 +1,6 @@
 We have now performed the standard meQTL analysis. We are now going to perform the same kind of analysis again except this time we will look for genetic effects against the squared residuals of the methylation probes, hence testing for genetic influences on the variance of methylation. 
 
-The procedure is exactly the same, the SNPs have been split into `meth_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_vmqtl.sh`) would be:
+The procedure is exactly the same, the SNPs have been split into `genetic_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_vmqtl.sh`) would be:
 
 ```bash
 
