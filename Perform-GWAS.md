@@ -41,7 +41,7 @@ In order to check how many cell types there are, you can check the following fil
 less results/gwas_cellcounts/cellcounts_columns.txt
 ```
 
-Finally, in order to perform the MVLMM on cell counts it is likely necessary that you will need a cluster, as this is much slower to run than the standard LMM. The script is setup to split the data into `genetic_chunks` chunks (as specified in the `config` file), and to run you will need to create a submission script that works for your system. For example, on our cluster we would create a script that looks like this (e.g. `submit_07e.sh`, if `genetic_chunks="1000"`):
+Finally, in order to perform the MVLMM on cell counts it is likely necessary that you will need a cluster, as this is much slower to run than the standard LMM. The script is setup to split the data into `genetic_chunks` chunks (as specified in the `config` file), and to run you will need to create a submission script that works for your system. For example, on our cluster we would create a script that looks like this (e.g. `submit_mvlmm.sh`, if `genetic_chunks="1000"`):
 
 ```
 #!/bin/bash
@@ -64,6 +64,6 @@ cd /path/to/godmc/
 
 and to submit:
 
-    qsub submit_07e.sh
+    qsub submit_mvlmm.sh
 
 And this will distribute the entire analysis into 1000 batches.
