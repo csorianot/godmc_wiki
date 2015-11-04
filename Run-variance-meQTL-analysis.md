@@ -19,7 +19,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./06-vmqtl.sh ${PBS_ARRAYID}
+./05b-vmqtl.sh ${PBS_ARRAYID}
 
 ```
 
