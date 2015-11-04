@@ -6,7 +6,7 @@ This process is computationally expensive, it is performing an association of ev
 
 is the default setting. So for example if there are 8000000 SNPs in total then when we run
 
-    ./05-mqtl.sh 1
+    ./05a-mqtl.sh 1
 
 The script will perform the meQTL analysis using SNPs 1-8000 (the first chunk of 1000), using `nthreads` threads in parallel (also specified in the `config` file). 
 
@@ -30,7 +30,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./05-mqtl.sh ${PBS_ARRAYID}
+./05a-mqtl.sh ${PBS_ARRAYID}
 
 ```
 
