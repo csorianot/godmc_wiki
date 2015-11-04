@@ -1,4 +1,4 @@
-- [Home](Home)
+[Home](Home)
 
 ### Pre-requisites
 - [Imputed genetic data](Imputed genetic data)
