@@ -7,6 +7,7 @@ install.packages("lattice")
 install.packages("ggplot2") 
 install.packages("data.table")
 install.packages("MatrixEQTL")
+install.packages("parallel")
 
 source("http://bioconductor.org/biocLite.R")
 biocLite("SNPRelate")
