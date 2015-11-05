@@ -18,7 +18,7 @@ biocLite("GENESIS")
 biocLite("plyr")
 ```
 
-#If you haven't installed meffil yet, here are some instructions:
+###If you haven't installed meffil yet, here are some instructions:
 ```
 source("http://bioconductor.org/biocLite.R")
 biocLite("illuminaio")
