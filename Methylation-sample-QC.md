@@ -28,13 +28,13 @@ library(meffil)
 options(mc.cores=16)
 ```
 
-Generate a samplesheet with your samples. The samplesheet can be generated automatically from the `idat` basenames by giving the directory with `idat` files or it can be done manually. It should contain at least the following necessary columns: `SampleName`, `Sex` (possible values "M","F" or "NA") and `Basename`. It tries to parse the basenames to guess if the Sentrix plate and positions are present.
+Generate a samplesheet with your samples. The samplesheet can be generated automatically from the `idat` basenames by giving the directory with `idat` files or it can be done manually. It should contain at least the following necessary columns: `Sample_Name`, `Sex` (possible values "M","F" or "NA") and `Basename`. It tries to parse the basenames to guess if the Sentrix plate and positions are present.
 
 ```r
 samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 ```
 
-At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the Sample_Name column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
+At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
 
 Next perform the background correction, dye bias correction, sex prediction and cell count estimates. This function processes your `idat` files and returns a qc.object for each sample. 
 
