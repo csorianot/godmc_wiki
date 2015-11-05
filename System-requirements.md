@@ -5,10 +5,13 @@ R.3.2.0
 ```
 install.packages("lattice")
 install.packages("ggplot2") 
+install.packages("data.table")
+install.packages("MatrixEQTL")
 
 source("http://bioconductor.org/biocLite.R")
 biocLite("SNPRelate")
 biocLite("GENESIS")
+biocLite("plyr")
 ```
 
 #If you haven't installed meffil yet, here are some instructions:
