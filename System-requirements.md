@@ -11,11 +11,11 @@ install.packages("MatrixEQTL")
 install.packages("parallel")
 install.packages("GenABEL")
 install.packages("matrixStats")
+install.packages("plyr")
 
 source("http://bioconductor.org/biocLite.R")
 biocLite("SNPRelate")
 biocLite("GENESIS")
-biocLite("plyr")
 ```
 
 ###If you haven't installed meffil yet, here are some instructions:
