@@ -17,9 +17,9 @@ This script should run very quickly (e.g. less than 5 minutes for 100 individual
 
 Please check the following graphs:
 
-- `log_files/methylation_variables/age_prediction.pdf` - shows correlation between predicted and actual ages
-- `log_files/methylation_variables/cellcounts_plot.pdf` - shows cell count distributions
-- `log_files/methylation_variables/smoking_prediction.pdf` - shows smoking predictor distribution
+- `results/04/age_prediction.pdf` - shows correlation between predicted and actual ages
+- `results/04/cellcounts_plot.pdf` - shows cell count distributions
+- `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
 
 
 ### Adjustment of methylation values
