@@ -16,8 +16,12 @@
 6. [Run variance meQTL analysis](Run variance meQTL analysis)
 7. [Run CNV meQTL analysis](Run CNV meQTL analysis)
 8. [Run EWAS](Perform EWAS)
-9. [Run GWAS](Perform GWAS)
-10. [Upload first stage results](Upload first stage results)
+9. [GWAS on age acceleration](GWAS AAR)
+10. [GWAS on smoking](GWAS Smoking)
+11. [GWAS on cell count diversity](GWAS cell count entropy)
+12. [GWAS on cell counts](GWAS cell counts)
+13. [MV GWAS on cell counts](GWAS cell counts MV)
+
 
 ### Phase 2
 
