@@ -11,59 +11,24 @@ In addition we have also provided scripts to perform a multivariate LMM (MVLMM) 
 
 To perform the age accelerated residuals GWAS:
 
-    ./07a-gwas_aar.sh
+    ./09-gwas_aar.sh
 
-To perform the predicted smoking GWAS:
+This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size.
 
-    ./07b-gwas_smoking.sh
+### Now upload the results
 
-To perform the cellcount entropy GWAS:
-
-    ./07c-gwas_cellcount_entropy.sh
-
-Each of these may take some time, (approximately 2 minutes each for sample size of 100, but time will increase quadratically with increasing sample size).
-
-To perform the GWAS of each cell type, assuming we have 7 cell types, we need to run:
+To check that everything ran successfully, please run:
 
 ```
-./07d-gwas_cellcounts.sh 1
-./07d-gwas_cellcounts.sh 2
-./07d-gwas_cellcounts.sh 3
-./07d-gwas_cellcounts.sh 4
-./07d-gwas_cellcounts.sh 5
-./07d-gwas_cellcounts.sh 6
-./07d-gwas_cellcounts.sh 7
+./check_upload 09 check
 ```
 
-In order to check how many cell types there are, you can check the following file:
+This should tell you that `Section 09 has been successfully completed!`. Now please upload the scripts like this:
 
 ```
-less results/gwas_cellcounts/cellcounts_columns.txt
+./check_upload 09 upload
 ```
 
-Finally, in order to perform the MVLMM on cell counts it is likely necessary that you will need a cluster, as this is much slower to run than the standard LMM. The script is setup to split the data into `genetic_chunks` chunks (as specified in the `config` file), and to run you will need to create a submission script that works for your system. For example, on our cluster we would create a script that looks like this (e.g. `submit_mvlmm.sh`, if `genetic_chunks="1000"`):
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from `section 09`.
 
-```
-#!/bin/bash
-
-#PBS -N mvlmm
-#PBS -o mvlmm-output
-#PBS -e mvlmm-error
-#PBS -l walltime=12:00:00
-#PBS -t 1-1000
-#PBS -l nodes=1:ppn=1
-#PBS -S /bin/bash
-
-set -e
-
-echo "Running on ${HOSTNAME}"
-
-cd /path/to/godmc/
-./07e_gwas_cellcounts_mvlmm.sh ${PBS_ARRAYID}
-```
-
-and to submit:
-
-    qsub submit_mvlmm.sh
-
-And this will distribute the entire analysis into 1000 batches.
+This procedure will be repeated at the end of each section.
