@@ -8,7 +8,7 @@
 - [System requirements](System requirements)
 - [Install and setup](Install and setup)
 
-### Sections
+### The pipeline
 1. [Check data](Check data)
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
