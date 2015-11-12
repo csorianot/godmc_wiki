@@ -30,7 +30,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./05a-mqtl.sh ${PBS_ARRAYID}
+./05-mqtl.sh ${PBS_ARRAYID}
 
 ```
 
