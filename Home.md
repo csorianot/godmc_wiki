@@ -13,3 +13,8 @@ Focussing initially on height and BMI.
 
 The full analysis plan can be found [here](), and we aim to have meta analysed at least 10,000 samples by the end of 2015 (see [here](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) for details of the contributing cohorts).
 
+---
+
+### How to use this wiki
+
+This wiki will guide you through the GoDMC analysis. The first stage is to get your data into the right format and the right place (see the **Pre-requisites** section in the sidebar). Then it's just a matter of running the scripts one by one. At the end of each section we have provided a script that will check and upload the results to the server.
