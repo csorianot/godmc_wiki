@@ -8,7 +8,7 @@
 - [System requirements](System requirements)
 - [Install and setup](Install and setup)
 
-### Phase 1
+### Sections
 1. [Check data](Check data)
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
@@ -23,7 +23,3 @@
 12. [GWAS on cell counts](GWAS on cell counts)
 13. [MV GWAS on cell counts](MV GWAS cell counts)
 
-
-### Phase 2
-
-*Still to come...*
