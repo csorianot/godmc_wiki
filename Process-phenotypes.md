@@ -10,7 +10,7 @@ To do this, run:
 
     ./03a-phenotype_data.sh
 
-This script also generates plots of the phenotypes. Please check that the plots in `log_files/phenotype_data/ewas_phenotypes.pdf` look sane.
+This script also generates plots of the phenotypes. Please check that the plots in `results/03/ewas_phenotypes.pdf` look sane.
 
 ### Test that the genotype and phenotype quality
 
@@ -18,7 +18,7 @@ Next, as a check for the genotype and phenotype data we will generate a genetic 
 
     ./03b-height_prediction.sh
 
-Please check the plots in `log_files/height_prediction/heightcor_plot.pdf` to make sure that you are seeing a reasonable correlation. Anything below r-square of 0.1 is cause for concern!!
+Please check the plots in `results/03/heightcor_plot.pdf` to make sure that you are seeing a reasonable correlation. Anything below r-square of 0.1 is cause for concern!!
 
 
 ### Upload the results
