@@ -178,11 +178,38 @@ The default is to split the methylation normalisation routines into batches of 1
 
 Other options are also modifiable, but for most cohorts the default settings should be fine. Please contact us if you are unsure.
 
+### Uploading the results
+
+At the end of each section you can check that things have run correctly and upload that section's results and log files to the SFTP server in Bristol. The script `check_upload.sh` takes two arguments:
+
+- the section number (e.g. `01`) 
+- the action (`check` or `upload`)
+
+For example, if you run
+
+```
+./check_upload 01 check
+```
+
+The script will check that the log files and results look as expected from `section 01`. If you run
+
+```
+./check_upload 01 upload
+```
+
+The script will:
+
+- perform the check
+- generate a file called `results/upload_01.tgz`
+- generate an MD5 checksum file called `results/md5sum_01.txt`
+- upload the files to the server
+
+It will request your password before uploading the results.
 
 
-## Checking the data
+## Section 01: Checking the data
 
-We have created a script which will check the data you have deposited and the `config` file parameters to make sure it all looks as expected. It also creates a list of IDs that are in common between the different data sources, and a number of graphs to visualise the raw data. To run:
+We have created a script which will check the data you have deposited and the `config` file parameters to make sure it all looks as expected. It also checks that the necessary libraries are present, creates a list of IDs that are in common between the different data sources, and a number of graphs to visualise the raw data. To run:
 
     ./01-check_data.sh
 
