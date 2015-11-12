@@ -38,7 +38,7 @@ To check that everything ran successfully, please run:
 ./check_upload 02 check
 ```
 
-This should tell you that `Section 01 has been successfully completed!`. Now please upload the scripts like this:
+This should tell you that `Section 02 has been successfully completed!`. Now please upload the scripts like this:
 
 ```
 ./check_upload 02 upload
