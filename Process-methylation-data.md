@@ -152,3 +152,21 @@ and once the jobs are completed:
 
     resources/aggregate_adjustment2.sh
 
+
+### Upload the results
+
+To check that everything ran successfully, please run:
+
+```
+./check_upload 04 check
+```
+
+This should tell you that `Section 04 has been successfully completed!`. Now please upload the scripts like this:
+
+```
+./check_upload 04 upload
+```
+
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 04.
+
+This procedure will be repeated at the end of each section.
