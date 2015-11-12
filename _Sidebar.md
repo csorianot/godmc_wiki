@@ -6,9 +6,10 @@
 - [Phenotype and covariate data](Phenotype and covariate data)
 - [Structural variant data](Structural variant data)
 - [System requirements](System requirements)
+- [Install and setup](Install and setup)
 
 ### Phase 1
-1. [Install and setup](Install and setup)
+1. [Check data](Check data)
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
 4. [Process methylation data](Process methylation data)
