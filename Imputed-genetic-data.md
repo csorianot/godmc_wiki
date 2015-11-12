@@ -35,7 +35,7 @@ do
 
     # Now extract the best guess data from the bgen files, filtering on info score and MAF
 
-    plink1.90 --bgen data_chr${i}.bgen --sample data.sample --make-bed --qual-scores data_chr${i}.info --qual-threshold 0.8 --maf 0.01 --out data_chr${i}_filtered
+    plink1.90 --bgen data_chr${i}.bgen --sample data.sample --make-bed --qual-scores data_chr${i}.info --qual-threshold 0.8 --maf 0.01 --out data_chr${i}_filtered --hard-call-threshold 0.499999
 
     # Rename the SNP IDs if necessary to avoid possible duplicates
     
