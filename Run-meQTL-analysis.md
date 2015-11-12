@@ -6,7 +6,7 @@ This process is computationally expensive, it is performing an association of ev
 
 is the default setting. So for example if there are 8000000 SNPs in total then when we run
 
-    ./05a-mqtl.sh 1
+    ./05-mqtl.sh 1
 
 The script will perform the meQTL analysis using SNPs 1-8000 (the first chunk of 1000), using `nthreads` threads in parallel (also specified in the `config` file). 
 
@@ -39,3 +39,22 @@ Then, when this is submitted:
     qsub submit_mqtl.sh
 
 it will create a batch of 1000 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-1000, and each individual job further parallelised across 16 threads. 
+
+
+### Upload the results
+
+To check that everything ran successfully, please run:
+
+```
+./check_upload 05 check
+```
+
+This should tell you that `Section 05 has been successfully completed!`. Now please upload the scripts like this:
+
+```
+./check_upload 05 upload
+```
+
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 05.
+
+This procedure will be repeated at the end of each section.
