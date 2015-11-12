@@ -60,6 +60,19 @@ and it will give you the full path to your current directory. Set the `home_dire
 home_directory="path/to/godmc"
 ```
 
+### SFTP details
+
+The results from your analysis will be uploaded to the SFTP server in Bristol. **Note: No individual level data will be uploaded by these scripts!**
+
+You should have received details about your username and password for the SFTP server. If not please contact the GoDMC developers (details at the bottom of the page). In the `config` file please enter your username in the field:
+
+```
+sftp_username="your_username"
+```
+
+You don't need to change the `sftp_address` field.
+
+
 ### Input data
 
 The folder `godmc/input_data` can be used to put input data. This will include:
@@ -183,3 +196,23 @@ The script produces the following plots:
 - age distributions
 
 Please visually check that these look as expected, they are located in the `log_files/check_data` directory. 
+
+It also generates summary statistics of the input data.
+
+### Now upload the results
+
+To check that everything ran successfully, please run:
+
+```
+./check_upload 01 check
+```
+
+This should tell you that `Section 01 has been successfully completed!`. Now please upload the scripts like this:
+
+```
+./check_upload 01 upload
+```
+
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from `section 01`.
+
+This procedure will be repeated at the end of each section.
