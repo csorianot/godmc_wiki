@@ -84,8 +84,7 @@ awk -v chr=$i '{
     }' data_chr${i}.snp-stats > data_chr${i}.info
 
     # Remove duplicates from snp-stats
-    fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info chr${i}_filtered.info.clean
-    mv chr${i}_filtered.info.clean chr${i}_filtered.info
+    fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info chr${i}_filtered.info
 done
 
 # Merge them into one dataset
