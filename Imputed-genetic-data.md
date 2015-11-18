@@ -6,8 +6,11 @@ The genetic data must be
 - Converted to best guess binary plink format
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
 
+
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
+SNP MAF info
+rs1 0.02 0.88
 
 #### `Impute2` imputed data 
 
@@ -32,7 +35,7 @@ do
     d2<-d[(which(d[,1]%in%e[,1]==F)),]
     write.table(d2,"filtered.sample",sep=" ",col.names=T,row.names=F,quote=F)
    
-    qctool -g $mydir/filteredchr${i}.bgen -s $mydir/filtered.sample -snp-stats $mydir/data_chr${i}.snp-stats
+    qctool -g filteredchr${i}.bgen -s filtered.sample -snp-stats data_chr${i}.snp-stats
      
     # Now extract the best guess data from the been files, variants with a "." will be recoded to chr:pos_allele1_allele2
 
@@ -61,7 +64,13 @@ do
     
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
-# Recode SNV ids in snp-stats
+
+# Relabel the SNP IDs and extract relevant columns
+    # Assumes column 4 is the position
+    # Assumes columns 7 and 8 are the allele names
+    # Assumes column 15 is the MAF
+    # Assumes columns 19 is the info score
+
 awk -v chr=$i '{
         if (length($7) == "1" && length($8) == "1") 
             print "chr"chr":"$4":SNP", $15, $19;
@@ -71,7 +80,7 @@ awk -v chr=$i '{
 
     # Remove duplicates from snp-stats
     fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info chr${i}_filtered.info.clean
-    
+    mv chr${i}_filtered.info.clean chr${i}_filtered.info
 done
 
 # Merge them into one dataset
@@ -83,43 +92,7 @@ done > mergefile.txt
 
 plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out data_filtered
 
-
-# Create the correct info score format
-# Column 1: SNP ID
-# Column 2: MAF
-# Column 3: Quality score
-
-for i in {1..22}
-do
-    # Extract the relevant SNPs
-    # Assumes column 2 is the SNP ID
-
-    awk '{ print $2 }' data_chr${i}_filtered.bim.orig > chr${i}_filtered.snplist
-    fgrep -wf chr${i}_filtered.snplist data_chr${i}.snp-stats > chr${i}_filtered.snp-stats
-
-
-    # Relabel the SNP IDs and extract relevant columns
-    # Assumes column 2 is the SNP ID
-    # Assumes column 4 is the position
-    # Assumes columns 7 and 8 are the allele names
-    # Assumes column 15 is the MAF
-    # Assumes columns 19 is the info score
-
-    awk -v chr=$i '{
-        if (length($7) == "1" && length($8) == "1") 
-            print "chr"chr":"$4":SNP", $15, $19;
-        else 
-            print "chr"chr":"$4":INDEL", $15, $19;
-    }' chr${i}_filtered.snp-stats > chr${i}_filtered.info
-
-    # Remove duplicates
-
-    awk '{ if (++dup[$1] == 1) { print $0 }}' > temp${i}
-    mv temp${i} chr${i}_filtered.info
-
-done
-
-# Combine into a single file
+# Combine info files into a single file
 
 for i in {1..22}
 do
