@@ -11,7 +11,7 @@ We also require imputation quality scores for each SNP. Some instructions on how
 
 #### `Impute2` imputed data 
 
-Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, and generated info scores using the `-snp-stats` flag in [qctool](http://www.well.ox.ac.uk/~gav/qctool/#overview), then the last three steps can be performed using the following bash script.
+Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, you can use [qctool](http://www.well.ox.ac.uk/~gav/qctool/#overview) to filter on MAF and info and prepare a snp quality file for the pipeline following the bash script below.
 
 It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
