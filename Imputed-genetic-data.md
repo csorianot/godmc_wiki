@@ -19,9 +19,16 @@ Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2
 It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
 ```bash
+# If you need to filter out samples you need to generate a new sample file.
+cp data.sample filtered.sample 
+In R:
+ d<-read.table("data.sample",header=T,stringsAsFactors=F)
+ e<-read.table("exclusion.samples.txt",stringsAsFactors=F)
+ d2<-d[(which(d[,1]%in%e[,1]==F)),]
+ write.table(d2,"filtered.sample",sep=" ",col.names=T,row.names=F,quote=F)
+
 
 #!/bin/bash
-
 for i in {1..22}
 do
 
@@ -29,12 +36,7 @@ do
     
     qctool -g data_chr${i}.bgen -s data.sample -og filteredchr${i}.bgen -maf 0.01 1 -info 0.8 1 -excl-samples   exclusion.samples.txt
     # Now calculate summary stats on the filtered data. Please note you need to exclude the samples from the .sample file 
-    In R:
-    d<-read.table("data.sample",header=T,stringsAsFactors=F)
-    e<-read.table("exclusion.samples.txt",stringsAsFactors=F)
-    d2<-d[(which(d[,1]%in%e[,1]==F)),]
-    write.table(d2,"filtered.sample",sep=" ",col.names=T,row.names=F,quote=F)
-   
+       
     qctool -g filteredchr${i}.bgen -s filtered.sample -snp-stats data_chr${i}.snp-stats
      
     # Now extract the best guess data from the been files, variants with a "." will be recoded to chr:pos_allele1_allele2
