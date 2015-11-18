@@ -9,8 +9,8 @@ The genetic data must be
 
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
-SNP MAF info
-rs1 0.02 0.88
+    SNP MAF Info
+    rs1 0.02 0.88
 
 #### `Impute2` imputed data 
 
