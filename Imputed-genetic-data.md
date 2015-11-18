@@ -19,14 +19,17 @@ Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2
 It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
 
 ```bash
+# First copy your sample file to a new file
+cp data.sample filtered.sample
 # If you need to filter out samples you need to generate a new sample file.
-cp data.sample filtered.sample 
+ 
 In R:
  d<-read.table("data.sample",header=T,stringsAsFactors=F)
  e<-read.table("exclusion.samples.txt",stringsAsFactors=F)
  d2<-d[(which(d[,1]%in%e[,1]==F)),]
  write.table(d2,"filtered.sample",sep=" ",col.names=T,row.names=F,quote=F)
 
+#Then run the bash script below.
 
 #!/bin/bash
 for i in {1..22}
@@ -39,7 +42,7 @@ do
        
     qctool -g filteredchr${i}.bgen -s filtered.sample -snp-stats data_chr${i}.snp-stats
      
-    # Now extract the best guess data from the been files, variants with a "." will be recoded to chr:pos_allele1_allele2
+    # Now extract the best guess data from the bgen files, variants with a "." will be recoded to chr:pos_allele1_allele2.
 
     plink1.9 --bgen filteredchr${i}.bgen snpid-chr --sample filtered.sample --set-missing-var-ids @:#\$1,\$2 --make-bed --out data_chr${i}_filtered --hard-call-threshold 0.499999 --fill-missing-a2
     
@@ -67,7 +70,7 @@ do
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
 
-# Relabel the SNP IDs and extract relevant columns
+# Relabel the SNP IDs and extract relevant columns in the snp-stats file
     # Assumes column 4 is the position
     # Assumes columns 7 and 8 are the allele names
     # Assumes column 15 is the MAF
