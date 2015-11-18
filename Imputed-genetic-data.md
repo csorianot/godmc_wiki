@@ -22,21 +22,22 @@ It is recommended that you use `plink1.90` to do this, available for download [h
 for i in {1..22}
 do
 
-    # First extract the info scores (renaming any duplicated SNP IDs)
-    # e.g. If using the output from the -snp-stats flag in qctool:
+    # First filter out snps (info<0.8) and maf <0.01 and samples using qctool.
+    
+    qctool -g data_chr${i}.bgen -s data.sample -og filteredchr${i}.bgen -maf 0.01 1 -info 0.8 1 -excl-samples   exclusion.samples.txt
+    # Now calculate summary stats on the filtered data. Please note you need to exclude the samples from the .sample file 
+    In R:
+    d<-read.table("data.sample",header=T,stringsAsFactors=F)
+    e<-read.table("exclusion.samples.txt",stringsAsFactors=F)
+    d2<-d[(which(d[,1]%in%e[,1]==F)),]
+    write.table(d2,"filtered.sample",sep=" ",col.names=T,row.names=F,quote=F)
+   
+    qctool -g $mydir/filteredchr${i}.bgen -s $mydir/filtered.sample -snp-stats $mydir/data_chr${i}.snp-stats
+     
+    # Now extract the best guess data from the been files, variants with a "." will be recoded to chr:pos_allele1_allele2
 
-    sed 1d data_chr${i}.snp-stats | awk '{
-        if (++dup[$2] > 1) {
-            print $2".duplicate."dup[$2], $19 
-        } else { 
-            print $2, $19 
-        }
-    }' > data_chr${i}.info
-
-    # Now extract the best guess data from the bgen files, filtering on info score and MAF
-
-    plink1.90 --bgen data_chr${i}.bgen --sample data.sample --make-bed --qual-scores data_chr${i}.info --qual-threshold 0.8 --maf 0.01 --out data_chr${i}_filtered --hard-call-threshold 0.499999
-
+    plink1.9 --bgen filteredchr${i}.bgen snpid-chr --sample filtered.sample --set-missing-var-ids @:#\$1,\$2 --make-bed --out data_chr${i}_filtered --hard-call-threshold 0.499999 --fill-missing-a2
+    
     # Rename the SNP IDs if necessary to avoid possible duplicates
     
     cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig
@@ -56,9 +57,21 @@ do
         } else { 
             print $0 }
     }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
-    grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.txt
-    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.txt --make-bed --out data_chr${i}_filtered
+    grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
+    
+    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
+# Recode SNV ids in snp-stats
+awk -v chr=$i '{
+        if (length($7) == "1" && length($8) == "1") 
+            print "chr"chr":"$4":SNP", $15, $19;
+        else 
+            print "chr"chr":"$4":INDEL", $15, $19;
+    }' data_chr${i}.snp-stats > data_chr${i}.info
+
+    # Remove duplicates from snp-stats
+    fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info chr${i}_filtered.info.clean
+    
 done
 
 # Merge them into one dataset
