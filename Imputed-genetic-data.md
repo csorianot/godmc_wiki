@@ -98,10 +98,12 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 
 # Combine info files into a single file
 
+head -n1 chr01_filtered.info > data_filtered.info
+
 for i in {1..22}
 do
-    cat chr${i}_filtered.info
-done > data_filtered.info
+    awk ' NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
+done
 
 ```
 
