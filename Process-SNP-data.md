@@ -17,7 +17,7 @@ For a sample size of 100 this script takes less than 5 minutes to run on our com
 
 Note that for 'unrelated' samples we are generating PCs by removing long LD tracts, extracting HapMap3 SNPs, LD pruning, and then calculating PCs on the data after cryptic relateds have been removed. For 'related' samples we are using a general method for estimating PCs that accounts for any relatedness. This involves estimating a kinship matrix that is robust to population structure and relatedness ([Manichaikil et al 2010](http://bioinformatics.oxfordjournals.org/content/26/22/2867.long)), estimating principal components on an unrelated subset, and then projecting principal components onto the related subset based on estimated kinships ([Conomos et al 2015](http://onlinelibrary.wiley.com/doi/10.1002/gepi.21896/abstract)).
 
-Please check your pca plot `pcaplot.pdf` in the results directory and adjust the sd threshold in the `config` file if necessary and rerun `02a-snp_data.sh`
+Please check your pca plot `pcaplot.pdf` in the results directory and adjust the SD threshold in the `config` file and rerun `02a-snp_data.sh` if necessary. The blue dashed lines define the SD threshold.
 
     cd results/02
 
