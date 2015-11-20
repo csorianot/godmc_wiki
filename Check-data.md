@@ -19,7 +19,7 @@ It also generates summary statistics of the input data.
 To check that everything ran successfully, please run:
 
 ```
-./check_upload 01 check
+./check_upload.sh 01 check
 ```
 
 This should tell you that `Section 01 has been successfully completed!`. Now please upload the scripts like this:
