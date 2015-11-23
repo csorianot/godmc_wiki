@@ -31,7 +31,7 @@ This script will split the genetic dataset into a number of smaller chunks. The 
 
 is the default and will split all the SNP data into 1000 subsets (e.g. for 8 million SNPs each chunk will have 8000 SNPs). The required files will be saved in `processed_data/genetic_data/tabfile/`. In addition, this script will do the same for the CNV data.
 
-This script takes a few minutes to run for sample size of 100.
+This script takes a few minutes to run for sample size of 100 and 1hour to run ~1800 samples.
 
 
 ### Upload the results
