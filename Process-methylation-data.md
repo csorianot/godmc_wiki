@@ -3,10 +3,8 @@ You have created the necessary files for the SNP data. Now we will create the me
 ### Generate covariates and derived variables
 
 First we will generate the following:
-
-- Estimate cell counts ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86) as implemented in `meffil`))
-- Estimate age accelerated residuals ([Horvath original method](http://www.genomebiology.com/2013/14/10/R115))
 - Predict smoking ([Zeilinger et al 2013](http://www.ncbi.nlm.nih.gov/pubmed/23691101) and [Elliott et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/24485148))
+- Estimate cell counts ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86) as impPredict smoking ([Zeilinger et al 2013](http://www.ncbi.nlm.nih.gov/pubmed/23691101) and [Elliott et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/24485148))
 - Generate necessary covariate file formats for upcoming analyses
 
 To do this simply run
