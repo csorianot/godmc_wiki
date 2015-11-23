@@ -39,13 +39,13 @@ This script takes a few minutes to run for sample size of 100 and 1hour to run ~
 To check that everything ran successfully, please run:
 
 ```
-./check_upload 02 check
+./check_upload.sh 02 check
 ```
 
 This should tell you that `Section 02 has been successfully completed!`. Now please upload the scripts like this:
 
 ```
-./check_upload 02 upload
+./check_upload.sh 02 upload
 ```
 
 It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 02.
