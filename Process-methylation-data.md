@@ -14,10 +14,10 @@ To do this simply run
 This script should run very quickly (e.g. less than 5 minutes for 100 individuals), and generate the necessary files in the `processed_data/methylation_data` folder.
 
 Please check the following graphs:
-
+- `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
 - `results/04/age_prediction.pdf` - shows correlation between predicted and actual ages
 - `results/04/cellcounts_plot.pdf` - shows cell count distributions
-- `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
+
 
 
 ### Adjustment of methylation values
