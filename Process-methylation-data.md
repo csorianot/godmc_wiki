@@ -11,7 +11,7 @@ To do this simply run
 
     ./04a-methylation_variables.sh
 
-This script should run very quickly (e.g. less than 5 minutes for 100 individuals), and generate the necessary files in the `processed_data/methylation_data` folder.
+This script should run very quickly (e.g. less than 5 minutes for 100 individuals, I took me 6 min on ~1800 samples), and generate the necessary files in the `processed_data/methylation_data` folder.
 
 Please check the following graphs:
 - `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
