@@ -14,7 +14,7 @@ To do this, run:
 
 This script also generates plots of the phenotypes. Please check that the plots in `results/03/ewas_phenotypes.pdf` look sane.
 
-### Test that the genotype and phenotype quality
+### Test the genotype and phenotype quality
 
 Next, as a check for the genotype and phenotype data we will generate a genetic prediction for height using the SNPs from [Wood et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/25282103) and test its correlation with the height phenotype (if it is provided). To do this, run:
 
