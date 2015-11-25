@@ -16,8 +16,7 @@ This script should run very quickly (e.g. less than 5 minutes for 100 individual
 Please check the following graphs:
 - `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
 - `results/04/age_prediction.pdf` - shows correlation between predicted and actual ages
-- `results/04/cellcounts_plot.pdf` - shows cell count distributions
-
+- `results/04/cellcounts_plot.pdf` - shows cell count distributions. Please note that there maybe zeros in the cell counts (CD8T and eosinophils) so the transformations don't look great. 
 
 
 ### Adjustment of methylation values
