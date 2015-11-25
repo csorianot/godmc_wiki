@@ -28,7 +28,7 @@ cd results/01
 ```
 
 
-Now please upload the scripts like this:
+Now please go back to the godmc directory and upload the scripts like this:
 
 ```
 ./check_upload.sh 01 upload
