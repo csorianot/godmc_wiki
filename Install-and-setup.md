@@ -12,7 +12,7 @@ Now please visit [this Google Docs spreadsheet](https://docs.google.com/spreadsh
 
 To download the scripts you will need to run the following git command:
 
-    git clone git@github.com:MRCIEU/godmc.git
+    git clone https://github.com/MRCIEU/godmc.wiki.git
 
 This will create a new directory called `godmc` which will contain the files needed to run the analysis, and directories in which to put your input data.
 
