@@ -151,7 +151,7 @@ You can remove bad samples prior to performing quantile normalization. Bad probe
 
 ```r
 length(qc.objects)
-qc.objects <- meffil.remove.samples(qc.objects, outlier)
+qc.objects <- meffil.remove.samples(qc.objects, outlier$sample.name)
 length(qc.objects)
 save(qc.objects,file="qc.objects.clean.Robj")
 ```
@@ -168,4 +168,3 @@ Rerun QC report on clean dataset
 ```r
 meffil.qc.report(qc.summary, output.file="qc-report.clean.html")
 ```
-
