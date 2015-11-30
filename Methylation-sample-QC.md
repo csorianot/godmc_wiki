@@ -160,7 +160,7 @@ Rerun QC summary on clean dataset
 
 ```r
 qc.summary <- meffil.qc.summary(qc.objects,parameters=qc.parameters,genotypes=genotypes)
-save(qc.summary, file=”qcsummary.clean.Robj")
+save(qc.summary, file="qcsummary.clean.Robj")
 ```
 
 Rerun QC report on clean dataset
