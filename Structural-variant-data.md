@@ -18,25 +18,40 @@ install_github("perishky/meffil")
 ```
 Load meffil and set how many cores to use for parallelization
 ```
-    library(meffil)
-    options(mc.cores=16)
+library(meffil)
+options(mc.cores=16)
 ```
 Generate a samplesheet with your samples. The samplesheet can be generated automatically from the idat basenames by giving the directory with idat files or it can be done manually. It should contain at least the following necessary columns: `Sample Name`, `Sex` (possible values `M`, `F` or `NA`) and `Basename`. It tries to parse the basenames to guess if the Sentrix plate and positions are present. 
 
-    samplesheet <- meffil.create.samplesheet(path_to_idat_files)
+```
+samplesheet <- meffil.create.samplesheet(/path/to/idat/files)
+```
 
 At this point please ensure that the `Sample_Name` column contains the actual sample IDs that are being used for the other data types. Please also add the sex values to the `Sex` column. Don't change these column names though.
 
+Obtain the control samples:
+
+```
+library(CopyNumber450kData)
+data(RGcontrolSetEx)
+controls <- meffil.cnv.controls(RGcontrolSetEx, verbose=TRUE)
+```
+
 Now estimate the CNVs:
+
 ```
-    cnv <- meffil.calculate.cnv(samplesheet)    
+cnv_values <- meffil.calculate.cnv(samplesheet, controls, verbose=TRUE)
 ```
+
 A matrix of genetic copy number variation at each probe can now be generated:
+
 ```
-    cnv <- meffil.cnv.matrix(cnv)
+cnv <- meffil.cnv.matrix(cnv_values, abs.thresh=0.25, p.thresh=0.05)
 ```
+
 Please save this object to the `godmc/input_data` folder:
+
 ```
-    save(cnv, file="/path/to/godmc/input_data/cnv.RData")
+save(cnv, file="/path/to/godmc/input_data/cnv.RData")
 ```
 and make sure that the object name that you are saving is `cnv`, as this is the name that the pipeline will be expecting. For ARIES comprising 5469 samples, it took 30 hrs to extract cnvs using 6 cores. It takes about 30seconds for each sample. 
