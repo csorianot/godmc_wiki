@@ -1,18 +1,18 @@
 
 ## Covariates
-Your covariates file should be a text file (white space separated) with `IID` in the first column followed by headed columns for covariates. The following covariates are **required**:
+Your covariates file should be a text file (white space separated) with `IID` in the first column followed by headed columns for covariates. You need to specify whether your covariate is a categorical (`factor`) or continuous (`numeric`) variable. For example: `{Name}_factor` or `{Name}_numeric`.  The following covariates are **required**:
 
-- `Sex`: A column of `M`'s for males and `F`'s for females
-- `Age`: In years
+- `Sex_factor`: A column of `M`'s for males and `F`'s for females
+- `Age_numeric`: In years
 
 The following covariates are strongly recommended (but not necessary):
 
-- `Slide`: The slide ID for the methylation array
+- `Slide_factor`: The slide ID for the methylation array
 - Any other important batches
 
 The pipeline will create genetic and methylation principal components for you so you don’t need to add PCs to this file. An example of what your file should look like is below:
 
-    IID Sex Age Slide
+    IID Sex_factor Age_numeric Slide_factor
     id1 F 30 12345678
     id2 M 42 12345678
     id3 M 76 87654321
