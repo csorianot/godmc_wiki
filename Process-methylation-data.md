@@ -113,7 +113,7 @@ On our cluster this creates a batch of 100 jobs, each with the `${PBS_ARRAYID}` 
 
 After these jobs have completed, assuming there have been no errors, there will be 100 separate `.RData` files that need to be combined together. To do this simply run:
 
-    resources/aggregate_adjustment1.sh
+    resources/methylation/aggregate_adjustment1.sh
 
 This will combine your 100 chunks into a single file for use moving forward in the analysis.
 
