@@ -45,7 +45,7 @@ In order to perform steps 3 and 4, run:
 
     ./04c-methylation_pcs.sh
 
-This step took 15 minutes with a sample of 100 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). 
+This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). 
 
 In order to run step 5, run the following:
 
