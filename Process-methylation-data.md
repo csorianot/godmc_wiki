@@ -25,11 +25,13 @@ Next we will normalise the methylation data. This is a more computationally inte
 
 In order to maximise the meQTL analysis speed we will pre-adjust the methylation values for all possible covariates. In order to improve power we will be adjusting for as much non-genetic variance as possible, and to reduce the possibility of type 1 errors we will be transforming the methylation values using inverse normal transformation. The steps we are about to perform are as follows:
 
-1. Inverse-normal transformation of each methylation probe
-2. Fit age, sex, predicted smoking, (predicted) cell counts, genetic principal components as fixed effects, and family relatedness as a random effect if it is family data, against each methylation probe and keep the normalised residuals
-3. Estimate the methylation principal components using the 20000 most variable methylation probes, retain the first `n` PCs that individually explain at least 1% of the methylation variation. Remove any PCs associated with height or BMI from this list.
-4. Run a GWAS against each of the retained methylation PCs and discard any PCs that have evidence for a genetic effect (p < 1e-8).
-5. Fit the remaining non-genetic methylation PCs against each of the methylation probes from (2) and retain the residuals.
+1. Set 10 SD outliers to NA
+2. Inverse-normal transformation of each methylation probe
+3. Fit age, sex, predicted smoking, (predicted) cell counts, genetic principal components as fixed effects, and family relatedness as a random effect if it is family data, against each methylation probe and keep the normalised residuals.
+4. Set NAs to probe mean.
+5. Estimate the methylation principal components using the 20000 most variable methylation probes, retain the first `n` PCs that individually explain at least 1% of the methylation variation. Remove any PCs associated with height or BMI from this list.
+6. Run a GWAS against each of the retained methylation PCs and discard any PCs that have evidence for a genetic effect (p < 1e-6).
+7. Fit the remaining non-genetic methylation PCs against each of the methylation probes from (2) and retain the residuals.
 
 These residuals have now been adjusted for measured covariates, estimated cell counts, estimated smoking, genetic relatedness and structure, and estimates of unmeasured confounders. Therefore the residual variance should be minimised as much as possible without losing genetic variance.
 
