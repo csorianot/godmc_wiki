@@ -25,6 +25,10 @@ Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To
     1 chr1:1081403:INDEL  0 1081403                GC    G
     1 chr1:1084475:INDEL  0 1084475                 A   AG
 
+#### Bed file
+We use best guess genotypes without a probability threshold in our pipeline. 
+Please make sure you don't filter on a probability threshold as matrixQTL (software used to calculate methQTLs) can't handle missingness properly and will set missing genotypes to the genotypic mean. We use best guess genotypes as matrixQTL can't handle dosages. Please see below how you can prepare best guess files.
+
 #### Imputation quality
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
