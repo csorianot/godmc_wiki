@@ -143,7 +143,10 @@ index <- outlier$issue %in% c("Control probe (dye.bias)",
                               "Low bead numbers",
                               "Detection p-value",
                               "Sex mismatch",
-                              "Genotype mismatch")
+                              "Genotype mismatch",
+                              "Control probe (bisulfite1)",
+                              "Control probe (bisulfite2)")
+
 outlier <- outlier[index,]
 ```
 
