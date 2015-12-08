@@ -132,7 +132,7 @@ This creates the file `qc-report.html` in the current work directory. The file s
 
 ### Removing bad samples
 
-After checking the qc report you can select bad samples to remove. I wouldn't remove outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which is captured by the normalisation probes `(normC + normG)/(normA + normT)`.
+After checking the qc report you can select bad samples to remove. I wouldn't remove outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which are captured by the normalisation probes `(normC + normG)/(normA + normT)` or bisulfite conversion control probes.
 
 ```r
 outlier <- qc.summary$bad.samples
