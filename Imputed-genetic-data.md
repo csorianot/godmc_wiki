@@ -14,16 +14,16 @@ The genetic data must be
     2A 2A  0  0  2 -9
     3A 3A  0  0  2 -9
 
-#### Bim file
+#### Bim file and allele coding
 
-Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no I,R, D recoding. The pipeline changes the IDs of you (second column) so you don't need to worry about this.
+Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no recoding to I,R, D. The pipeline changes the IDs of you (second column) so you don't need to worry about this. Please don't use a header.
 
-1 chr1:1068669:INDEL  0 1068669                GT    G
-1 chr1:1068832:INDEL  0 1068832 CGCCGCCTGCCTGCCCG    C
-1 chr1:1069474:INDEL  0 1069474         AAAAAAAAG    A
-1 chr1:1069475:INDEL  0 1069475          AAAAAAAG    A
-1 chr1:1081403:INDEL  0 1081403                GC    G
-1 chr1:1084475:INDEL  0 1084475                 A   AG
+    1 chr1:1068669:INDEL  0 1068669                GT    G
+    1 chr1:1068832:INDEL  0 1068832 CGCCGCCTGCCTGCCCG    C
+    1 chr1:1069474:INDEL  0 1069474         AAAAAAAAG    A
+    1 chr1:1069475:INDEL  0 1069475          AAAAAAAG    A
+    1 chr1:1081403:INDEL  0 1081403                GC    G
+    1 chr1:1084475:INDEL  0 1084475                 A   AG
 
 #### Imputation quality
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
