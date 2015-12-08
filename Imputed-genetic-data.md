@@ -3,9 +3,8 @@
 The genetic data must be
 - Imputed to 1000 genomes reference panel, ideally phase 3. Phased haplotypes available [here](https://mathgen.stats.ox.ac.uk/impute/1000GP_Phase3.html). For guidelines on how to perform imputation see [here](http://genome.sph.umich.edu/wiki/IMPUTE2:_1000_Genomes_Imputation_Cookbook) and [here](https://github.com/explodecomputer/godmc/wiki/Genetic-imputation). A pipeline is also available [here](https://github.com/explodecomputer/imputePipePBS). Please contact us if you have any queries about this.
 - Filtered to have MAF > 0.01 and imputation quality score > 0.8
-- Converted to best guess binary plink format
+- Converted to best guess binary plink format without a probability threshold 
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
-
 
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
@@ -38,7 +37,7 @@ do
     # First filter out snps (info<0.8) and maf <0.01 and samples using qctool.
     
     qctool -g data_chr${i}.bgen -s data.sample -og filteredchr${i}.bgen -maf 0.01 1 -info 0.8 1 -excl-samples   exclusion.samples.txt
-    # Now calculate summary stats on the filtered data. Please note you need to exclude the samples from the .sample file 
+    # Now calculate summary stats on the filtered data. Please note you need to exclude the samples from the .sample file manually. 
        
     qctool -g filteredchr${i}.bgen -s filtered.sample -snp-stats data_chr${i}.snp-stats
      
