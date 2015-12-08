@@ -6,6 +6,26 @@ The genetic data must be
 - Converted to best guess binary plink format without a probability threshold 
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
 
+#### Fam file and Sample IDs
+
+**IMPORTANT:** Please ensure that the second column of the `.fam` file (individual IDs) contains unique sample IDs. These sample IDs should be the IDs that are used in the phenotype, covariate, methylation and structural variants data. The first column of the `.fam` file (family IDs) is not important for these analysis. e.g. They can just be the same as the second column. Please also ensure that the individual IDs don't contain any underscores.
+
+1A 1A  0  0  2 -9
+2A 2A  0  0  2 -9
+3A 3A  0  0  2 -9
+
+#### Bim file
+
+Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no I,R, D recoding. The pipeline changes the IDs of you (second column) so you don't need to worry about this.
+
+1 chr1:1068669:INDEL  0 1068669                GT    G
+1 chr1:1068832:INDEL  0 1068832 CGCCGCCTGCCTGCCCG    C
+1 chr1:1069474:INDEL  0 1069474         AAAAAAAAG    A
+1 chr1:1069475:INDEL  0 1069475          AAAAAAAG    A
+1 chr1:1081403:INDEL  0 1081403                GC    G
+1 chr1:1084475:INDEL  0 1084475                 A   AG
+
+#### Imputation quality
 We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
 
     SNP MAF Info
@@ -115,8 +135,3 @@ and
 
     quality_scores="${home_directory}/input_data/data_filtered.info"
     quality_type="impute2"
-
-
-#### Sample IDs
-
-**IMPORTANT:** Please ensure that the second column of the `.fam` file (individual IDs) contains unique sample IDs. These sample IDs should be the IDs that are used in the phenotype, covariate, methylation and structural variants data. The first column of the `.fam` file (family IDs) is not important for these analysis. e.g. They can just be the same as the second column. Please also ensure that the individual IDs don't contain any underscores.
