@@ -33,13 +33,12 @@ Generate a samplesheet with your samples. The samplesheet can be generated autom
 ```r
 samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 ```
-
-
 At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
 
-Next perform the background correction, dye bias correction, sex prediction and cell count estimates. This function processes your `idat` files and returns a qc.object for each sample. 
+Next perform the background correction, dye bias correction, sex prediction and cell count estimates. This function processes your `idat` files and returns a qc.object for each sample. You need to specify which cell type reference you need. Currently there are whole blood and cord blood references implemented.
 
 ```r
+meffil.list.cell.type.references()
 qc.objects <- meffil.qc(samplesheet, cell.type.reference="blood gse35069 complete", verbose=TRUE)
 save(qc.objects,file="qc.objects.Robj")
 ```
@@ -70,7 +69,7 @@ It is important that the SNPs in your genotype data and the methylation levels i
 In R:
 
 ```r
-writeLines(meffil.get.snp.probes(), con="snp-names.txt")
+writeLines(meffil.snp.names(), con="snp-names.txt")
 ```
 
 In the UNIX command shell (you will need `plink1.90`, available [here](https://www.cog-genomics.org/plink2))
