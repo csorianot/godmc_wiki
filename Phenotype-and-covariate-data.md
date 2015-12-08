@@ -45,7 +45,7 @@ IID Bcell CD4T CD8T Eos Mono Neu NK
 0.16438292 0.1637806 -8.673617e-19 -1.042249e-19 0.11164848 0.3932823 0.25849168
 ```
 
-In the `config` file of the pipeline, if cell counts are required (e.g. it is not a single cell type sample) then set:
+In the `config` file of the pipeline, if cell counts adjustments in the statistical models are required (e.g. it is not a single cell type sample) then set:
 
 ```
 cellcounts_required="yes"
