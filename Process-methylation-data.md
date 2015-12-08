@@ -139,7 +139,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./04d-methylation_adjustment.sh ${PBS_ARRAYID}
+./04d-methylation_adjustment2.sh ${PBS_ARRAYID}
 
 ```
 
