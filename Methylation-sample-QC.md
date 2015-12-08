@@ -35,7 +35,7 @@ samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 ```
 At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
 
-Next perform the background correction, dye bias correction, sex prediction and cell count estimates. This function processes your `idat` files and returns a qc.object for each sample. You need to specify which cell type reference you need. Currently there are whole blood and cord blood references implemented.
+Next perform the background correction, dye bias correction, sex prediction and cell count estimates. The `meffil.qc` function processes your `idat` files and returns a qc.object for each sample. You need to specify which cell type reference you need. You can find cell type references with the `meffil.list.cell.type.references()` function. Currently there are whole blood and cord blood references implemented. Cell count predictions are done using the [Houseman et al. method](http://www.ncbi.nlm.nih.gov/pubmed/22568884)
 
 ```r
 meffil.list.cell.type.references()
