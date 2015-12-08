@@ -16,7 +16,7 @@ The genetic data must be
 
 #### Bim file and allele coding
 
-Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no recoding to I,R, D. The pipeline changes the IDs of you (second column) so you don't need to worry about this. Please don't use a header.
+Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no recoding to I,R, D. The pipeline changes the IDs for you (second column) so you don't need to worry about this. Please don't use a header.
 
     1 chr1:1068669:INDEL  0 1068669                GT    G
     1 chr1:1068832:INDEL  0 1068832 CGCCGCCTGCCTGCCCG    C
