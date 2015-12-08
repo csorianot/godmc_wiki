@@ -90,7 +90,7 @@ genotypes <- genotypes[,match(samplesheet$Sample_Name, colnames(genotypes))]
 We can now set some parameters for the QC of the raw data.
 
 ```r
-qc.parameters <- meffil.qc.parameters(
+        qc.parameters <- meffil.qc.parameters(
 	beadnum.samples.threshold             = 0.1,
 	detectionp.samples.threshold          = 0.1,
 	detectionp.cpgs.threshold             = 0.1, 
@@ -101,13 +101,13 @@ qc.parameters <- meffil.qc.parameters(
 )
 ```
 
-`beadnum.samples.threshold` = fraction of probes that failed the threshold of 3 beads.
-`detectionp.samples.threshold` = fraction of probes that failed a detection.pvalue threshold of 0.01.
-`beadnum.cpgs.threshold` = fraction of samples that failed the threshold of 3 beads.
-`detectionp.cpgs.threshold` = fraction of samples that failed the detection.pvalue threshold of 0.01.
-`sex.outlier.sd` = number of standard deviations to determine whether sample is sex outlier 
-`snp.concordance.threshold` = concordance threshold to include snps to calculate sample concordance 
-`sample.genotype.concordance.threshold` = concordance threshold to determine whether sample is outlier
+    `beadnum.samples.threshold` = fraction of probes that failed the threshold of 3 beads.
+    `detectionp.samples.threshold` = fraction of probes that failed a detection.pvalue threshold of 0.01.
+    `beadnum.cpgs.threshold` = fraction of samples that failed the threshold of 3 beads.
+    `detectionp.cpgs.threshold` = fraction of samples that failed the detection.pvalue threshold of 0.01.
+    `sex.outlier.sd` = number of standard deviations to determine whether sample is sex outlier 
+    `snp.concordance.threshold` = concordance threshold to include snps to calculate sample concordance 
+    `sample.genotype.concordance.threshold` = concordance threshold to determine whether sample is outlier
 
 We can now summarise the QC analysis of the raw data. 
 
