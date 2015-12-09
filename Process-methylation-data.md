@@ -149,7 +149,7 @@ Then:
 
 and once the jobs are completed:
 
-    resources/aggregate_adjustment2.sh
+    resources/methylation/aggregate_adjustment2.sh
 
 
 ### Upload the results
