@@ -16,14 +16,24 @@ The genetic data must be
 
 #### Bim file and allele coding
 
-Please ensure that your alleles coded in column 5 and 6 are coded as A,C,T,G. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full allele coding for INDELS and no recoding to I,R, D. The pipeline changes the SNV ids for you (second column) so you don't need to worry about this. Please don't use a header.
+Please ensure that your alleles coded using the original impute2 or minimac coding. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full sequence allele coding for INDELs if you have used impute2.  If you have used minimac, INDELs need to be coded as I, R, D. The pipeline harmonizes the allele coding to an universal coding. The pipeline also changes the SNV ids for you (second column) so you don't need to worry about marker names. Please don't use a header.
 
+###### impute2
     1 chr1:1068669:INDEL  0 1068669                GT    G
     1 chr1:1068832:INDEL  0 1068832 CGCCGCCTGCCTGCCCG    C
     1 chr1:1069474:INDEL  0 1069474         AAAAAAAAG    A
     1 chr1:1069475:INDEL  0 1069475          AAAAAAAG    A
     1 chr1:1081403:INDEL  0 1081403                GC    G
     1 chr1:1084475:INDEL  0 1084475                 A   AG
+
+#####minimac
+              SNP Al1 Al2   Freq1     MAF AvgCall     Rsq
+    20:69481:CT_C   R   D 0.88314 0.11686 0.88314 0.04981
+    20:70480:GTC_G   R   D 0.99163 0.00837 0.99163 0.00433
+    20:70484:CTCTT   R   D 0.99163 0.00837 0.99163 0.00435
+    20:72104:TA_T   R   D 0.51257 0.48743 0.61782 0.12189
+    20:74543:A_AT   R   I 0.88037 0.11963 0.96957 0.72511
+    20:86164:AG_A   R   D 0.85616 0.14384 0.85616 0.08919
 
 #### Bed file
 We use best guess genotypes without a probability threshold in our pipeline. 
