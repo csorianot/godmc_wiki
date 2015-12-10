@@ -1,6 +1,6 @@
 This page will show you how to use `R/meffil` for normalisation and post-normalisation QC after you following the [sample QC](Methylation-sample-QC)
 
-[Meffil](https://github.com/perishky/meffil) performs normalization and post normalization QC for data measured with Illumina 450k arrays. It uses multi-threading and reads `idat` files directly to maximise speed and minimise memory use. It is therefore much faster than minfi. Please email [josine.min@bristol.ac.uk] or [g.hemani@bristol.ac.uk] if you have any questions.
+[Meffil](https://github.com/perishky/meffil) performs normalization and post normalization QC for data measured with Illumina 450k arrays. It uses multi-threading and reads `idat` files directly to maximise speed and minimise memory use. It is therefore much faster than minfi.
 
 
 ### Load in the QC objects
@@ -30,7 +30,7 @@ save(qc.objects,file="qc.objects.clean.Robj")
 
 ### Estimate the number of principal components to use
 
-Next we need to estimate how many principal components (PCs) to use to adjust the methylation levels for technical effects. We can use 10-fold cross validation to estimate the residual variance after fitting `n` number of PCs. The residuals should consistently decrease with increasing numbers of PCs. For ARIES there was a dramatic drop around 10 PCs.
+Next we need to estimate how many principal components (PCs) to use to adjust the methylation levels for technical effects. We can use 10-fold cross validation to estimate the residual variance after fitting `n` number of PCs. The residuals should consistently decrease with increasing numbers of PCs. The plot generated is similar to an elbow curve. The idea is to choose the number of PCs at which the residuals decreases abruptly. Sometimes there is more than one elbow and I would choose the one with the highest number of PCs. For ARIES there was a dramatic drop around 10 PCs.
 
 ```r
 y <- meffil.plot.pc.fit(qc.objects)
