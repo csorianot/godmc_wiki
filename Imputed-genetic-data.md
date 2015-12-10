@@ -26,14 +26,14 @@ The genetic data must be
     1 chr1:1081403:INDEL  0 1081403                GC    G
     1 chr1:1084475:INDEL  0 1084475                 A   AG
 
-#####minimac
-              SNP Al1 Al2   Freq1     MAF AvgCall     Rsq
-    20:69481:CT_C   R   D 0.88314 0.11686 0.88314 0.04981
-    20:70480:GTC_G   R   D 0.99163 0.00837 0.99163 0.00433
-    20:70484:CTCTT   R   D 0.99163 0.00837 0.99163 0.00435
-    20:72104:TA_T   R   D 0.51257 0.48743 0.61782 0.12189
-    20:74543:A_AT   R   I 0.88037 0.11963 0.96957 0.72511
-    20:86164:AG_A   R   D 0.85616 0.14384 0.85616 0.08919
+##### minimac
+              
+    20 chr20:69481 0 69481 R D
+    20 chr20:70480 0 70480 R D
+    20 chr20:70484 0 70484 R D
+    20 chr20:72104 0 72104 R D
+    20 chr20:74543 0 74543 R I
+    20 chr20:86164 0 86164 R D
 
 #### Bed file
 We use best guess genotypes without a probability threshold in our pipeline. 
