@@ -52,7 +52,7 @@ norm.objects <- meffil.normalize.quantiles(qc.objects, number.pcs=pc)
 save(norm.objects,file=paste("norm.obj.pc",pc,".Robj",sep=""))
 
 norm.beta <- meffil.normalize.samples(norm.objects, cpglist.remove=qc.summary$bad.cpgs$name)
-save(norm.beta,file=paste("norm.beta.",pc,".Robj",sep=""))
+save(norm.beta,file=paste("norm.beta.pc",pc,".Robj",sep=""))
 ```
 
 ### Generate normalisation report
