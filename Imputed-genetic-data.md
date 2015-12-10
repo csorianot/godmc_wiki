@@ -105,12 +105,12 @@ do
 
 # Relabel the SNP IDs and extract relevant columns in the snp-stats file
     # Assumes column 4 is the position
-    # Assumes columns 7 and 8 are the allele names
+    # Assumes columns 5 and 6 are the allele names
     # Assumes column 15 is the MAF
     # Assumes columns 19 is the info score
 
 awk -v chr=$i '{
-        if (length($7) == "1" && length($8) == "1") 
+        if (($5 == "A" || $5 == "T" || $5 == "C" || $5=="G") &&  ($6 == "A" || $6 == "T" || $6 == "C" || $6=="G")) 
             print "chr"chr":"$4":SNP", $15, $19;
         else 
             print "chr"chr":"$4":INDEL", $15, $19;
