@@ -36,7 +36,7 @@ The genetic data must be
     20 chr20:86164 0 86164 R D
 
 #### Bed file
-We use best guess genotypes without a probability threshold in our pipeline. 
+**IMPORTANT:** We use best guess genotypes without a probability threshold in our pipeline. 
 Please make sure you don't filter on a probability threshold as matrixQTL (software used to calculate methQTLs) can't handle missingness properly and will set missing genotypes to the genotypic mean. We use best guess genotypes as matrixQTL can't handle dosages. Please see below how you can prepare best guess files.
 
 #### Imputation quality
