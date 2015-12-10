@@ -82,13 +82,13 @@ do
     # Rename the SNP IDs if necessary to avoid possible duplicates
     
     cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig
-    awk '{
-        if (length($5) == "1" && length($6) == "1") 
-            print $1, "chr"$1":"$4":SNP", $3, $4, $5, $6;
-        else 
-            print $1, "chr"$1":"$4":INDEL", $3, $4, $5, $6;
-    }' data_chr${i}_filtered.bim.orig > data_chr${i}_filtered.bim
-
+awk '{
+if (($5 == "A" || $5 == "T" || $5 == "C" || $5=="G") &&  ($6 == "A" || $6 == "T" || $6 == "C" || $6=="G")) 
+    print $1, "chr"$1":"$4":SNP", $3, $4, $5, $6;
+else 
+    print $1, "chr"$1":"$4":INDEL", $3, $4, $5, $6;
+   }' data_chr${i}_filtered.bim.orig > data_chr${i}_filtered.bim
+    
     # For simplicity remove any duplicates
 
     cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig2
