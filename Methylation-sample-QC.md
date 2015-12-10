@@ -101,13 +101,13 @@ We can now set some parameters for the QC of the raw data.
 )
 ```
 
-    `beadnum.samples.threshold` = fraction of probes that failed the threshold of 3 beads.
-    `detectionp.samples.threshold` = fraction of probes that failed a detection.pvalue threshold of 0.01.
-    `beadnum.cpgs.threshold` = fraction of samples that failed the threshold of 3 beads.
-    `detectionp.cpgs.threshold` = fraction of samples that failed the detection.pvalue threshold of 0.01.
-    `sex.outlier.sd` = number of standard deviations to determine whether sample is sex outlier 
-    `snp.concordance.threshold` = concordance threshold to include snps to calculate sample concordance 
-    `sample.genotype.concordance.threshold` = concordance threshold to determine whether sample is outlier
+    beadnum.samples.threshold` = fraction of probes that failed the threshold of 3 beads.
+    detectionp.samples.threshold` = fraction of probes that failed a detection.pvalue threshold of 0.01.
+    beadnum.cpgs.threshold` = fraction of samples that failed the threshold of 3 beads.
+    detectionp.cpgs.threshold` = fraction of samples that failed the detection.pvalue threshold of 0.01.
+    sex.outlier.sd` = number of standard deviations to determine whether sample is sex outlier 
+    snp.concordance.threshold` = concordance threshold to include snps to calculate sample concordance 
+    sample.genotype.concordance.threshold` = concordance threshold to determine whether sample is outlier
 
 We can now summarise the QC analysis of the raw data. 
 
@@ -132,7 +132,7 @@ This creates the file `qc-report.html` in the current work directory. The file s
 
 ### Removing bad samples
 
-After checking the qc report you can select bad samples to remove. I wouldn't remove outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which are captured by the normalisation probes `(normC + normG)/(normA + normT)` or bisulfite conversion control probes.
+After checking the qc report you can select bad samples to remove. I wouldn't remove all outliers based on control probes as there only a few probes for each category. However, I would remove slides with dyebias which are captured by the normalisation probes `(normC + normG)/(normA + normT)` or bisulfite conversion control probes.
 
 ```r
 outlier <- qc.summary$bad.samples
