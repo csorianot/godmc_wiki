@@ -24,4 +24,4 @@
 13. [MV GWAS on cell counts](MV GWAS cell counts)
 
 ### Phase 2 Ideas
-1. [Phase 2](ideas)
+1. [Phase 2 Ideas](ideas)
