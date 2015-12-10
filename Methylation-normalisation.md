@@ -97,3 +97,8 @@ This creates the file `normalization-report.html` in the current work directory.
 - The linear model can be used to identify a possible association between a PC extracted from normalised betas and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
 
 For ARIES, we found one slide significantly associated with several PCs. We removed this slide from the normalization matrix. The associations could also inform you which batch variables you should include in your downstream methQTL analysis.
+
+###Extraction of cell counts
+cc<-t(sapply(qc.objects, function(obj) obj$cell.counts$counts))
+cc<-data.frame(IID=row.names(cc),cc)
+write.table(cc,"cellcounts.txt",sep="\t",row.names=F,col.names=T,quote=F)
