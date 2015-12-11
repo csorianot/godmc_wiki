@@ -80,7 +80,7 @@ norm.parameters <- meffil.normalization.parameters(
 Run normalization summary and make normalisation report. 
 
 ```r
-norm.summary <- meffil.normalization.summary(norm.beta, norm.objects)
+norm.summary <- meffil.normalization.summary(norm.beta, norm.objects, parameters=norm.parameters)
 meffil.normalization.report(norm.summary, output.file="normalization-report.html")
 ```
 
