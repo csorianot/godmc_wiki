@@ -21,8 +21,8 @@ Please check your pca plot `pcaplot.pdf` in the results directory and adjust the
 
     cd results/02
 
-Next, we need to generate the correct format for the MeQTL analysis software (MatrixeQTL). To do this run the following script:
-
+Next, we need to generate the correct format for the MeQTL analysis software (MatrixeQTL). To do this run the following script form your home directory:
+   
     ./02b-convert_snp_format.sh
 
 This script will split the genetic dataset into a number of smaller chunks. The number of chunks is determined by the `genetic_chunks` variable in the `config` file. For example:
