@@ -154,9 +154,9 @@ and
 
 #####
 Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
-
+```
 perl get_vcf_chr_pos_info.pl tmp.dose.vcf.gz MAF,R2
-
+```
 ##### Then run the bash script below.
 ```
 #!/bin/bash
