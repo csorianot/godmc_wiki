@@ -168,12 +168,12 @@ awk -v chr=$i '{
 awk '$2<0.01 && $3<0.8{print $1}' <data_chr${i}.info >data_chr${i}.remove
 done
 ```
-# Assumes column 2 is the position
+    # Assumes column 2 is the position
     # Assumes columns 4 and 5 are the allele names
     # Assumes column 8 is the MAF
     # Assumes columns 9 is the info score
 
-##### Then run the bash script below.
+##### Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
 ```
    #!/bin/bash
    for i in {1..22}
