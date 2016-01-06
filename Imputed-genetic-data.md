@@ -151,6 +151,10 @@ and
     quality_type="impute2"
 
 #### `Minimac3` imputed data
+
+#####
+Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]
+
 ##### Then run the bash script below.
 ```
 #!/bin/bash
