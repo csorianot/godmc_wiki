@@ -155,7 +155,6 @@ and
 #####
 Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
 ```
-```
 for i in {1..22}
 do
 perl get_vcf_chr_pos_info.pl chr$i.vcf.gz MAF,R2 >mafinfo.minimac3.chr$i.txt
@@ -176,11 +175,11 @@ done
 
 ##### Then run the bash script below.
 ```
-#!/bin/bash
-for i in {1..22}
-do
-vcftools --vcf chr$i.vcf --plink --chr $i --out chr$i
-plink --ped chr$i.ped --map chr$i.map --make-bed --out chr$i --exclude data_chr${i}.remove
-done
+   #!/bin/bash
+   for i in {1..22}
+   do
+   vcftools --vcf chr$i.vcf --plink --chr $i --out chr$i
+   plink --ped chr$i.ped --map chr$i.map --make-bed --out chr$i --exclude data_chr${i}.remove
+   done
 ```
  
