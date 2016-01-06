@@ -151,13 +151,13 @@ and
     quality_type="impute2"
 
 #### `Minimac3` imputed data
-#Then run the bash script below.
-
+##### Then run the bash script below.
+```
 #!/bin/bash
 for i in {1..22}
 do
 vcftools --vcf chr$i.vcf --plink --chr $i --out chr$i
 plink --ped chr$i.ped --map chr$i.map --make-bed --out chr$i
 done
-
+```
  
