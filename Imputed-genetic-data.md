@@ -173,7 +173,7 @@ done
     # Assumes column 8 is the MAF
     # Assumes columns 9 is the info score
 
-##### Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
+######## Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
 ```
    #!/bin/bash
    for i in {1..22}
