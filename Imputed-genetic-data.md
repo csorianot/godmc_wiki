@@ -155,15 +155,32 @@ and
 #####
 Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
 ```
-perl get_vcf_chr_pos_info.pl tmp.dose.vcf.gz MAF,R2 >mafinfo.minimac3.txt
 ```
+for i in {1..22}
+do
+perl get_vcf_chr_pos_info.pl chr$i.vcf.gz MAF,R2 >mafinfo.minimac3.chr$i.txt
+awk -v chr=$i '{
+        if (($4 == "A" || $4 == "T" || $4 == "C" || $4=="G") &&  ($5 == "A" || $5 == "T" || $5 == "C" || $5 == "G")) 
+            print "chr"chr":"$2":SNP", $8, $9;
+        else 
+            print "chr"chr":"$2":INDEL", $8, $9;
+    }' mafinfo.minimac3.chr$i.txt |perl -pe 's/R2/Info/g'|perl -pe 's/chr[0-9][0-9]\:POS\:INDEL/SNP/g'|perl -pe 's/chr[0-9]\:POS\:INDEL/SNP/g'> data_chr${i}.info
+
+awk '$2<0.01 && $3<0.8{print $1}' <data_chr${i}.info >data_chr${i}.remove
+done
+```
+# Assumes column 2 is the position
+    # Assumes columns 4 and 5 are the allele names
+    # Assumes column 8 is the MAF
+    # Assumes columns 9 is the info score
+
 ##### Then run the bash script below.
 ```
 #!/bin/bash
 for i in {1..22}
 do
 vcftools --vcf chr$i.vcf --plink --chr $i --out chr$i
-plink --ped chr$i.ped --map chr$i.map --make-bed --out chr$i
+plink --ped chr$i.ped --map chr$i.map --make-bed --out chr$i --exclude data_chr${i}.remove
 done
 ```
  
