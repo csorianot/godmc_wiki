@@ -45,7 +45,7 @@ We also require imputation quality scores for each SNP. Some instructions on how
     SNP MAF Info
     rs1 0.02 0.88
 
-#### `Impute2` imputed data 
+#### Convert `Impute2` imputed data to bestguess data
 
 Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, you can use [qctool](http://www.well.ox.ac.uk/~gav/qctool/#overview) to filter on MAF and info and prepare a snp quality file for the pipeline following the bash script below.
 
@@ -150,10 +150,12 @@ and
     quality_scores="${home_directory}/input_data/data_filtered.info"
     quality_type="impute2"
 
-#### `Minimac3` imputed data
+#### Convert `Minimac3` imputed data to bestguess data
 
 #####
-Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]
+Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
+
+perl get_vcf_chr_pos_info.pl tmp.dose.vcf.gz MAF,R2
 
 ##### Then run the bash script below.
 ```
