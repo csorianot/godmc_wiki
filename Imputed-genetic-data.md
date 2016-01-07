@@ -153,7 +153,7 @@ and
 #### Convert `Minimac3` imputed data to bestguess data
 
 #####
-Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
+Please use this script [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69] to extract imputation quality scores (r2) and MAF from the vcf files. You need to have gzipped vcf files as input. You run the script like this:
 ```
 for i in {1..22}
 do
