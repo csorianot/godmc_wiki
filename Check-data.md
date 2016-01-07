@@ -1,8 +1,8 @@
 We have created a script which will check the data you have deposited and the `config` file parameters to make sure it all looks as expected. 
 It checks:
- - necessary R libraries are present 
- - creates a list of IDs that are in common between the different data sources 
- - a number of graphs to visualise the raw data. 
+ - Necessary R libraries are present 
+ - Creates a list of IDs that are in common between the different data sources 
+ - A number of graphs to visualise the raw data. 
 
 To run:
 
