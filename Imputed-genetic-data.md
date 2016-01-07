@@ -155,9 +155,15 @@ and
 #####
 Please use this script to extract imputation quality scores (r2) and MAF from the vcf files [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69]. You run the script like this:
 ```
-for i in {20..20}
+for i in {1..22}
 do
 perl get_vcf_chr_pos_info.pl chr$i.vcf.gz MAF,R2 >mafinfo.minimac3.chr$i.txt
+
+    # Assumes column 2 is the position
+    # Assumes columns 4 and 5 are the allele names
+    # Assumes column 8 is the MAF
+    # Assumes columns 9 is the info score
+
 awk -v chr=$i '{
         if (($4 == "A" || $4 == "T" || $4 == "C" || $4=="G") &&  ($5 == "A" || $5 == "T" || $5 == "C" || $5 == "G")) 
             print "chr"chr":"$2":SNP", $8, $9;
@@ -168,18 +174,14 @@ awk -v chr=$i '{
 awk 'NR>1 {print $1}' <data_chr${i}.info >data_chr${i}.keep
 done
 
-    # Assumes column 2 is the position
-    # Assumes columns 4 and 5 are the allele names
-    # Assumes column 8 is the MAF
-    # Assumes columns 9 is the info score
 
     # Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
 
    #!/bin/bash
-   for i in {20..20}
+   for i in {1..22}
    do
    vcftools --gzvcf chr$i.vcf.gz --plink --chr $i --out chr$i
-   plink --ped chr$i.ped --map chr$i.map --make-bed --out data_chr${i}_filtered 
+   plink1.90 --ped chr$i.ped --map chr$i.map --make-bed --out data_chr${i}_filtered 
    
  # Rename the SNP IDs if necessary to avoid possible duplicates
     
@@ -193,20 +195,20 @@ done
   
 
    # Keep SNPs with MAF>0.01 or info>0.8
-   plink --bfile data_chr${i}_filtered --make-bed --out data_chr${i}_filtered2 --keep data_chr${i}.keep
+   plink1.90 --bfile data_chr${i}_filtered --make-bed --out data_chr${i}_filtered --extract data_chr${i}.keep
    
     # For simplicity remove any duplicates
 
-    cp data_chr${i}_filtered2.bim data_chr${i}_filtered.bim.orig2
+    cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig2
     awk '{
         if (++dup[$2] > 1) { 
             print $1, $2".duplicate."dup[$2], $3, $4, $5, $6 
         } else { 
             print $0 }
-    }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered2.bim
-    grep "duplicate" data_chr${i}_filtered2.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
+    }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
+    grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
     
-    plink --bfile data_chr${i}_filtered2 --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
 
     # Remove duplicates from maf/info file
