@@ -3,14 +3,15 @@ Once the imputed genetic data is in the [correct format](Imputed genetic data) a
 - Extract relevant IDs
 - HWE and MAF QC
 - Re-code SNP IDs
-- Remove duplicate SNPs
 - Re-code INDEL alleles to I,D
+- Remove duplicate SNPs
 - Construct kinship matrices
 - Remove PC outliers
 - Remove any cryptic relatedness for 'unrelated' data
 - Create a pedigree matrix for 'related' samples
 - Calculate principal components
-- Strand check and flip strand
+- Strand check
+- Flip strand for misaligned SNPs and remove SNPs with mismatched alleles
 
 To do this, run the following script:
 
