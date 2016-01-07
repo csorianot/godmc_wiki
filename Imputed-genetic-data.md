@@ -77,7 +77,7 @@ do
      
     # Now extract the best guess data from the bgen files, variants with a "." will be recoded to chr:pos_allele1_allele2.
 
-    plink1.9 --bgen filteredchr${i}.bgen snpid-chr --sample filtered.sample --set-missing-var-ids @:#\$1,\$2 --make-bed --out data_chr${i}_filtered --hard-call-threshold 0.499999 --fill-missing-a2
+    plink1.90 --bgen filteredchr${i}.bgen snpid-chr --sample filtered.sample --set-missing-var-ids @:#\$1,\$2 --make-bed --out data_chr${i}_filtered --hard-call-threshold 0.499999 --fill-missing-a2
     
     # Rename the SNP IDs if necessary to avoid possible duplicates
     
