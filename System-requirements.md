@@ -20,7 +20,7 @@ install.packages("matrixStats")
 install.packages("plyr")
 install.packages("Cairo")
 install.packages("plotrix")
-install.packages("EasyQC_9.0.tar.gz")
+install.packages("EasyQC_9.2.tar.gz")
 
 source("http://bioconductor.org/biocLite.R")
 biocLite("SNPRelate")
