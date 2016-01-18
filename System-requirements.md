@@ -2,6 +2,12 @@
 ```
 R.3.2.0
 ```
+
+In the repo dir you need to run
+```
+wget http://homepages.uni-regensburg.de/~wit59712/easyqc/EasyQC_9.2.tar.gz
+```
+
 ###These are the Rpackages you need:
 ```
 install.packages("lattice")
