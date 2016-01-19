@@ -162,7 +162,8 @@ gcta --dosage-mach myfile.mldose myfile.mlinfo --maf 0.01 --imput-rsq 0.8 --make
 fcgene --minimac-prob chr$chr.prob.gz --minimac-info chr$chr.info.gz --oformat plink-bed --out chr$chr --rsq 0.8 --maf-thresh 0.01
 ```
 
-#####
+#### Convert `minimac3` imputed data to bestguess data (vcf files)
+
 Please use this script [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69] to extract imputation quality scores (r2) and MAF from the vcf files. You need to have gzipped vcf files as input. You run the script like this:
 ```
 for i in {1..22}
