@@ -150,7 +150,17 @@ and
     quality_scores="${home_directory}/input_data/data_filtered.info"
     quality_type="impute2"
 
-#### Convert `Minimac3` imputed data to bestguess data
+#### Convert `MACH` imputed data to bestguess data (.mldose and .mlinfo files)
+
+```
+gcta --dosage-mach myfile.mldose myfile.mlinfo --maf 0.01 --imput-rsq 0.8 --make-bed --out myfile
+```
+
+#### Convert `minimac` imputed data to bestguess data (.dose and .info files)
+
+```
+fcgene --minimac-prob chr$chr.prob.gz --minimac-info chr$chr.info.gz --oformat plink-bed --out chr$chr --rsq 0.8 --maf-thresh 0.01
+```
 
 #####
 Please use this script [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69] to extract imputation quality scores (r2) and MAF from the vcf files. You need to have gzipped vcf files as input. You run the script like this:
