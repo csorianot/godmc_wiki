@@ -153,7 +153,60 @@ and
 #### Convert `MACH` imputed data to bestguess data (.mldose and .mlinfo files)
 
 ```
-gcta --dosage-mach myfile.mldose myfile.mlinfo --maf 0.01 --imput-rsq 0.8 --make-bed --out myfile
+#!/bin/bash
+for i in {1..22}
+do 
+gcta --dosage-mach chr$i.mldose chr$i.mlinfo --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
+
+# Rename the SNP IDs if necessary to avoid possible duplicates
+
+    cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig
+    awk '{
+        if (($5 == "A" || $5 == "T" || $5 == "C" || $5=="G") &&  ($6 == "A" || $6 == "T" || $6 == "C" || $6=="G")) 
+            print $1, "chr"$1":"$4":SNP", $3, $4, $5, $6;
+    else 
+        print $1, "chr"$1":"$4":INDEL", $3, $4, $5, $6;
+   }' data_chr${i}_filtered.bim.orig > data_chr${i}_filtered.bim
+
+    # For simplicity remove any duplicates
+
+    cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig2
+    awk '{
+        if (++dup[$2] > 1) { 
+            print $1, $2".duplicate."dup[$2], $3, $4, $5, $6 
+        } else { 
+            print $0 }
+    }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
+    grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
+
+    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+
+done
+
+# Merge them into one dataset
+
+for i in {2..22}
+do 
+    echo "data_chr${i}_filtered"
+done > mergefile.txt
+
+plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out data_filtered
+
+# Combine info files into a single file
+
+head -n1 chr01_filtered.info > data_filtered.info
+
+for i in {1..22}
+do
+    awk ' NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
+done
+The result should be three plink files: data_filtered.bed, data_filtered.bim, data_filtered.fam, and the info file: data_filtered.info. Copy them to godmc/input_data and set the following variable in your config file:
+
+bfile_raw="${home_directory}/input_data/data_filtered"
+and
+
+quality_scores="${home_directory}/input_data/data_filtered.info"
+quality_type="mach"
 ```
 
 #### Convert `minimac` imputed data to bestguess data (.dose and .info files)
