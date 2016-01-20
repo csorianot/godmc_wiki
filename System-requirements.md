@@ -25,6 +25,7 @@ install.packages("EasyQC_9.2.tar.gz")
 source("http://bioconductor.org/biocLite.R")
 biocLite("SNPRelate")
 biocLite("GENESIS")
+biocLite("impute")
 ```
 
 ###If you haven't installed meffil yet, here are some instructions:
