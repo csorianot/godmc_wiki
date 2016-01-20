@@ -186,8 +186,15 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
     }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
 
-    plink --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+    
+    # Remove duplicates from maf/info file
+   # zcat chr${i}.info.gz |awk -F':' '{print $1}'>pos$i.txt
+   # awk -F':' '{print $2}' <data_chr${i}_filtered.bim |awk '{print $1}'>pos$i.txt    
+   # paste pos$i.txt data_chr${i}_filtered.bim |awk '{print '$i',$3,$4,$1,$6,$7}' >data_chr${i}_filtered.bim2
+   # mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
 
+   # fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info |awk {print $1,$5,$7} |perl -pe 's/Rsq/Info/g'>chr${i}_filtered.info
 done
 
 # Merge them into one dataset
@@ -202,8 +209,16 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 # Combine info files into a single file
 
 ```
-needs to be added
+head -n1 chr1_filtered.info > data_filtered.info
+
+for i in {1..22}
+do
+   awk '{print $2}' < data_chr{i}_filtered.bim >data_chr{i}_filtered.id 
+   fgrep -v -w -f duplicates.chr${i}.txt
+   awk 'NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
+done
 ```
+
 The result should be three plink files: data_filtered.bed, data_filtered.bim, data_filtered.fam, and the info file: data_filtered.info. Copy them to godmc/input_data and set the following variable in your config file:
 
 bfile_raw="${home_directory}/input_data/data_filtered"
