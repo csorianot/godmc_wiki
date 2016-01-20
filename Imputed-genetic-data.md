@@ -156,7 +156,7 @@ and
 #!/bin/bash
 for i in {1..22}
 do 
-gcta --dosage-mach chr$i.mldose chr$i.mlinfo --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
+gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
 
 # Rename the SNP IDs if necessary to avoid possible duplicates
 
