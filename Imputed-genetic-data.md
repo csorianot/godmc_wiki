@@ -152,12 +152,18 @@ and
 
 #### Convert `MACH/minimac` imputed data to bestguess data (.mldose and .mlinfo files or .dose and info files)
 
+GCTA can convert both mldose and mlinfo as .dose and .info files to plink best guess format if the files are gzipped. However, chr and pos are set to 0. In the example below, chromosomal position are extracted from the SNP ids. Please contact us if you have ids other than {CHR}:{POS}:{A1}:{A2} or {CHR}:{POS}.
+
 ```
 #!/bin/bash
-for i in {1..22}
+for i in {10..10}
 do 
-#gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
-gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
+#gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
+gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
+
+awk -F':' '{print $2}' <data_chr${i}_filtered.bim |awk '{print $1}'>pos$i.txt
+paste pos$i.txt data_chr${i}_filtered.bim |awk '{print '$i',$3,$4,$1,$6,$7}' >data_chr${i}_filtered.bim2
+mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
 
 # Rename the SNP IDs if necessary to avoid possible duplicates
 
@@ -180,7 +186,7 @@ gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --m
     }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
 
-    plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+    plink --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
 done
 
