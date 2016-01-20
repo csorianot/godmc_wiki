@@ -150,13 +150,14 @@ and
     quality_scores="${home_directory}/input_data/data_filtered.info"
     quality_type="impute2"
 
-#### Convert `MACH` imputed data to bestguess data (.mldose and .mlinfo files)
+#### Convert `MACH/minimac` imputed data to bestguess data (.mldose and .mlinfo files or .dose and info files)
 
 ```
 #!/bin/bash
 for i in {1..22}
 do 
-gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
+#gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
+gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out chr$i_filtered
 
 # Rename the SNP IDs if necessary to avoid possible duplicates
 
@@ -204,12 +205,6 @@ and
 
 quality_scores="${home_directory}/input_data/data_filtered.info"
 quality_type="mach"
-```
-
-#### Convert `minimac` imputed data to bestguess data (.dose and .info files)
-
-```
-fcgene --minimac-prob chr$chr.prob.gz --minimac-info chr$chr.info.gz --oformat plink-bed --out chr$chr --rsq 0.8 --maf-thresh 0.01
 ```
 
 #### Convert `minimac3` imputed data to bestguess data (vcf files)
