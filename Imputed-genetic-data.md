@@ -304,8 +304,6 @@ do
     awk ' NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
 done
 
-```
-
 
 The result should be three plink files: `data_filtered.bed`, `data_filtered.bim`, `data_filtered.fam`, and the info file: `data_filtered.info`. Copy them to `godmc/input_data` and set the following variable in your `config` file:
 
