@@ -47,5 +47,5 @@ We also require imputation quality scores for each SNP. Some instructions on how
 
 #### Convert imputed data to bestguess data
   - [Convert impute2 imputed data to bestguess data (.gen/bgen files)](https://github.com/MRCIEU/godmc/wiki/Convert-impute2-imputed-data-to-bestguess-data)
-  - [Convert mach/minimac imputed data to bestguess data (.info/.dose or .mlinfo/.mldose files)](https://github.com/MRCIEU/godmc/wiki/Convert-mach-minimac-imputed-data-to-bestguess-data-(.info-.dose))
+  - [Convert mach/minimac imputed data to bestguess data (.info/.dose or .mlinfo/.mldose files)](https://github.com/MRCIEU/godmc/wiki/Convert-mach-minimac-imputed-data-to-bestguess-data-(.info-.dose-or-.mlinfo-.mldose-files))
   - [Convert minimac3 imputed data to bestguess data (vcf files)](https://github.com/MRCIEU/godmc/wiki/Convert-minimac3-imputed-data-to-bestguess-data-(vcf-files))
