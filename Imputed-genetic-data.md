@@ -188,13 +188,11 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
 
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
     
-    # Remove duplicates from maf/info file
-   # zcat chr${i}.info.gz |awk -F':' '{print $1}'>pos$i.txt
-   # awk -F':' '{print $2}' <data_chr${i}_filtered.bim |awk '{print $1}'>pos$i.txt    
-   # paste pos$i.txt data_chr${i}_filtered.bim |awk '{print '$i',$3,$4,$1,$6,$7}' >data_chr${i}_filtered.bim2
-   # mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
-
-   # fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info |awk {print $1,$5,$7} |perl -pe 's/Rsq/Info/g'>chr${i}_filtered.info
+    #filter info/maf file
+    awk '{print $2}' < data_chr{i}_filtered.bim >data_chr{i}_filtered.id 
+   zcat chr$i.info.gz | awk '$5>0.01 && $7>0.8 || NR>1 {print $1,$5,$7}' |perl -pe 's/Rsq/Info/g' >      chr{i}_filtered.info
+   fgrep -v -w -f duplicates.chr${i}.txt <chr{i}_filtered.info >chr{i}_filtered.info2
+   mv chr{i}_filtered.info2 chr{i}_filtered.info
 done
 
 # Merge them into one dataset
@@ -212,9 +210,7 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 head -n1 chr1_filtered.info > data_filtered.info
 
 for i in {1..22}
-do
-   awk '{print $2}' < data_chr{i}_filtered.bim >data_chr{i}_filtered.id 
-   fgrep -v -w -f duplicates.chr${i}.txt
+do   
    awk 'NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
 done
 ```
@@ -225,7 +221,7 @@ bfile_raw="${home_directory}/input_data/data_filtered"
 and
 
 quality_scores="${home_directory}/input_data/data_filtered.info"
-quality_type="mach"
+quality_type="minimac"
 ```
 
 #### Convert `minimac3` imputed data to bestguess data (vcf files)
