@@ -156,7 +156,7 @@ GCTA can convert both mldose and mlinfo as .dose and .info files to plink best g
 
 ```
 #!/bin/bash
-for i in {10..10}
+for i in {1..22}
 do 
 #gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
 gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
