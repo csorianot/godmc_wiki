@@ -25,8 +25,12 @@ After you have run this script please check:
 ```
 cd results/02
 ```
+
 IMPORTANT:
-- The pca plot `pcaplot.pdf` in the results directory and adjust the SD threshold in the `config` file and rerun `01-check_data.sh` and `02a-snp_data.sh` if necessary. The blue dashed lines define the SD threshold.
+- The pca plot `pcaplot.pdf` in the results directory and adjust the SD threshold `pca_sd` in the `config` file and rerun `01-check_data.sh` and `02a-snp_data.sh` if necessary. The blue dashed lines define the SD threshold. You can check the number of outliers that are removed by 
+```
+grep outlier ./logs_a/log.txt
+```
 - The easyQC.rep opens in excel and shows the number of SNPs that are flipped because they were on the wrong strand as compared to 1000G phase 3 ("AlleleChange")
 - The easyQC.rep file also shows you the number of SNPs that are going to be removed. eg. allele mismatches ("AlleleMismatch") and also SNPs that have a discrepant allele frequency (>0.2) as compared to 1000G phase 3 ("AFCHECK.numOutlier").
 - The `easyQC.multi.AFCHECK.png` plot shows a comparison between allele frequencies of your study as compared to 1000G phase3 EUR. Please read the link for explanation of this plot: [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4083217/figure/F4/]    
