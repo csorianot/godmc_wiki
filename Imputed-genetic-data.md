@@ -5,6 +5,7 @@ The genetic data must be
 - Filtered to have MAF > 0.01 and imputation quality score > 0.8
 - Converted to best guess binary plink format without a probability threshold 
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
+- No spaces in the file names
 
 #### Fam file and Sample IDs
 
