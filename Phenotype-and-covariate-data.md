@@ -47,7 +47,7 @@ The GWA on cell counts will be done on Houseman predicted cell counts for the fo
 Bcells, CD4T, CD8T, Neutrophils, Monocytes, Natural Killer cells. Please note that we splitted Granulocytes into Neutrophils and Eosinophils. 
 
 
-
+### Cell counts file(s) format
 If you are providing your own cell count estimates, please make sure you use the same format as the phenotypes and covariate files and save it as a separate file. Your header should be the same as in the example below. 
 
 ```
