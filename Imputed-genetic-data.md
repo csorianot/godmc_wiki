@@ -46,7 +46,7 @@ We also require imputation quality scores for each SNP. Some instructions on how
     rs1 0.02 0.88
 
 #### Convert imputed data to bestguess data
-Convert impute2 imputed data to bestguess data 
-Convert mach/minimac imputed data to bestguess data (.info/.dose) 
-Convert minimac3 imputed data to bestguess data (vcf files) 
+ []Convert impute2 imputed data to bestguess data 
+ []Convert mach/minimac imputed data to bestguess data (.info/.dose) 
+ []Convert minimac3 imputed data to bestguess data (vcf files) 
 
