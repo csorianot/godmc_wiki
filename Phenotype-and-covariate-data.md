@@ -56,23 +56,3 @@ IID Bcell CD4T CD8T Eos Mono Neu NK
 0.07131901 0.0532302 1.147492e-02 0.000000e+00 0.05687753 0.7669148 0.07237679
 0.16438292 0.1637806 -8.673617e-19 -1.042249e-19 0.11164848 0.3932823 0.25849168
 ```
-
-In the `config` file of the pipeline, if cell counts adjustments in the statistical models are required (e.g. it is not a single cell type sample) then set:
-
-```
-cellcounts_required="yes"
-```
-
-If the cellcounts are being provided then
-
-```
-predicted_cellcounts="path/to/cellcounts_houseman.txt"
-```
-
-otherwise
-
-```
-predicted_cellcounts="NULL"
-```
-
-Please specify the prediction type used for the prediction e.g. 'houseman' or if you have cord blood set the variable to 'cord'
