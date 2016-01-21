@@ -1,4 +1,4 @@
-GCTA can convert both mldose and mlinfo as .dose and .info files to plink best guess format if the files are gzipped. However, chr and pos are set to 0. In the example below, chromosomal position are extracted from the SNP ids. Please contact us if you have ids other than {CHR}:{POS}:{A1}:{A2} or {CHR}:{POS}.
+GCTA(http://cnsgenomics.com/software/gcta/data_management.html) can convert both .mldose and .mlinfo as .dose and .info files to plink best guess format if the files are gzipped. However, chr and pos are set to 0. In the example below, chromosomal position are extracted from the SNP ids. Please contact us if you have ids other than {CHR}:{POS}:{A1}:{A2} or {CHR}:{POS}.
 
 ```
 #!/bin/bash
