@@ -66,11 +66,13 @@ cellcounts_required="yes"
 If the cellcounts are being provided then
 
 ```
-provided_cellcounts="path/to/cellcounts.txt"
+predicted_cellcounts="path/to/cellcounts_houseman.txt"
 ```
 
 otherwise
 
 ```
-provided_cellcounts="NULL"
+predicted_cellcounts="NULL"
 ```
+
+Please specify the prediction type used for the prediction e.g. 'houseman' or if you have cord blood set the variable to 'cord'
