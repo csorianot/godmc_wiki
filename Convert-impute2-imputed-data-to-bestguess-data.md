@@ -1,5 +1,3 @@
-#### Convert `Impute2` imputed data to bestguess data
-
 Assuming you have used [impute2](https://mathgen.stats.ox.ac.uk/impute/impute_v2.html) to perform the imputation and generated `bgen` dosage files, you can use [qctool](http://www.well.ox.ac.uk/~gav/qctool/#overview) to filter on MAF and info and prepare a snp quality file for the pipeline following the bash script below.
 
 It is recommended that you use `plink1.90` to do this, available for download [here](https://www.cog-genomics.org/plink2)
