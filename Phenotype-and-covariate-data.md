@@ -34,7 +34,19 @@ We are expecting height in metres and BMI in kg/m2 units.
 
 ## Cell counts
 
-If you have directly measured cell counts then ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). Otherwise, we will estimate cell counts using `meffil` during the course of running the pipeline. Note that in estimating cell counts we separate granulocytes into neutrophils and eosinophils, so please do the same if you wish to provide your own cell count estimates.
+We use cell counts as covariates in the methQTL analysis and as phenotypes in the GWA analysis.
+
+### Cell counts to use as covariates
+To use cell counts as covariates you can either provide predicted cell counts or directly measured cell counts. If you have directly measured cell counts then ideally you should provide cell counts for 7 cell types (Bcells, CD4T, CD8T, Neutrophils, Eosinophils, Monocytes, Natural Killer cells). If you use predicted cell counts, you can extract cell counts from idat files using `meffil` which has several blood reference datasets implemented including two reference datasets for cord blood. `Meffil` is using the Houseman method to predict cell counts.
+
+
+If no cell counts file has been provided, we will estimate cell counts on the normalized betas using `meffil` during the course of running the pipeline. Note that in estimating cell counts we separate granulocytes into neutrophils and eosinophils, so please do the same if you wish to provide your own cell count estimates.
+
+### Cell counts as GWA phenotypes
+The GWA on cell counts will be done on Houseman predicted cell counts for the following 6 cell types:
+Bcells, CD4T, CD8T, Neutrophils, Monocytes, Natural Killer cells. Please note that we splitted Granulocytes into Neutrophils and Eosinophils. 
+
+
 
 If you are providing your own cell count estimates, please make sure you use the same format as the phenotypes and covariate files and save it as a separate file. Your header should be the same as in the example below. 
 
