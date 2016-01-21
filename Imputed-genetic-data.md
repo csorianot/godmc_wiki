@@ -207,12 +207,12 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 # Combine info files into a single file
 
 ```
-head -n1 chr1_filtered.info > data_filtered.info
+ head -n1 chr1_filtered.info > data_filtered.info
 
-for i in {1..22}
-do   
+ for i in {1..22}
+ do   
    awk 'NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
-done
+ done
 ```
 
 The result should be three plink files: data_filtered.bed, data_filtered.bim, data_filtered.fam, and the info file: data_filtered.info. Copy them to godmc/input_data and set the following variable in your config file:
@@ -221,7 +221,7 @@ bfile_raw="${home_directory}/input_data/data_filtered"
 and
 
 quality_scores="${home_directory}/input_data/data_filtered.info"
-quality_type="minimac"
+quality_type="minimac2"
 ```
 
 #### Convert `minimac3` imputed data to bestguess data (vcf files)
