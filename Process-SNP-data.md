@@ -35,10 +35,11 @@ grep outlier ./logs_a/log.txt
 - The easyQC.rep file also shows you the number of SNPs that are going to be removed. eg. allele mismatches ("AlleleMismatch") and also SNPs that have a discrepant allele frequency (>0.2) as compared to 1000G phase 3 ("AFCHECK.numOutlier").
 - The `easyQC.multi.AFCHECK.png` plot shows a comparison between allele frequencies of your study as compared to 1000G phase3 EUR. Please read the link for explanation of this plot: [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4083217/figure/F4/]    
 
+### Convert to matrixQTL format
 Next, we need to generate the correct format for the MeQTL analysis software (MatrixeQTL). To do this run the following script form your home directory:
-   
+``` 
     ./02b-convert_snp_format.sh
-
+```
 This script will split the genetic dataset into a number of smaller chunks. The number of chunks is determined by the `genetic_chunks` variable in the `config` file. For example:
 
     genetic_chunks="1000"
