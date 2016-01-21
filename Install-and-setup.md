@@ -121,26 +121,6 @@ quality_type="impute2"
 
 
 ### Cellcount options
-In the `config` file of the pipeline, if cell counts adjustments in the statistical models are required (e.g. it is not a single cell type sample) then set:
-
-```
-cellcounts_required="yes"
-```
-
-If the cellcounts are being provided then
-
-```
-predicted_cellcounts="path/to/cellcounts_houseman.txt"
-```
-
-otherwise
-
-```
-predicted_cellcounts="NULL"
-```
-
-Please specify the prediction type used for the prediction e.g. 'houseman' or if you have cord blood set the variable to 'cord'
-
 You do not need to provide cellcounts, as they can be predicted using the Houseman reference method by the pipeline. If you do not have cellcounts pre-calculated (not recommended), and you know that you have heterogeneous cell types in your methylation samples, then please set the following variables:
 
     cellcounts_required="yes"
