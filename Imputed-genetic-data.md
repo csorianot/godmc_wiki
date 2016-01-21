@@ -41,7 +41,7 @@ The genetic data must be
 Please make sure you don't filter on a probability threshold as matrixQTL (software used to calculate methQTLs) can't handle missingness properly and will set missing genotypes to the genotypic mean. We use best guess genotypes as matrixQTL can't handle dosages. Please see below how you can prepare best guess files.
 
 #### Imputation quality
-We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format are below.
+We also require imputation quality scores for each SNP. Some instructions on how to get imputed data into the desired format including your imputation quality file are below.
 
     SNP MAF Info
     rs1 0.02 0.88
