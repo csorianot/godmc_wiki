@@ -189,7 +189,6 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
     plink1.90 --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
     
     #filter info/maf file
-    awk '{print $2}' < data_chr{i}_filtered.bim >data_chr{i}_filtered.id 
     zcat chr$i.info.gz | awk '$5>0.01 && $7>0.8 || NR>1 {print $1,$5,$7}' |perl -pe 's/Rsq/Info/g' >         chr{i}_filtered.info
     fgrep -v -w -f duplicates.chr${i}.txt <chr{i}_filtered.info >chr{i}_filtered.info2
     mv chr{i}_filtered.info2 chr{i}_filtered.info
