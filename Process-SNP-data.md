@@ -14,17 +14,18 @@ Once the imputed genetic data is in the [correct format](Imputed genetic data) a
 - Flip strand for misaligned SNPs and remove SNPs with mismatched alleles
 
 To do this, run the following script:
-
+```
     ./02a-snp_data.sh
-
+```
 For a sample size of 100 this script takes less than 5 minutes to run on our computers or 10 minutes on 1800 samples. The relevant files should have been generated and saved in `processed_data/genetic_data`.
 
-Note that for 'unrelated' samples we are generating PCs by removing long LD tracts, extracting HapMap3 SNPs, LD pruning, and then calculating PCs on the data after cryptic relateds have been removed. For 'related' samples we are using a general method for estimating PCs that accounts for any relatedness. This involves estimating a kinship matrix that is robust to population structure and relatedness ([Manichaikil et al 2010](http://bioinformatics.oxfordjournals.org/content/26/22/2867.long)), estimating principal components on an unrelated subset, and then projecting principal components onto the related subset based on estimated kinships ([Conomos et al 2015](http://onlinelibrary.wiley.com/doi/10.1002/gepi.21896/abstract)).
+Note that for 'unrelated' samples we are generating PCs by removing long LD tracts, extracting HapMap3 SNPs, LD pruning, and then calculating PCs on the data after cryptic relateds have been removed. For 'related' samples we are using a general method implemented in the Rpackage 'GENESIS' for estimating PCs that accounts for any relatedness. This involves estimating a kinship matrix that is robust to population structure and relatedness ([Manichaikil et al 2010](http://bioinformatics.oxfordjournals.org/content/26/22/2867.long)), estimating principal components on an unrelated subset, and then projecting principal components onto the related subset based on estimated kinships ([Conomos et al 2015](http://onlinelibrary.wiley.com/doi/10.1002/gepi.21896/abstract)).
 
 After you have run this script please check:
-
+```
 cd results/02
-
+```
+IMPORTANT:
 - The pca plot `pcaplot.pdf` in the results directory and adjust the SD threshold in the `config` file and rerun `01-check_data.sh` and `02a-snp_data.sh` if necessary. The blue dashed lines define the SD threshold.
 - The easyQC.rep opens in excel and shows the number of SNPs that are flipped because they were on the wrong strand as compared to 1000G phase 3 ("AlleleChange")
 - The easyQC.rep file also shows you the number of SNPs that are going to be removed. eg. allele mismatches ("AlleleMismatch") and also SNPs that have a discrepant allele frequency (>0.2) as compared to 1000G phase 3 ("AFCHECK.numOutlier").
