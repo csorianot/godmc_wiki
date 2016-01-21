@@ -10,6 +10,10 @@ To run:
 
 **PLEASE NOTE:** It is important to monitor this script as it runs - it will stop with errors if it encounters problems. Please fix any errors/warnings that are encountered, and re-run the script until it completes without errors.
 
+The script can be run in chunks in case it fails:
+    
+    ./01-check_data.sh methylation
+
 The script produces the following plots:
 
 - the number of SNPs per chromosome
