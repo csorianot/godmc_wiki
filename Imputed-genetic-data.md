@@ -206,7 +206,6 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 
 # Combine info files into a single file
 
-```
  head -n1 chr1_filtered.info > data_filtered.info
 
  for i in {1..22}
