@@ -121,21 +121,64 @@ quality_type="impute2"
 
 
 ### Cellcount options
+In the `config` file of the pipeline, if cell counts adjustments in the statistical models are required (e.g. it is not a single cell type sample) then set:
 
-You do not need to provide cellcounts, as they can be predicted using the Houseman reference method by the pipeline. If you do not have cellcounts pre-calculated, and you know that you have heterogeneous cell types in your methylation samples, then please set the following variables:
+```
+cellcounts_required="yes"
+```
+
+If the cellcounts are being provided then
+
+```
+predicted_cellcounts="path/to/cellcounts_houseman.txt"
+```
+
+otherwise
+
+```
+predicted_cellcounts="NULL"
+```
+
+Please specify the prediction type used for the prediction e.g. 'houseman' or if you have cord blood set the variable to 'cord'
+
+You do not need to provide cellcounts, as they can be predicted using the Houseman reference method by the pipeline. If you do not have cellcounts pre-calculated (not recommended), and you know that you have heterogeneous cell types in your methylation samples, then please set the following variables:
 
     cellcounts_required="yes"
-    provided_cellcounts="NULL"
+    predicted_cellcounts="NULL"
+    predicted_cellcounts_type="NULL"
+    measured_cellcounts="NULL"
 
 If you have a homogeneous cell type then:
 
     cellcounts_required="no"
-    provided_cellcounts="NULL"
+    predicted_cellcounts="NULL"
+    predicted_cellcounts_type="NULL"
+    measured_cellcounts="NULL"
 
-If you have cellcounts available for all your methylation samples already then:
+If you have cellcounts available for all your methylation samples already by using a prediction method then:
 
-    cellcounts_required="no"
-    provided_cellcounts="/path/to/cellcounts.txt"
+    cellcounts_required="yes"
+    predicted_cellcounts="/path/to/cellcounts.txt"
+    predicted_cellcounts_type="houseman"
+    measured_cellcounts="NULL"
+
+If you have measured cell counts available which can be used as covariates for all your methylation samples then:
+
+    cellcounts_required="yes"
+    predicted_cellcounts="/path/to/predictedcellcounts.txt"
+    predicted_cellcounts_type="houseman"
+    measured_cellcounts="/path/to/measuredcellcounts.txt"
+
+The measured cell counts will be used as covariates whereas the predicted cell counts will be used as GWA phenotypes.
+
+If you have cord blood samples please use the right reference data to predict cell counts:
+
+    cellcounts_required="yes"
+    predicted_cellcounts="/path/to/predictedcellcounts.txt"
+    predicted_cellcounts_type="cord"
+    measured_cellcounts="NULL"
+
+We will not include cord blood samples in the cell counts GWA.
 
 Note that you can copy the cellcounts to the `input_data` directory and specify the path as `${home_directory}/input_data/cellcounts.txt`. Please note that the required format for pre-specified cellcount data should look like this:
 
@@ -145,7 +188,6 @@ Note that you can copy the cellcounts to the `input_data` directory and specify 
     id3 0.06 0.12 0.07 0.56 0.08 0.16
 
 *i.e.* An `IID` column for the sample IDs, and then one column for each cell type that has been counted (or estimated).
-
 
 ### Relatedness
 
