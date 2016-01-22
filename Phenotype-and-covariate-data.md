@@ -46,16 +46,6 @@ If no cell counts file has been provided, we will estimate cell counts on the no
 The GWA on cell counts will be done on Houseman predicted cell counts for the following 6 cell types:
 Bcells, CD4T, CD8T, Neutrophils, Monocytes, Natural Killer cells. Please note that we splitted Granulocytes into Neutrophils and Eosinophils. 
 
-### Predict cell counts from idat files (Houseman or cord blood)
-
-###Extraction of cell counts
-   ```r
-   
-   cc<-t(sapply(qc.objects, function(obj) obj$cell.counts$counts))
-   cc<-data.frame(IID=row.names(cc),cc)
-   write.table(cc,"cellcounts.txt",sep="\t",row.names=F,col.names=T,quote=F)
-   ```
-
 ### Cell counts file(s) format
 If you are providing your own cell count estimates, please make sure you use the same format as the phenotypes and covariate files and save it as a separate file. Your header should be the same as in the example below. 
 
