@@ -26,7 +26,7 @@ After you have run this script please check:
 cd results/02
 ```
 
-IMPORTANT PLEASE CHECK YOUR RESULTS:
+**IMPORTANT PLEASE CHECK YOUR RESULTS:**
 - The pca plot `pcaplot.pdf` in the results directory and adjust the SD threshold `pca_sd` in the `config` file and rerun `01-check_data.sh` and `02a-snp_data.sh` if necessary. The blue dashed lines define the SD threshold. You can check the number of outliers that are removed by 
 ```
 grep outlier ./logs_a/log.txt
