@@ -3,12 +3,14 @@ It checks:
  - Necessary R libraries are present 
  - Creates a list of IDs that are in common between the different data sources 
  - A number of graphs to visualise the raw data. 
+ - Summary statistics of the cohort descriptives
+ - Summary statistics of the methylation data
 
 To run:
 
     ./01-check_data.sh
 
-**PLEASE NOTE:** It is important to monitor this script as it runs - it will stop with errors if it encounters problems. Please fix any errors/warnings that are encountered, and re-run the script until it completes without errors.
+**PLEASE NOTE:** It is important to monitor this script as it runs - it will stop with warnings/errors if it encounters problems. Please fix any errors/warnings that are encountered, and re-run the script until it completes without errors.
 
 The script can be run in chunks so you can fix problems more easily:
     
@@ -26,10 +28,10 @@ IMPORTANT: The script produces the following plots in the `results/01/` director
 cd results/01
 ```
 
-- the number of SNPs per chromosome (`no_snps_by_chr.pdf`): Please check if the number of SNPs is decreasing among the 22 chromosomes
-- the SNP quality metrics (`snp_quality.pdf`): Please check you filtered correctly on MAF (0.01) and info (0.8)
-- age distributions (`age_distribution.pdf`): Please check if you get a histogram for all you samples. 
-- summary statistics of the input data (`cohort_descriptives.RData`). Please check there are no NAs in there. These statistics will be used for the cohort characteristics Table in the paper.
+- the number of SNPs per chromosome (`no_snps_by_chr.pdf`): Please check if the number of SNPs is decreasing among the 22 chromosomes.
+- the SNP quality metrics (`snp_quality.pdf`): Please check you filtered correctly on MAF (0.01) and info (0.8).
+- age distribution (`age_distribution.pdf`): Please check if you get a histogram for all you samples. 
+- summary statistics of the input data (`cohort_descriptives.RData`). Please check there are no unexpected NAs in there. These statistics will be used for the cohort characteristics Table in the paper.
 - summary statistics of the methylation data (`methylation_summary.RData`). Please check the outlier column. These are the number of outliers that are 10 SD from the mean after 3 iterations and will be removed from the analysis.
 - The `phenotype_list.txt` file contains the phenotypes that will be used for the EWAS analysis.
 - The `log.txt` wil be used to check you have used the right version of the pipeline
