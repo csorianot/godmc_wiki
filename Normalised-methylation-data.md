@@ -20,3 +20,5 @@ If you prefer to use your own normalisation then please ensure that the data you
 - The methylation matrix should be saved as a `.RData` file and the methylation matrix object should be called `norm.beta`. e.g. in R:
 
         save(norm.beta, file="/path/to/godmc/input_data/methylation.RData")
+
+- You should avoid spaces in your file name.
