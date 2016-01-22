@@ -66,7 +66,7 @@ In the `norm.parameters` variable, you can set your batch variables eg. `Slide`,
 Set the parameters to use in normalisation:
 
 ```r
-batch_var<-c("Slide", "plate")
+batch_var<-c("Slide", "plate","Sex")
 norm.parameters <- meffil.normalization.parameters(
 	norm.objects,
 	variables=batch_var,
@@ -80,7 +80,9 @@ norm.parameters <- meffil.normalization.parameters(
 Run normalization summary and make normalisation report. 
 
 ```r
-norm.summary <- meffil.normalization.summary(norm.beta, norm.objects, parameters=norm.parameters)
+pcs <- meffil.methylation.pcs(norm.beta,probe.range=20000)
+save(pcs,file="pcs.norm.beta.Robj")
+norm.summary <- meffil.normalization.summary(norm.objects, pcs=pcs,parameters=norm.parameters)
 meffil.normalization.report(norm.summary, output.file="normalization-report.html")
 ```
 
