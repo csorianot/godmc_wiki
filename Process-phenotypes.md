@@ -12,7 +12,8 @@ To do this, run:
 
     ./03a-phenotype_data.sh
 
-This script also generates plots of the phenotypes. Please check that the plots in `results/03/ewas_phenotypes.pdf` look sane.
+**IMPORTANT**: 
+- This script also generates plots of the phenotypes. Please check that the plots in `results/03/ewas_phenotypes.pdf` look sane.
 
 ### Test the genotype and phenotype quality
 
