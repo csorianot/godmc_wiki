@@ -32,7 +32,7 @@ cd results/01
 - The SNP quality metrics (`snp_quality.pdf`): Please check you filtered correctly on MAF (0.01) and info (0.8).
 - Age distribution (`age_distribution.pdf`): Please check if you get a histogram for all you samples. 
 - Summary statistics of the input data (`cohort_descriptives.RData`). Please check there are no unexpected NAs in there. These statistics will be used for the cohort characteristics Table in the paper.
-- Aummary statistics of the methylation data (`methylation_summary.RData`). Please check the outlier column. These are the number of outliers that are 10 SD from the mean after 3 iterations and will be removed from the analysis.
+- Summary statistics of the methylation data (`methylation_summary.RData`). Please check the outlier column. These are the number of outliers that are 10 SD from the mean after 3 iterations and will be removed from the analysis.
 - The `phenotype_list.txt` file contains the phenotypes that will be used for the EWAS analysis.
 - The `log.txt` wil be used to check you have used the right version of the pipeline
 
