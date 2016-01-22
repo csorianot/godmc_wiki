@@ -88,10 +88,10 @@ meffil.normalization.report(norm.summary, output.file="normalization-report.html
 
 This creates the file `normalization-report.html` in the current work directory. The file should open up in your web browser.
 
-### QC report details
+### QC report details -please check!
 
 - Control probe scree plots: how many PCs do you need to explain at least 99% of the variance? From which PC is less than 1% of the variance explained?
-- PCAplots of control probes: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
+- PCAplots of control probes: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown. Row effects are often captured with the control probes.
 - Control probe associations of PCs with measured batch variables: The plots show anova test statistics which can be used to identify possible associations between a PC and a batch. For example in ARIES, we found significant associations for plate and slide.
 - The linear model can be used to identify a possible association between a PC extracted from the control probes and a batch level. Are there any levels of a batch significant? The plots show coefficients with their 95% confidence interval of the t-test statistics. These can be used for example to identify poor slides.
 - PCAplots of normalized betas: do you see any clusters indicating possible batch effects? Only batches with less than 10 levels are shown.
