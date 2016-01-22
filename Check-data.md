@@ -23,7 +23,7 @@ The script can be run in chunks so you can fix problems more easily:
     ./01-check_data.sh cnv
     ./01-check_data.sh summary
 
-IMPORTANT: The script produces the following plots in the `results/01/` directory. Please check the following plots:
+**IMPORTANT:** The script produces the following plots in the `results/01/` directory. Please check the following plots:
 ```
 cd results/01
 ```
