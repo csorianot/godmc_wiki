@@ -4,7 +4,8 @@ You have created the necessary files for the SNP data. Now we will create the me
 
 First we will generate the following:
 - Predict smoking ([Zeilinger et al 2013](http://www.ncbi.nlm.nih.gov/pubmed/23691101) and [Elliott et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/24485148))
-- Estimate cell counts ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86) as impPredict smoking ([Zeilinger et al 2013](http://www.ncbi.nlm.nih.gov/pubmed/23691101) and [Elliott et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/24485148))
+- Estimate cell counts from normalized betas ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86) if you haven't provided these (http://www.ncbi.nlm.nih.gov/pubmed/24485148))
+- Transform houseman predicted cellcounts for the GWA analysis
 - Generate necessary covariate file formats for upcoming analyses
 
 To do this simply run
@@ -13,7 +14,7 @@ To do this simply run
 
 This script should run very quickly (e.g. less than 5 minutes for 100 individuals, I took me 6 min on ~1800 samples), and generate the necessary files in the `processed_data/methylation_data` folder.
 
-Please check the following graphs:
+**IMPORTANT** Please check the following graphs:
 - `results/04/smoking_prediction.pdf` - shows smoking predictor distribution
 - `results/04/age_prediction.pdf` - shows correlation between predicted and actual ages
 - `results/04/cellcounts_plot.pdf` - shows cell count distributions. Please note that there maybe zeros in the cell counts (CD8T and eosinophils) so the transformations don't look great. 
