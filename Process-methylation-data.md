@@ -63,6 +63,6 @@ This also produces data of the squared residuals for use in variance meQTL analy
 
 Finally we run one CpG GWA as a positive control. It should give a signal on chromosome 22 as this methQTL was found in at least 3 cohorts (p<1e-8).
 
-./04f-convert_methylation_format.sh
+    ./04f-convert_methylation_format.sh
 
 Please check the plots and lambda in the results section. It is important to check lambda here before going on.
