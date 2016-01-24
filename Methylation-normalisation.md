@@ -66,6 +66,17 @@ In the `norm.parameters` variable, you can set your batch variables eg. `Slide`,
 Set the parameters to use in normalisation:
 
 ```r
+#Set your batch variables
+#It is important to code your batch variables as a factor in order to look at the associations between PCs and your batch variables eg. Slide, sentrix_row, sentrix_col, Sex and other batch should be coded as a factor. You can check this with: 
+
+str(norm.objects[[1]]$samplesheet)
+
+#You change it by running a loop
+
+for (i in 1:length(norm.objects)){
+norm.objects[[i]]$samplesheet$Slide<-as.factor(norm.objects[[i]]$samplesheet$Slide)
+}
+
 batch_var<-c("Slide", "plate","Sex")
 norm.parameters <- meffil.normalization.parameters(
 	norm.objects,
@@ -77,7 +88,7 @@ norm.parameters <- meffil.normalization.parameters(
 )
 ```
 
-Run normalization summary and make normalisation report. 
+Run pcs, normalization summary and make normalisation report. 
 
 ```r
 pcs <- meffil.methylation.pcs(norm.beta,probe.range=20000)
