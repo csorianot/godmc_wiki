@@ -65,9 +65,10 @@ In the `norm.parameters` variable, you can set your batch variables eg. `Slide`,
 
 Set the parameters to use in normalisation:
 
-```r
+
 #Set your batch variables
 #It is important to code your batch variables as a factor in order to look at the associations between PCs and your batch variables eg. Slide, sentrix_row, sentrix_col, Sex and other batch should be coded as a factor. You can check this with: 
+```r
 
 str(norm.objects[[1]]$samplesheet)
 
@@ -75,6 +76,9 @@ str(norm.objects[[1]]$samplesheet)
 
 for (i in 1:length(norm.objects)){
 norm.objects[[i]]$samplesheet$Slide<-as.factor(norm.objects[[i]]$samplesheet$Slide)
+norm.objects[[i]]$samplesheet$Sex<-as.factor(norm.objects[[i]]$samplesheet$Sex)
+norm.objects[[i]]$samplesheet$sentrix_row<-as.factor(norm.objects[[i]]$samplesheet$sentrix_row)
+norm.objects[[i]]$samplesheet$sentrix_col<-as.factor(norm.objects[[i]]$samplesheet$sentrix_col)
 }
 
 batch_var<-c("Slide", "plate","Sex")
