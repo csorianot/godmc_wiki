@@ -40,7 +40,7 @@ Please note:
 - If you have more idat files in your directory than needed you can simply delete the rows from the sample sheet.
 - At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the `Sex` column. Don't change these column names though.
 
-If you have already a sample sheet with batch variables you can read it in using:
+Alternatively, if you have already a samplesheet with batch variables you can read it in using:
 ```r
 samplesheet <- meffil.read.samplesheet(path_to_idat_files)
 ```
