@@ -65,4 +65,4 @@ Finally we run one CpG GWA as a positive control. It should give a signal on chr
 
     ./04f-convert_methylation_format.sh
 
-Please check the plots and lambda in the results section. It is important to check lambda here before going on and any lambda above 1 is worrying.
+Please check the plots and lambda in the results section. It is important to check lambda here before going on and any lambda above 1.08 is worrying. In general for a standard GWA you would expect to see a lambda below 1.08.
