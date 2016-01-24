@@ -63,13 +63,9 @@ In addition associations will be calculated between the first 10 PCs and the bat
 
 In the `norm.parameters` variable, you can set your batch variables eg. `Slide`, `plate`, and `tissue` etc., the number of extracted PCs in the control matrix, the number of extracted PCs from the normalized betas, number of variable probes and the p-value threshold used for the association testing.
 
-Set the parameters to use in normalisation:
+It is important to code your batch variables as a factor in order to look at the associations between PCs and your batch variables eg. Slide, sentrix_row, sentrix_col, Sex and other batch should be coded as a factor. You can check this with: 
 
-
-#Set your batch variables
-#It is important to code your batch variables as a factor in order to look at the associations between PCs and your batch variables eg. Slide, sentrix_row, sentrix_col, Sex and other batch should be coded as a factor. You can check this with: 
 ```r
-
 str(norm.objects[[1]]$samplesheet)
 
 #You change it by running a loop
