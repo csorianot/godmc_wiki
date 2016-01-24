@@ -55,8 +55,14 @@ In order to run step 5, run the following:
 
 This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions.
 
-Finally we need to turn the methylation data into the correct format for MatrixeQTL analysis, to do this:
+We need to turn the methylation data into the correct format for MatrixeQTL analysis, to do this:
 
     ./04e-convert_methylation_format.sh
 
 This also produces data of the squared residuals for use in variance meQTL analysis. This script took a few minutes for a sample size of 100.
+
+Finally we run one CpG GWA as a positive control. It should give a signal on chromosome 22 as this methQTL was found in at least 3 cohorts (p<1e-8).
+
+./04f-convert_methylation_format.sh
+
+Please check the plots and lambda in the results section. It is important to check lambda here before going on.
