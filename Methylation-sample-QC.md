@@ -30,14 +30,15 @@ options(mc.cores=16)
 
 Generate a samplesheet with your samples. The samplesheet can be generated automatically from the `idat` basenames by giving the directory with `idat` files or it can be done manually. It should contain at least the following necessary columns: `Sample_Name`, `Sex` (possible values "M","F" or "NA") and `Basename`. 
 `Basename` is the path to the idat file without the _Red.idat and _Grn.idat extension.  It tries to parse the basenames to guess if the Sentrix plate and positions are present. 
-Please note: 
-- If you have your idat files in more than one directory you need to make a samplesheet for each directory followed by `rbind` to combine the samplesheets into one samplesheet.
-- If you have more idat files in your directory than needed you can simply delete the rows from the sample sheet.
 
 ```r
 samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 ```
-At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
+
+Please note: 
+- If you have your idat files in more than one directory you need to make a samplesheet for each directory followed by `rbind` to combine the samplesheets into one samplesheet.
+- If you have more idat files in your directory than needed you can simply delete the rows from the sample sheet.
+- At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
 
 If you have already a sample sheet with batch variables you can read it in using:
 ```r
