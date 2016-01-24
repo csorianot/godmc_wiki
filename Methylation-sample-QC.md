@@ -38,7 +38,7 @@ samplesheet <- meffil.create.samplesheet(path_to_idat_files)
 Please note: 
 - If you have your idat files in more than one directory you need to make a samplesheet for each directory followed by `rbind` to combine the samplesheets into one samplesheet.
 - If you have more idat files in your directory than needed you can simply delete the rows from the sample sheet.
-- At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the Sex column. Don't change these column names though.
+- At this point it is worthwhile to manually modify the samplesheet data frame to replace the actual sample IDs in the `Sample_Name` column if necessary, and to add the sex values to the `Sex` column. Don't change these column names though.
 
 If you have already a sample sheet with batch variables you can read it in using:
 ```r
