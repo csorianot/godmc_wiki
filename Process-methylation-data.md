@@ -49,7 +49,7 @@ In order to perform steps 5 and 6, run:
 
     ./04c-methylation_pcs.sh
 
-This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). In the config file we have currently set the GWA significance threshold to 1e-7 (`meth_pc_threshold="1e-7"`). This means that any GWA signals with a p<1e-7 are considered as genetic signals.
+This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). In the `config` file we have currently set the GWA significance threshold to 1e-7 (`meth_pc_threshold="1e-7"`). This means that any GWA signals with a p<1e-7 are considered as genetic signals. These "genetic" PCs are ignored and not regressed out from the methylation data. The maximum number of "non-genetic" PCs that is regressed out is set to 20 in the `config` file (`n_meth_pcs="20"`).
 
 In order to run step 7, run the following:
 
@@ -71,4 +71,3 @@ Finally we run one CpG GWA as a positive control as a final check (step 9).
 - In addition this GWA is used to check the lambda (inflation statistic) of your data. Please check the plots and lambda in the results section. It is important to check lambda here before going on and any lambda above 1.08 is worrying. In general for a standard GWA you would expect to see a lambda below 1.08.
 
     
-
