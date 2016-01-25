@@ -38,20 +38,20 @@ In order to maximise the meQTL analysis speed we will pre-adjust the methylation
 
 These residuals have now been adjusted for measured covariates, estimated cell counts, estimated smoking, genetic relatedness and structure, and estimates of unmeasured confounders. Therefore the residual variance should be minimised as much as possible without losing genetic variance.
 
-In order to perform this normalisation perform the following. To perform steps 1, 2 and 3, run:
+In order to perform this normalisation perform the following. To perform steps 1, 2, 3 and 4 run:
 
     ./04b-methylation_adjustment1.sh
 
 This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 2 hours. It is faster for unrelated samples. 
 See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b. In ARIES, where we have related data of ~1800 samples, it took one hour to run one of the 100 chunks.
 
-In order to perform steps 4 and 5, run:
+In order to perform steps 5 and 6, run:
 
     ./04c-methylation_pcs.sh
 
-This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). 
+This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). In the config file we have currently set the GWA significance threshold to 1e-7 (`meth_pc_threshold="1e-7"`). This means that any GWA signals with a p<1e-7 are considered as genetic signals.
 
-In order to run step 6 and 7, run the following:
+In order to run step 7, run the following:
 
     ./04d-methylation_adjustment2.sh
 
@@ -71,5 +71,4 @@ Finally we run one CpG GWA as a positive control as a final check (step 9).
 - In addition this GWA is used to check the lambda (inflation statistic) of your data. Please check the plots and lambda in the results section. It is important to check lambda here before going on and any lambda above 1.08 is worrying. In general for a standard GWA you would expect to see a lambda below 1.08.
 
     
-
 
