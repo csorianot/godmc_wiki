@@ -31,7 +31,7 @@ In order to maximise the meQTL analysis speed we will pre-adjust the methylation
 3. Fit age, sex, predicted smoking, (predicted) cell counts, genetic principal components as fixed effects, and family relatedness as a random effect if it is family data, against each methylation probe and keep the normalised residuals.
 4. Set NAs to probe mean.
 5. Estimate the methylation principal components using the 20000 most variable methylation probes, retain the first `n` PCs that individually explain at least 1% of the methylation variation. Remove any PCs associated with height or BMI from this list.
-6. Run a GWAS against each of the retained methylation PCs and discard any PCs that have evidence for a genetic effect (p < 1e-6).
+6. Run a GWAS against each of the retained methylation PCs and discard any PCs that have evidence for a genetic effect (p < 1e-7).
 7. Fit the remaining non-genetic methylation PCs against each of the methylation probes from (2) and retain the residuals.
 8. Convert files to matrixQTL format.
 9. Run a methQTL association as positive control.
