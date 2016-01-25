@@ -65,12 +65,11 @@ This also produces data of the squared residuals for use in variance meQTL analy
 
 Finally we run one CpG GWA as a positive control as a final check. 
 
-   ./04f-convert_methylation_format.sh
+    ./04f-perform_positive_control.sh
 
 - cg07959070 should give a signal on chromosome 22 as this cis methQTL was found in at least 3 cohorts (p<1e-8). This CpG survives probe filtering based on Price et al, Chen et al and Naeem et al and no 1000G SNP was found in the probe sequence or CpG site. Obviously the strength of the association will depend on the sample size of your cohort and is currently set to a pvalue of 0.001.
 - In addition this GWA is used to check the lambda (inflation statistic) of your data. Please check the plots and lambda in the results section. It is important to check lambda here before going on and any lambda above 1.08 is worrying. In general for a standard GWA you would expect to see a lambda below 1.08.
 
     
-
 
 
