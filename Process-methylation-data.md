@@ -51,19 +51,19 @@ In order to perform steps 4 and 5, run:
 
 This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). 
 
-In order to run step 6, run the following:
+In order to run step 6 and 7, run the following:
 
     ./04d-methylation_adjustment2.sh
 
 This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions.
 
-We need to turn the methylation data into the correct format for MatrixeQTL analysis, to do this:
+We need to turn the methylation data into the correct format for MatrixeQTL analysis (step 8), to do this:
 
     ./04e-convert_methylation_format.sh
 
 This also produces data of the squared residuals for use in variance meQTL analysis. This script took a few minutes for a sample size of 100.
 
-Finally we run one CpG GWA as a positive control as a final check. 
+Finally we run one CpG GWA as a positive control as a final check (step 9). 
 
     ./04f-perform_positive_control.sh
 
