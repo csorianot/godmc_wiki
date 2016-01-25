@@ -43,7 +43,7 @@ In order to perform this normalisation perform the following. To perform steps 1
     ./04b-methylation_adjustment1.sh
 
 This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 2 hours. It is faster for unrelated samples. 
-See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b. In ARIES, where we have related data of ~1800 samples, it took one hour to run one of the 100 chunks.
+See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b. In ARIES, where we have related data of ~1800 samples, it took one hour to run one of the 100 chunks on 16 cores.
 
 In order to perform steps 5 and 6, run:
 
@@ -55,13 +55,13 @@ In order to run step 7, run the following:
 
     ./04d-methylation_adjustment2.sh
 
-This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions.
+This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script on unrelated data. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions. It takes about 10 minutes to run 1 chunk on 16 cores on ~1800 samples.
 
 We need to turn the methylation data into the correct format for MatrixeQTL analysis (step 8), to do this:
 
     ./04e-convert_methylation_format.sh
 
-This also produces data of the squared residuals for use in variance meQTL analysis. This script took a few minutes for a sample size of 100.
+This also produces data of the squared residuals for use in variance meQTL analysis. This script took a few minutes for a sample size of 100. It took about 30 minutes on ~1800 samples.
 
 Finally we run one CpG GWA as a positive control as a final check (step 9). 
 
