@@ -33,23 +33,25 @@ In order to maximise the meQTL analysis speed we will pre-adjust the methylation
 5. Estimate the methylation principal components using the 20000 most variable methylation probes, retain the first `n` PCs that individually explain at least 1% of the methylation variation. Remove any PCs associated with height or BMI from this list.
 6. Run a GWAS against each of the retained methylation PCs and discard any PCs that have evidence for a genetic effect (p < 1e-6).
 7. Fit the remaining non-genetic methylation PCs against each of the methylation probes from (2) and retain the residuals.
+8. Convert files to matrixQTL format.
+9. Run a methQTL association as positive control.
 
 These residuals have now been adjusted for measured covariates, estimated cell counts, estimated smoking, genetic relatedness and structure, and estimates of unmeasured confounders. Therefore the residual variance should be minimised as much as possible without losing genetic variance.
 
-In order to perform this normalisation perform the following. To perform steps 1 and 2, run:
+In order to perform this normalisation perform the following. To perform steps 1, 2 and 3, run:
 
     ./04b-methylation_adjustment1.sh
 
 This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 2 hours. It is faster for unrelated samples. 
-See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster.
+See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b.
 
-In order to perform steps 3 and 4, run:
+In order to perform steps 4 and 5, run:
 
     ./04c-methylation_pcs.sh
 
 This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). 
 
-In order to run step 5, run the following:
+In order to run step 6, run the following:
 
     ./04d-methylation_adjustment2.sh
 
