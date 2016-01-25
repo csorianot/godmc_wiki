@@ -43,7 +43,7 @@ In order to perform this normalisation perform the following. To perform steps 1
     ./04b-methylation_adjustment1.sh
 
 This will parallelise across `$nthreads` (which was set in your `config` file). For 100 samples of related individuals and using 16 cores this analysis took about 2 hours. It is faster for unrelated samples. 
-See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b. In ARIES, where we have related data of ~1800 samples it took one hour to run one chunk.
+See [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions on how to parallelise this analysis across multiple nodes on a cluster. You can check your log files on /results/04/logs_b. In ARIES, where we have related data of ~1800 samples, it took one hour to run one of the 100 chunks.
 
 In order to perform steps 4 and 5, run:
 
