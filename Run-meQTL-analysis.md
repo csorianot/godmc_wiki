@@ -41,7 +41,16 @@ Then, when this is submitted:
 it will create a batch of 500 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-500, and each individual job further parallelised across 16 threads. 
 
 
-### Upload the results
+### Check and upload the results
+
+The results are in results/05.
+
+Please open one of the *RData files and check if the output looks fine.
+
+```
+load("res.1.RData")
+head(me$all$eqtls)
+```
 
 To check that everything ran successfully, please run:
 
