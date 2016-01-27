@@ -10,7 +10,7 @@ The procedure is exactly the same, the SNPs have been split into `genetic_chunks
 #PBS -o vmqtl-output
 #PBS -e vmqtl-error
 #PBS -l walltime=12:00:00
-#PBS -t 1-1000
+#PBS -t 1-500
 #PBS -l nodes=1:ppn=16
 #PBS -S /bin/bash
 
@@ -27,7 +27,7 @@ then to submit to the cluster:
 
     qsub submit_vmqtl.sh
 
-And this will distribute the entire surface across 1000 nodes, each node parallelising across 16 cores.
+And this will distribute the entire surface across 500 nodes, each node parallelising across 16 cores.
 
 
 ### Upload the results
