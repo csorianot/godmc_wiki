@@ -43,7 +43,7 @@ it will create a batch of 500 jobs, each running with the variable `$PBS_ARRAYID
 
 ### Check and upload the results
 
-The results are in results/05.
+The results are in `results/05`.
 
 Please open one of the *RData files and check if the output looks fine.
 
