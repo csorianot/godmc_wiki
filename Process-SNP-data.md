@@ -34,7 +34,7 @@ grep outlier ./logs_a/log.txt
 
 If you think the outlier threshold should be adjusted, you can change the sd threshold `pca_sd` in the `config` file. If you change the threshold you need to rerun `./01-check_data.sh` and  `02a-snp_data.sh`.
 
-- The easyQC.rep opens in excel and shows the number of SNPs that are flipped because they were on the wrong strand as compared to 1000G phase 3 ("AlleleChange"). Please find an example [here](/Additionalfiles/easyQC.rep)
+- The easyQC.rep opens in excel and shows the number of SNPs that are flipped because they were on the wrong strand as compared to 1000G phase 3 ("AlleleChange"). Please find an example [here][[/Additionalfiles/easyQC.rep]]
 - The easyQC.rep file also shows you the number of SNPs that are going to be removed. eg. allele mismatches ("AlleleMismatch") and also SNPs that have a discrepant allele frequency (>0.2) as compared to 1000G phase 3 ("AFCHECK.numOutlier").
 - The `easyQC.multi.AFCHECK.png` plot shows a comparison between allele frequencies of your study as compared to 1000G phase3 EUR. Only outlying SNPs that differ > 0.2 in terms of allele frequency from the reference frequency, will be plotted. Please read the link for explanation of this plot here: [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4083217/figure/F4/]. Please find an example [here](Additionalfiles/easyQC.multi.AFCHECK.png).   
 
