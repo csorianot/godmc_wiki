@@ -13,9 +13,9 @@ To perform the age accelerated residuals GWAS:
 
     ./09-gwas_aar.sh
 
-This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size.
+This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size. For ~1800 samples, it took 1.5 hour.
 
-### Now upload the results
+### Check and upload the results
 
 To check that everything ran successfully, please run:
 
@@ -23,7 +23,9 @@ To check that everything ran successfully, please run:
 ./check_upload.sh 09 check
 ```
 
-This should tell you that `Section 09 has been successfully completed!`. Now please upload the scripts like this:
+This should tell you that `Section 09 has been successfully completed!`. Now go to the results folder and check your qqplot (aar.loco.mlma_qqplot.png), lambda and your manhattan plot (`aar.loco.mlma_manhattan.png`). 
+
+Now please upload the scripts like this:
 
 ```
 ./check_upload.sh 09 upload
