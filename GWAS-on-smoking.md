@@ -1,9 +1,16 @@
-To perform the predicted smoking GWAS:
+To perform the predicted smoking GWAS on all samples:
 
-    ./10-gwas_smoking.sh
+    ./10-gwas_smoking.sh 1
 
 This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size.
 
+To perform the predicted smoking GWAS on subjects older than 25 years 
+     ./10-gwas_smoking.sh 2
+
+To perform the predicted smoking GWAS on subjects younger than 25 years
+     ./10-gwas_smoking.sh 3
+
+     
 ### Now upload the results
 
 To check that everything ran successfully, please run:
