@@ -7,7 +7,7 @@ This takes approximately 2 minutes for sample size of 100, but time will increas
 To perform the predicted smoking GWAS on subjects older than 25 years:
 
     ./10-gwas_smoking.sh 2
-    ```
+
 To perform the predicted smoking GWAS on subjects younger than 25 years:
 
     ./10-gwas_smoking.sh 3
