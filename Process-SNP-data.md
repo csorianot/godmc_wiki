@@ -48,9 +48,9 @@ Next, we need to generate the correct format for the MeQTL analysis software (Ma
 ```
 This script will split the genetic dataset into a number of smaller chunks. The number of chunks is determined by the `genetic_chunks` variable in the `config` file. For example:
 
-    genetic_chunks="1000"
+    genetic_chunks="500"
 
-is the default and will split all the SNP data into 1000 subsets (e.g. for 8 million SNPs each chunk will have 8000 SNPs). The required files will be saved in `processed_data/genetic_data/tabfile/`. In addition, this script will do the same for the CNV data.
+is the default and will split all the SNP data into 500 subsets (e.g. for 8 million SNPs each chunk will have 16000 SNPs). The required files will be saved in `processed_data/genetic_data/tabfile/`. In addition, this script will do the same for the CNV data.
 
 This script takes a few minutes to run for sample size of 100 and 1 hour to run ~1800 samples.
 
