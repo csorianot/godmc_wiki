@@ -1,0 +1,2 @@
+fileInShortName	numSNPsIn	numSNPsOut	NotInRef	NotInIn	Checked	StrandChange	AlleleMatch	AlleleChange	n4AlleleMatch	n4AlleleChange	AlleleMismatch	AlleleInMissing	AlleleInInvalid	StrandInInvalid	AlleleRefMissing	AlleleRefInvalid	StrandRefInvalid	AFCHECK.cor_eaf.ref_EAF	AFCHECK.numOutlier
+data.easyqc.txt	7976637	7976637	279206	16275578	7697431	0	7588570	106889	0	0	1972	0	0	0	279206	0	0	0.986635625374304	8373
