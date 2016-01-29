@@ -23,7 +23,7 @@ To check that everything ran successfully, please run:
 ./check_upload.sh 09 check
 ```
 
-This should tell you that `Section 09 has been successfully completed!`. Now go to the results folder and check your qqplot (aar.loco.mlma_qqplot.png), lambda and your manhattan plot (`aar.loco.mlma_manhattan.png`). 
+This should tell you that `Section 09 has been successfully completed!`. Now go to the results folder and check your qqplot (`aar.loco.mlma_qqplot.png`), lambda and your manhattan plot (`aar.loco.mlma_manhattan.png`). 
 
 Now please upload the scripts like this:
 
