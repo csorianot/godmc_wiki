@@ -16,7 +16,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./13_gwas_cellcounts_mvlmm.sh ${PBS_ARRAYID}
+./13-gwas_cellcounts_mvlmm.sh ${PBS_ARRAYID}
 ```
 
 and to submit:
