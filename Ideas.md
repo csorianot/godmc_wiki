@@ -13,4 +13,5 @@ For example:
 Bayesian fine mapping approaches such as Maller et al..
 10. Integration with gene expression: i) Lookup of CpG genes in GTEx. ii) Two sample MR approach a. get all cismQTLs in GoDMC b. Find all of those SNP effects in trans eQTLanalyses. Use GTEx and blood eQTL browser.
 11. Can we run a EWAS on polygenic risk scores?
-12. Can we find X and Y chromosome trans effects?
+12. Can we find chromosome X and Y trans effects?
+13. Are methQTL SNPs annotated to enhancers or superenhancers?
