@@ -16,7 +16,7 @@ In R:
 #Then run the bash script below.
 
 #!/bin/bash
-for i in {1..22}
+for i in {1..23}
 do
 
     # First filter out snps (info<0.8) and maf <0.01 and samples using qctool.
@@ -73,7 +73,7 @@ done
 
 # Merge them into one dataset
 
-for i in {2..22}
+for i in {2..23}
 do 
     echo "data_chr${i}_filtered"
 done > mergefile.txt
@@ -84,7 +84,7 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 
 head -n1 chr01_filtered.info > data_filtered.info
 
-for i in {1..22}
+for i in {1..23}
 do
     awk ' NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
 done
