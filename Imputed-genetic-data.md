@@ -6,6 +6,7 @@ The genetic data must be
 - Converted to best guess binary plink format without a probability threshold 
 - All remaining SNPs combined into a single fileset (*i.e.* not a separate fileset for each chromosome)
 - No spaces in the file names
+- All autosomes and chrX
 
 #### Fam file and Sample IDs
 
