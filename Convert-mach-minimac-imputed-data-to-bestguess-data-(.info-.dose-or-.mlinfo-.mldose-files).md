@@ -2,7 +2,7 @@
 
 ```
 #!/bin/bash
-for i in {1..22}
+for i in {1..23}
 do 
 #gcta --dosage-mach-gz chr$i.mldose.gz chr$i.mlinfo.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
 gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --maf 0.01 --imput-rsq 0.8 --make-bed --out data_chr${i}_filtered
@@ -42,7 +42,7 @@ done
 
 # Merge them into one dataset
 
-for i in {2..22}
+for i in {2..23}
 do 
     echo "data_chr${i}_filtered"
 done > mergefile.txt
@@ -53,7 +53,7 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 
  head -n1 chr1_filtered.info > data_filtered.info
 
- for i in {1..22}
+ for i in {1..23}
  do   
    awk 'NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
  done
