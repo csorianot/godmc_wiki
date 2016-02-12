@@ -2,7 +2,7 @@
 
 Please use this script [https://gist.github.com/epzjlm/2d7c1aded2ee24443d69] to extract imputation quality scores (r2) and MAF from the vcf files. You need to have gzipped vcf files as input. You run the script like this:
 ```
-for i in {1..22}
+for i in {1..23}
 do
 perl get_vcf_chr_pos_info.pl chr$i.vcf.gz MAF,R2 >mafinfo.minimac3.chr$i.txt
 
@@ -25,7 +25,7 @@ done
     # Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
 
    #!/bin/bash
-   for i in {1..22}
+   for i in {1..23}
    do
    vcftools --gzvcf chr$i.vcf.gz --plink --chr $i --out chr$i
    plink1.90 --ped chr$i.ped --map chr$i.map --make-bed --out data_chr${i}_filtered 
@@ -64,7 +64,7 @@ done
 
 # Merge them into one dataset
 
-for i in {2..22}
+for i in {2..23}
 do 
     echo "data_chr${i}_filtered"
 done > mergefile.txt
@@ -75,7 +75,7 @@ plink1.90 --bfile data_chr1_filtered --merge-list mergefile.txt --make-bed --out
 
 head -n1 chr1_filtered.info > data_filtered.info
 
-for i in {1..22}
+for i in {1..23}
 do
     awk ' NR>1 {print $0}' < chr${i}_filtered.info |cat >> data_filtered.info
 done
