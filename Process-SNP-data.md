@@ -3,6 +3,7 @@ Once the imputed genetic data is in the [correct format](Imputed genetic data) a
 - Extract relevant IDs
 - HWE and MAF QC
 - Re-code SNP IDs
+- Remove sexcheck outliers if chr X is available 
 - Re-code INDEL alleles to I,D
 - Remove duplicate SNPs
 - Construct kinship matrices
