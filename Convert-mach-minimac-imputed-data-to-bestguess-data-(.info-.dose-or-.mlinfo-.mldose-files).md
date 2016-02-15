@@ -35,7 +35,7 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
     }' data_chr${i}_filtered.bim.orig2 > data_chr${i}_filtered.bim
     grep "duplicate" data_chr${i}_filtered.bim | awk '{ print $2 }' > duplicates.chr${i}.txt
 
-    plink --bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
+    plink1.90--bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
     #filter info/maf file
     zcat chr$i.info.gz.orig | awk '$5>0.01 && $7>0.8 || NR>1 {print $1,$5,$7}' |perl -pe 's/Rsq/Info/g' > chr${i}_filtered.info
