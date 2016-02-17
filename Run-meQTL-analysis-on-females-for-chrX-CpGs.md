@@ -1,24 +1,13 @@
-We have already performed the standard meQTL analysis. We are now going to perform the same kind of analysis again except this time we will look at ChrX methylation probes in females only.
-
-The procedure is exactly the same, the SNPs have been split into `genetic_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_mqtlX.sh`) would be:
-
-
-```
-./14-mqtl_females.sh
-```
-
-This process is computationally expensive, it is performing an association of every SNP against every probe. So the data has been setup to parallelise. The SNP data has been split into `genetic_chunks` chunks using `script 2b`. The genetic chunks can be found here: `./processed_data/genetic_data/tabfile/data.tab.{1-500}` This variable is specified in the `config` file:
-
-    genetic_chunks="500"
-
-is the default setting. So for example if there are 8000000 SNPs in total then when we run
+We have already performed the standard meQTL analysis. We are now going to perform the same kind of analysis again except this time we will look at ChrX methylation probes in females only. The procedure is exactly the same as in 05, the SNPs have been split into `genetic_chunks` chunks which can each be run independently on a different node on the cluster. 
 
     ./14-mqtl_females.sh 1
 
+
 The script will perform the meQTL analysis using SNPs 1-16000 (the first chunk of 500), using `nthreads` threads in parallel (also specified in the `config` file). 
 
-Going through 1-500 sequentially is likely to take some time so it is recommended that you parallelise across a cluster. For ~1800 samples, one chunk took 25 minutes to run using 16 cores. To do this, you need to create a job submission script that will work on your cluster. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_mqtl.sh`) like this:
+Going through 1-500 sequentially is likely to take some time so it is recommended that you parallelise across a cluster. For ~1800 samples, one chunk took 25 minutes to run using 16 cores.
 
+An example job submission script (e.g. `submit_mqtlX.sh`) would be:
 
 ```bash
 
@@ -72,4 +61,3 @@ This should tell you that `Section 14 has been successfully completed!`. Now ple
 ```
 
 It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 14.
-
