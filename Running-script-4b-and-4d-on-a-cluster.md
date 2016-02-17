@@ -1,5 +1,5 @@
 ### Optional: Running on the cluster
-
+#### Script 4b
 We can run the `04b-methylation_adjustment1.sh` and `04d-methylation_adjustment2.sh` in parallel on a cluster. In the `config` file you can specify how many chunks to break the entire analysis into, e.g. 
 
     meth_chunks="100"
@@ -60,7 +60,7 @@ After these jobs have completed, assuming there have been no errors, there will 
 
 This will combine your 100 chunks into a single file for use moving forward in the analysis.
 
-
+#### Script 4d
 Similarly, for the `04d-methylation_adjustment2.sh` script you would create a submission script (e.g. `submit_04d.sh`):
 
 ```bash
