@@ -1,3 +1,3 @@
 ```
-14-mqtl_females.sh
+./14-mqtl_females.sh
 ```
