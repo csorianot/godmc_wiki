@@ -50,10 +50,10 @@ then to run:
 
 On our cluster this creates a batch of 100 jobs, each with the `${PBS_ARRAYID}` variable set to a value between 1 and 100. 
 
-You can check whether your jobs are completed by grepping `Successfully` from the log files:
-
-`grep Successfully meth_04b-output-* |wc` 
-
+You can check whether your jobs are completed by grepping `Successfully` from the log files (`results/04/logs_b`):
+```
+grep Successfully meth_04b-output-* |wc
+```
 After these jobs have completed, assuming there have been no errors, there will be 100 separate `.RData` files that need to be combined together. To do this simply run:
 
     resources/methylation/aggregate_adjustment1.sh
@@ -87,6 +87,12 @@ cd /path/to/godmc/
 Then:
 
     qsub submit_04d.sh
+
+You can check if your jobs ran successfully by using this line in `results/04/logs_d`:
+```
+grep Successfully log.txt_[0-9]* |wc
+
+```
 
 and once the jobs are completed:
 
