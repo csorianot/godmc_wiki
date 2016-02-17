@@ -55,7 +55,7 @@ In order to run step 7, run the following:
 
     ./04d-methylation_adjustment2.sh
 
-This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script on unrelated data. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions. It takes about 10 minutes to run 1 chunk on 16 cores on ~1800 samples.
+This should take roughly the same amount of time as the `04b-methylation_adjustment1.sh` script on unrelated data. Again, it can be split across multiple nodes on a cluster, see [here](https://github.com/MRCIEU/godmc/wiki/Running-script-4b-and-4d-on-a-cluster) for instructions.  In ARIES (~1800 samples), it took one hour to run one of the 100 chunks on 16 cores.
 
 We need to turn the methylation data into the correct format for MatrixeQTL analysis (step 8), to do this:
 
