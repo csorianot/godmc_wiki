@@ -7,15 +7,15 @@ The script will perform the meQTL analysis using SNPs 1-16000 (the first chunk o
 
 Going through 1-500 sequentially is likely to take some time so it is recommended that you parallelise across a cluster. For ~1800 samples, one chunk took 25 minutes to run using 16 cores.
 
-An example job submission script (e.g. `submit_mqtlX.sh`) would be:
+An example job submission script (e.g. `submit_mqtlX_females.sh`) would be:
 
 ```bash
 
 #!/bin/bash
 
-#PBS -N mqtlX
-#PBS -o mqtlX-output
-#PBS -e mqtlX-error
+#PBS -N mqtlXf
+#PBS -o mqtlXf-output
+#PBS -e mqtlXf-error
 #PBS -l walltime=12:00:00
 #PBS -t 1-500
 #PBS -l nodes=1:ppn=16
