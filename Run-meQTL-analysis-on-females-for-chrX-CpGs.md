@@ -32,7 +32,7 @@ cd /path/to/godmc/    #EDIT THIS LINE
 
 Then, when this is submitted:
 
-    qsub submit_mqtlX.sh
+    qsub submit_mqtlX_females.sh
 
 it will create a batch of 500 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-500, and each individual job further parallelised across 16 threads. 
 
