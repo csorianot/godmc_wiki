@@ -35,13 +35,13 @@ And this will distribute the entire surface across 1000 nodes, each node paralle
 To check that everything ran successfully, please run:
 
 ```
-./check_upload 07 check
+./check_upload.sh 07 check
 ```
 
 This should tell you that `Section 07 has been successfully completed!`. Now please upload the scripts like this:
 
 ```
-./check_upload 07 upload
+./check_upload.sh 07 upload
 ```
 
 It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 07.
