@@ -26,7 +26,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/    #EDIT THIS LINE
-14-mqtl_females.sh ${PBS_ARRAYID}
+./14-mqtl_females.sh ${PBS_ARRAYID}
 
 ```
 
