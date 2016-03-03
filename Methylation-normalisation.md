@@ -77,13 +77,12 @@ norm.objects[[i]]$samplesheet$sentrix_row<-as.factor(norm.objects[[i]]$sampleshe
 norm.objects[[i]]$samplesheet$sentrix_col<-as.factor(norm.objects[[i]]$samplesheet$sentrix_col)
 }
 
-batch_var<-c("Slide", "plate","Sex")
+batch_var<-c("Slide", "plate","Sex") #PLEASE EDIT THIS LINE
 norm.parameters <- meffil.normalization.parameters(
 	norm.objects,
 	variables=batch_var,
 	control.pcs=1:10,
-	probe.pcs=1:10,
-	probe.range=20000,
+	batch.pcs=1:10,
 	batch.threshold=0.01
 )
 ```
