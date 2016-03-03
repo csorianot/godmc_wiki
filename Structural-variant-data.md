@@ -40,7 +40,7 @@ controls <- meffil.add.copynumber450k.references()
 Now estimate the CNVs:
 
 ```
-cnv_values <- meffil.calculate.cnv(samplesheet, cnv.reference, verbose=TRUE)
+cnv_values <- meffil.calculate.cnv(samplesheet, cnv.reference=controls, verbose=TRUE)
 ```
 
 A matrix of genetic copy number variation at each probe can now be generated:
