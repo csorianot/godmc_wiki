@@ -11,7 +11,7 @@ Focussing initially on height and BMI.
 
 ---
 
-The full analysis plan can be downloaded here [[Additionalfiles/GoDMCanalysisplan271116.docx]], and we aim to have meta analysed at least 10,000 samples by the end of 2015 (see [here](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) for details of the contributing cohorts).
+The full analysis plan can be downloaded here [[/Additionalfiles/GoDMCanalysisplan271116.docx]], and we aim to have meta analysed at least 10,000 samples by the end of 2015 (see [here](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) for details of the contributing cohorts).
 
 ---
 
