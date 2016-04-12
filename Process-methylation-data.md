@@ -4,7 +4,7 @@ You have created the necessary files for the SNP data. Now we will create the me
 
 First we will generate the following:
 - Predict smoking ([Zeilinger et al 2013](http://www.ncbi.nlm.nih.gov/pubmed/23691101) and [Elliott et al 2014](http://www.ncbi.nlm.nih.gov/pubmed/24485148))
-- Estimate cell counts from normalized betas ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86) if you haven't provided these.
+- Estimate cell counts from normalized betas ([Houseman reference method](http://www.biomedcentral.com/1471-2105/13/86)) if you haven't provided these.
 - Transform houseman predicted cellcounts for the GWA analysis
 - Generate necessary covariate file formats for upcoming analyses
 
