@@ -20,6 +20,63 @@ Ideally you should clone the scripts to a location on your server which you can 
 
 Once cloned, in the `godmc` directory you will see the following files and folders:
 
+```
+├── 01-check_data.sh
+├── 02-phenotype_data.sh
+├── 03a-snp_data.sh
+├── 03b-convert_snp_format.sh
+├── 04a-methylation_variables.sh
+├── 04b-methylation_adjustment1.sh
+├── 04c-methylation_pcs.sh
+├── 04d-methylation_adjustment2.sh
+├── 04e-convert_methylation_format.sh
+├── 05a-mqtl.sh
+├── 05b-vmqtl.sh
+├── 05c-mcnv.sh
+├── 06-ewas.sh
+├── 07a-gwas_aar.sh
+├── 07b-gwas_smoking.sh
+├── 07c-gwas_cellcounts.sh
+├── config.example
+├── input_data
+│   └── README
+├── processed_data
+│   ├── cellcounts
+│   ├── cnv_data
+│   ├── covariate_data
+│   ├── datacheck
+│   ├── genetic_data
+│   ├── ids
+│   ├── methylation_data
+│   ├── phenotypes
+│   └── README
+├── README.md
+├── resources
+│   ├── bin
+│   ├── cellcounts
+│   ├── cnv
+│   ├── datacheck
+│   ├── dnamage
+│   ├── genetics
+│   ├── methylation
+│   ├── parameters
+│   ├── phenotypes
+│   ├── qc
+│   ├── relateds
+│   └── smoking
+└── results
+    ├── ewas
+    ├── ewas_bmi
+    ├── ewas_height
+    ├── gwas_aar
+    ├── gwas_cellcounts
+    ├── gwas_smoking
+    ├── matrixeqtl_mcnv
+    ├── matrixeqtl_mqtl
+    ├── matrixeqtl_vmqtl
+    └── README
+```
+
 - `config.example` file: Your first task in setting up the pipeline is to create a `config` file. The `config.example` is a template for this and you can modify this file to point to your input data files. You can also change the various settings and parameters used for the analysis here.
 - `input_data` directory: You can deposit your input data files (genotypes, methylation data, CNV data, covariates, phenotypes) into this directory. 
 - `*.sh` files: These are the files that you need to run in sequence to perform the analysis. They will be explained step-by-step in this guide. **You do not need to manually change any of these files**.
