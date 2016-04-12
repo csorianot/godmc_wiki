@@ -10,7 +10,7 @@ We will be performing a GWAS on age accelerated residuals (AAR), smoking status 
 Focussing initially on height and BMI.
 
 ---
-### Analysisplan
+### Analysis plan
 The full analysis plan can be downloaded [here](https://github.com/MRCIEU/godmc/files/197447/GoDMCanalysisplan271116.docx), and we aim to have meta analysed at least 10,000 samples by the end of 2016 (see [here](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) for details of the contributing cohorts).
 
 ---
