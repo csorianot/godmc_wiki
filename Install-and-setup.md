@@ -133,9 +133,9 @@ You don't need to change the `sftp_address` field.
 
 The folder `godmc/input_data` can be used to put input data. This will include:
 
-- Genetic data in binary plink format. Please see [here](Imputed-genetic-data) for more info.
+- Genetic data in binary plink format without a genotype probability cut-off. Please see [here](Imputed-genetic-data) for more info.
 - CNV data stored in a `.RData` file. Please see [here](Structural-variant-data) for more info.
-- Normalised and QC'd methyation data stored in an `.RData` file. Please see [here](Normalised-methylation-data) for more info.
+- Normalised and QC'd methylation data stored in an `.RData` file. Please see [here](Normalised-methylation-data) for more info.
 - Phenotypes and covariates stored as plain text files. Please see [here](Phenotype-and-covariate-data) for more info.
 
 For simplicity you can copy your genetic data (e.g. `geno.bed`, `geno.bim`, `geno.fam`), your methylation data (e.g. `beta.RData`), your CNV data (e.g. `cnv.RData`), and your covariate data (e.g. `covariates.txt`) to the `input_data` directory. Then set the following variables:
