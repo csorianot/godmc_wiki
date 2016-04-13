@@ -8,6 +8,10 @@ Please read the code of conduct here:
 
 Now please visit [this Google Docs spreadsheet](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) and enter your cohort's information. Make sure to specify that you have read the code of conduct!
 
+### Phase I and II inclusion criteria
+
+In phase I and II we are focusing on establishing a methQTL catalogue on blood samples from European origin. After we have established a methQTL catalogue we are definitely interested in transethnic and intertissue comparisons.
+
 ### Case control studies
 
 If you have a case-control design, we recommend to _combine_ cases and controls for the methQTL analysis to have the largest sample size as possible. We do not recommend to analyse cases and controls separately.
