@@ -10,7 +10,7 @@ Now please visit [this Google Docs spreadsheet](https://docs.google.com/spreadsh
 
 ### Case control studies
 
-If you have a case-control design, we recommend to _combine_ cases and controls for the methQTL analysis.
+If you have a case-control design, we recommend to _combine_ cases and controls for the methQTL analysis to have the largest sample size as possible. We do not recommend to analyse cases and controls separately.
 
 ### Download the scripts
 
