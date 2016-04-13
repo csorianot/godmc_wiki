@@ -18,7 +18,7 @@ The genetic data must be
 
 #### Bim file and allele coding
 
-**IMPORTANT:** ensure that your alleles coded using the original impute2 or minimac coding. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full sequence allele coding for INDELs if you have used impute2.  If you have used minimac, INDELs need to be coded as I, R, D. The pipeline harmonizes the allele coding to an universal coding. The pipeline also changes the SNV ids for you (second column) so you don't need to worry about marker names. Please don't use a header.
+**IMPORTANT:** ensure that your alleles coded using the original impute2 or minimac coding. To perform a meta-analysis across cohorts, alleles should be matching across cohorts. Please use full sequence allele coding for INDELs if you have used impute2.  If you have used minimac, INDELs need to be coded as I, R, D. The pipeline harmonizes the allele coding to an universal I,D coding. The pipeline also changes the SNV ids for you (second column) so you don't need to worry about marker names. Please don't use a header.
 
 ###### impute2
     1 chr1:1068669:INDEL  0 1068669                GT    G
