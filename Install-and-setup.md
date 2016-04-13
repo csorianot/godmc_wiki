@@ -8,6 +8,10 @@ Please read the code of conduct here:
 
 Now please visit [this Google Docs spreadsheet](https://docs.google.com/spreadsheets/d/1iOr0ZyLr8OOmhOsHLCxoBEhanJ2K_LZG-X1YrnDFyRc/edit?usp=sharing) and enter your cohort's information. Make sure to specify that you have read the code of conduct!
 
+### Case control studies
+
+If you have a case-control design, we recommend to _combine_ cases and controls for the methQTL analysis.
+
 ### Download the scripts
 
 To download the scripts you will need to run the following git command:
