@@ -3,7 +3,7 @@
 Your covariates file should be a text file (white space separated) with `IID` in the first column followed by headed columns for covariates. You need to specify whether your covariate is a categorical (`factor`) or continuous (`numeric`) variable. For example: `{Name}_factor` or `{Name}_numeric`.  The following covariates are **required**:
 
 - `Sex_factor`: A column of `M`'s for males and `F`'s for females
-- `Age_numeric`: In years
+- `Age_numeric`: In years (can be integer or with decimals)
 
 The following covariates are strongly recommended (but not necessary):
 
