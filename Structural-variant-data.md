@@ -24,7 +24,7 @@ options(mc.cores=16)
 Generate a samplesheet with your samples. The samplesheet can be generated automatically from the idat basenames by giving the directory with idat files or it can be done manually. It should contain at least the following necessary columns: `Sample Name`, `Sex` (possible values `M`, `F` or `NA`) and `Basename`. It tries to parse the basenames to guess if the Sentrix plate and positions are present. 
 
 ```
-samplesheet <- meffil.create.samplesheet(/path/to/idat/files)
+samplesheet <- meffil.create.samplesheet("/path/to/idat/files")
 ```
 
 At this point please ensure that the `Sample_Name` column contains the actual sample IDs that are being used for the other data types. Please also add the sex values to the `Sex` column. Don't change these column names though.
