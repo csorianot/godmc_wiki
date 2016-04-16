@@ -46,7 +46,7 @@ cnv_values <- meffil.calculate.cnv(samplesheet, cnv.reference="copynumber450k", 
 A matrix of genetic copy number variation at each probe can now be generated:
 
 ```
-cnv <- meffil.cnv.matrix(cnv_values, abs.thresh=0.25, p.thresh=0.05)
+cnv <- meffil.cnv.matrix(cnv_values)
 ```
 
 Please save this object to the `godmc/input_data` folder:
