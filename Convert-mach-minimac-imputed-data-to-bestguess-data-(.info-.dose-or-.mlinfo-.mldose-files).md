@@ -7,7 +7,7 @@ do
 cp chr$i.info.gz chr$i.info.gz.orig
 zcat chr$i.info.gz | perl -pe 's/'$i'\:/\:/g'|perl -pe 's/chr//g'|perl -pe 's/ /\t/g'|awk '{printf("%010d %s\n", NR, $0)}' |perl -pe 's/ //g' |gzip >chr$i.info2.gz
 mv chr$i.info2.gz chr$i.info.gz
-zcat chr$i.info.gz | awk -F' ' '$5>0.01 && $7>0.8 && $5<0.99 || NR==1 {print $1,$5,$7}' |perl -pe 's/Rsq/Info/g' > chr${i}_filtered.info
+zcat chr$i.info.gz | awk -F' ' '$5>0.01 && $7>0.8 && $5<0.99 {print $1,$5,$7}' > chr${i}_filtered.info
 awk '{print $1}'<chr${i}_filtered.info >chr${i}_filtered.snp
 gcta --dosage-mach-gz chr$i.dose.gz chr$i.info.gz --make-bed --out data_chr${i}_filtered
 plink1.9 --bfile data_chr${i}_filtered --make-bed --out data_chr${i}_filtered --extract chr${i}_filtered.snp
@@ -26,6 +26,9 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
         print $1, "chr"$1":"$4":INDEL", $3, $4, $5, $6;
    }' data_chr${i}_filtered.bim.orig > data_chr${i}_filtered.bim
 
+paste chr${i}_filtered.info data_chr${i}_filtered.bim |awk '{print $5,$2,$3}' >chr${i}_filtered.info2
+
+
     # For simplicity remove any duplicates
 
     cp data_chr${i}_filtered.bim data_chr${i}_filtered.bim.orig2
@@ -40,7 +43,10 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
     plink1.90--bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
     #filter info/maf file
- 
+ awk -F':' '{print $2}' <chr${i}_filtered.info |awk '{print $1}'>pos$i.txt
+paste pos$i.txt chr${i}_filtered.info |awk '{print "chr" '$i'":"$1,$3,$4}' |awk '{if (NR==1) print "SNP","Info","MAF";else print $0;}' >chr${i}_filtered.info2
+mv data_chr${i}_filtered.info2 data_chr${i}_filtered.info
+
     cp data_chr${i}.info data_chr${i}_orig.info
 awk '{
         if (++dup[$1] > 1) {
