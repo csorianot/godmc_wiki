@@ -40,6 +40,7 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
     plink1.90--bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
     #filter info/maf file
+ 
     cp data_chr${i}.info data_chr${i}_orig.info
 awk '{
         if (++dup[$1] > 1) {
