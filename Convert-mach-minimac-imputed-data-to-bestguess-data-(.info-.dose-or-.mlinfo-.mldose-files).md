@@ -27,7 +27,7 @@ mv data_chr${i}_filtered.bim2 data_chr${i}_filtered.bim
    }' data_chr${i}_filtered.bim.orig > data_chr${i}_filtered.bim
 
 paste chr${i}_filtered.info data_chr${i}_filtered.bim |awk '{print $5,$2,$3}' >chr${i}_filtered.info2
-
+mv chr${i}_filtered.info2 chr${i}_filtered.info
 
     # For simplicity remove any duplicates
 
@@ -43,19 +43,17 @@ paste chr${i}_filtered.info data_chr${i}_filtered.bim |awk '{print $5,$2,$3}' >c
     plink1.90--bfile data_chr${i}_filtered --exclude duplicates.chr${i}.txt --make-bed --out data_chr${i}_filtered
 
     #filter info/maf file
- awk -F':' '{print $2}' <chr${i}_filtered.info |awk '{print $1}'>pos$i.txt
-paste pos$i.txt chr${i}_filtered.info |awk '{print "chr" '$i'":"$1,$3,$4}' |awk '{if (NR==1) print "SNP","Info","MAF";else print $0;}' >chr${i}_filtered.info2
-mv data_chr${i}_filtered.info2 data_chr${i}_filtered.info
 
-    cp data_chr${i}.info data_chr${i}_orig.info
+    cp chr${i}_filtered.info chr${i}_filtered.info.orig
 awk '{
         if (++dup[$1] > 1) {
             print $1".duplicate."dup[$1], $2, $3
         } else {
             print $0 }
-}' data_chr${i}_orig.info > data_chr${i}.info
+}' chr${i}_filtered.info.orig > chr${i}_filtered.info
  
     fgrep -v -w -f duplicates.chr${i}.txt <chr${i}_filtered.info >chr${i}_filtered.info2
+    cat 
     mv chr${i}_filtered.info2 chr${i}_filtered.info
 done
 
