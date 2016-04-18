@@ -53,8 +53,8 @@ awk '{
 }' chr${i}_filtered.info.orig > chr${i}_filtered.info
  
     fgrep -v -w -f duplicates.chr${i}.txt <chr${i}_filtered.info >chr${i}_filtered.info2
-    cat 
-    mv chr${i}_filtered.info2 chr${i}_filtered.info
+    echo "SNP" "MAF" "Info" >chr${i}_filtered.info
+    cat chr${i}_filtered.info2 >> chr${i}_filtered.info
 done
 
 # Merge them into one dataset
