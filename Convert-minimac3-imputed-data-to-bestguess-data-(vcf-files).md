@@ -59,6 +59,7 @@ done
 
 
     # Remove duplicates from maf/info file
+
     fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info >chr${i}_filtered.info
 done
 
