@@ -68,6 +68,13 @@ awk -v chr=$i '{
     }' data_chr${i}.snp-stats > data_chr${i}.info
 
     # Remove duplicates from snp-stats
+cp data_chr${i}.info data_chr${i}.info.orig
+awk '{
+        if (++dup[$1] > 1) {
+            print $1".duplicate."dup[$1], $2, $3
+        } else {
+            print $0 }
+}' data_chr${i}.info.orig > data_chr${i}.info
     fgrep -v -w -f duplicates.chr${i}.txt <data_chr${i}.info >chr${i}_filtered.info
 done
 
