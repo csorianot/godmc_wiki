@@ -30,7 +30,7 @@ We are expecting that you will provide `Height` and `BMI` phenotypes. Please pro
 
 Note the capitalisation!!
 
-We are expecting height in metres and BMI in kg/m2 units. We are splitting the ewas by age automatically (everyone together, below 18, above 18 for each trait).
+We are expecting height in metres and BMI in kg/m2 units. We are splitting the EWAS by age automatically (everyone together, below 18, above 18 for each trait).
 
 ## Cell counts
 
