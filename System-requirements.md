@@ -15,7 +15,7 @@ install.packages("ggplot2")
 install.packages("data.table")
 install.packages("MatrixEQTL")
 install.packages("parallel")
-install.packages("GenABEL")
+install.packages("GenABEL") #You only need to install this package if you have relatedness in your samples
 install.packages("matrixStats")
 install.packages("plyr")
 install.packages("Cairo")
@@ -23,8 +23,8 @@ install.packages("plotrix")
 install.packages("EasyQC_9.2.tar.gz")
 
 source("http://bioconductor.org/biocLite.R")
-biocLite("SNPRelate")
-biocLite("GENESIS")
+biocLite("SNPRelate") #You only need to install this package if you have relatedness in your samples
+biocLite("GENESIS") #You only need to install this package if you have relatedness in your samples
 biocLite("impute")
 ```
 
