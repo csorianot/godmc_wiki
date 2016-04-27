@@ -43,9 +43,9 @@ This approach should guard against publication bias. For example, if we only met
 
 This analysis is unfortunately one of the most complicated meta analyses performed in the GWAS consortium framework, owing to the obstacles described above. The pipeline has three main purposes:
 
-- Reduce the amount of time and efford analysts have to devote to perform the analyses
+- Reduce the amount of time and effort analysts have to devote to perform the analyses
 - Reduce the potential for heterogeneity being introduced into the analyses due to different historical choices made by cohorts
-- Provide an expandable platform that allows further analyses to be added with relative ease and then disseminated to the consortium. We hope this will 'democratise' the analysis somewhat.
+- Provide an expandable platform that allows further analyses to be added by members of the consortium with relative ease and then disseminated to the other centres.
 
 The pipeline requires data in the following formats:
 
@@ -74,21 +74,23 @@ This answer will vary from cohort to cohort, depending on
 
 - How much work is required to get the data into the right format
 - The sample size
-- How large the available computational resources are
+- Computational resources
 
 Based on our experience with 2000 samples and approximately 100 cores, starting from genetic data in `.bgen` format, and methylation data in `.idat` files:
 
 | Task                                      | Analyst time | Compute time |
 |-------------------------------------------|--------------|--------------|
-| Create best guess data                    | 2 hours      | 2 hours      |
+| Create best guess data                    | 2 hours      | 4 hours      |
 | Normalise methylation data using `meffil` | 2 hours      | 6 hours      |
-| Generate structural variant data          | 1 hour       | 17 hours     |
+| Generate structural variant data          | 1 hour       | 15 hours     |
 | Setup pipeline                            | 1 hour       | 1 hour       |
-| Run module 01                             | 1 hour       | 1 hour       |
-| Run module 02                             | 30 minutes   | 20 minutes   |
+| Run module 01*                            | 1 hour       | 1 hour       |
+| Run module 02                             | 30 minutes   | 30 minutes   |
 | Run module 03                             | 5 minutes    | 5 minutes    |
-| Run module 04                             | 1 hour       | 10 hours     |
+| Run module 04                             | 2 hours      | 15 hours     |
 | Run module 05                             | 30 minutes   | 10 hours     |
+
+*This step could potentially be more time consuming for the analyst - it is checking that the various datasets are in the correct format and won't complete until things have been fixed.
 
 If you find these numbers are unrealistic please do let us know and we will update to provide more accurate estimates.
 
