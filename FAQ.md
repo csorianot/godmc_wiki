@@ -1,11 +1,11 @@
 # FAQ
 
 - [What are the main goals of the analysis?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-are-the-main-goals-of-the-analysis)
-- [What is the mQTL analysis strategy?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-is-the-mQTL-analysis-strategy)
+- [What is the mQTL analysis strategy?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-is-the-mqtl-analysis-strategy)
 - [What does the pipeline do?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-does-the-pipeline-do)
 - [Deadlines](https://github.com/MRCIEU/godmc/wiki/FAQ#deadlines)
 - [How long will it take to run the pipeline](https://github.com/MRCIEU/godmc/wiki/FAQ#how-long-will-it-take-to-run-the-pipeline)
-- [Using GitHub](https://github.com/MRCIEU/godmc/wiki/FAQ#using-GitHub)
+- [Using GitHub](https://github.com/MRCIEU/godmc/wiki/FAQ#using-github)
 - [Encountering problems and finding bugs](https://github.com/MRCIEU/godmc/wiki/FAQ#encountering-problems-and-finding-bugs)
 - [Publication policy](https://github.com/MRCIEU/godmc/wiki/FAQ#publication-policy)
 - [Proposing new analyses](https://github.com/MRCIEU/godmc/wiki/FAQ#proposing-new-analyses)
