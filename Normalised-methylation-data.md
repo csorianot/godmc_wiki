@@ -10,15 +10,12 @@ Ideally, we would prefer it if you normalise and QC your data using the [meffil]
 
 If you prefer to use your own normalisation then please ensure that the data you provide is as follows:
 - Beta values should be used to measure methylation levels.
-
 - The methylation data is an R matrix object where CpGs should be in rows and sample IDs should be columns. 
-
 - The rownames must be the `cg` identifiers and the column names the IDs that correspond to the samples, and that correspond to sample IDs in the other datasets. 
-
 - Please note that you should avoid underscores in your sample identifiers. 
-
 - The methylation matrix should be saved as a `.RData` file and the methylation matrix object should be called `norm.beta`. e.g. in R:
 
         save(norm.beta, file="/path/to/godmc/input_data/methylation.RData")
 
 - You should avoid spaces in your file name.
+- Missing values are not permitted, and all values must be between 0 and 1.
