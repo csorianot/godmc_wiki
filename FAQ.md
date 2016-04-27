@@ -1,5 +1,3 @@
-# FAQ
-
 - [What are the main goals of the analysis?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-are-the-main-goals-of-the-analysis)
 - [What is the mQTL analysis strategy?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-is-the-mqtl-analysis-strategy)
 - [What does the pipeline do?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-does-the-pipeline-do)
