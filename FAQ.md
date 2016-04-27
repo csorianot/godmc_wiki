@@ -1,8 +1,8 @@
 # FAQ
 
-- [What are the main goals of the analysis?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-are-the-main-goals-of-the-analysis?)
-- [What is the mQTL analysis strategy?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-is-the-mQTL-analysis-strategy?)
-- [What does the pipeline do?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-does-the-pipeline-do?)
+- [What are the main goals of the analysis?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-are-the-main-goals-of-the-analysis)
+- [What is the mQTL analysis strategy?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-is-the-mQTL-analysis-strategy)
+- [What does the pipeline do?](https://github.com/MRCIEU/godmc/wiki/FAQ#what-does-the-pipeline-do)
 - [Deadlines](https://github.com/MRCIEU/godmc/wiki/FAQ#deadlines)
 - [How long will it take to run the pipeline](https://github.com/MRCIEU/godmc/wiki/FAQ#how-long-will-it-take-to-run-the-pipeline)
 - [Using GitHub](https://github.com/MRCIEU/godmc/wiki/FAQ#using-GitHub)
