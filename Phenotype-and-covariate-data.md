@@ -10,7 +10,7 @@ The following covariates are strongly recommended (but not necessary):
 - `Slide_factor`: The slide ID for the methylation array
 - Any other important batches
 
-The pipeline will create genetic and methylation principal components for you so you don’t need to add PCs to this file. An example of what your file should look like is below:
+The pipeline will create genetic and methylation principal components for you so you don’t need to add PCs to this file. Please note that you shouldn't add combat or PC variables as covariates as these will capture genetic and/or phenotypic variation of interest. An example of what your file should look like is below:
 
     IID Sex_factor Age_numeric Slide_factor
     id1 F 30 12345678
