@@ -18,4 +18,3 @@ If you prefer to use your own normalisation then please ensure that the data you
         save(norm.beta, file="/path/to/godmc/input_data/methylation.RData")
 
 - You should avoid spaces in your file name.
-- Missing values are not permitted, and all values must be between 0 and 1. If there are missing values in the data please set them to the mean of the probe.
