@@ -1,6 +1,5 @@
-[Home](Home)
-
-[FAQ](FAQ)
+- [Home](Home)
+- [FAQ](FAQ)
 
 ### Pre-requisites
 - [Imputed genetic data](Imputed genetic data)
