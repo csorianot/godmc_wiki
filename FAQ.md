@@ -179,7 +179,7 @@ Some cohorts will have collected data that ascertains for cases and controls for
 
 ## How should cord blood samples be handled
 
-For cord blood samples please set age to 0, and use a cord blood reference for cell count prediction. There are two cord blood references implemented in meffil or alternatively you can the reference provided in [Bakulski et al](http://www.ncbi.nlm.nih.gov/pubmed/27019159). Note - ** please do not use Houseman for cell count prediction on cord blood samples**. 
+For cord blood samples please set age to 0, and use a cord blood reference for cell count prediction. There are two cord blood references implemented in meffil or alternatively you can the reference provided in [Bakulski et al](http://www.ncbi.nlm.nih.gov/pubmed/27019159). Note - **please do not use Houseman for cell count prediction on cord blood samples**. 
 
 Please also add maternal smoking as covariate in the analysis if this is available.
 
@@ -203,7 +203,7 @@ Upon performing the meta analysis of the **candidate list** we will discuss with
 
 ## Can we use combat variables
 
-The main issue with combat variables is they may regress out genetic and/or phenotypic variation of interest. The pipeline conducts principal components analysis and only regress out non-genetic PCs (and PCs not associated to the phenotypes). Therefore, please **don't include combat variables as covariates**.
+The main issue with combat variables is they may regress out genetic and/or phenotypic variation of interest. The pipeline conducts principal components analysis and only regress out non-genetic PCs (and PCs not associated to the phenotypes). Therefore, **please don't include combat variables as covariates.**
 
 
 ## Are NAs allowed in the methylation matrix
