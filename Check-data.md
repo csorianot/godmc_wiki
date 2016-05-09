@@ -17,6 +17,7 @@ The script can be run in chunks so you can fix problems more easily:
     ./01-check_data.sh config
     ./01-check_data.sh download
     ./01-check_data.sh requirements
+    ./01-check_data.sh genetic
     ./01-check_data.sh methylation    
     ./01-check_data.sh covariates
     ./01-check_data.sh phenotypes
