@@ -146,7 +146,7 @@ There is a broad level publication policy written into the [Codes of conduct](ht
 
 ## Who is the lead person for the secondary analyses
 
-This is yet to be determined, if you have any queries about specific analyses please address them to [ieu-godmc@bristol.ac.uk](mailto:ieu-godmc@bristol.ac.uk).
+The lead person for the EWAS and GWAS analyses is yet to be determined, if you have any queries about specific analyses please address them to [ieu-godmc@bristol.ac.uk](mailto:ieu-godmc@bristol.ac.uk).
 
 
 ## How does the pipeline handle twins and related individuals
