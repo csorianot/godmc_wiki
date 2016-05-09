@@ -21,7 +21,7 @@ Next, as a check for the genotype and phenotype data we will generate a genetic 
 
     ./03b-height_prediction.sh
 
-Please check the plots in `results/03/heightcor_plot.pdf` to make sure that you are seeing a reasonable correlation. Anything below r-square of 0.1 is cause for concern!! We found a correlation of 0.29 in ARIES.
+Please check the plots in `results/03/heightcor_plot.pdf` to make sure that you are seeing a reasonable correlation. Anything below r-square of 0.1 in adults is cause for concern!! We found a correlation of 0.29 in ARIES. 
 
 
 ### Upload the results
