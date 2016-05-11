@@ -20,7 +20,7 @@ If you have a case-control design, we recommend to _combine_ cases and controls 
 
 To download the scripts you will need to run the following git command:
 
-    git clone https://github.com/MRCIEU/godmc.wiki.git
+    git clone https://github.com/MRCIEU/godmc.git
 
 This will create a new directory called `godmc` which will contain the files needed to run the analysis, and directories in which to put your input data.
 
