@@ -51,6 +51,23 @@ In order to perform steps 5 and 6, run:
 
 This step took 15 minutes with a sample of 100 individuals and 15 minutes with a sample of ~1800 individuals. Again, it parallelises across `$nthreads` (for the GWAS stage). In the `config` file we have currently set the GWA significance threshold to 1e-7 (`meth_pc_threshold="1e-7"`). This means that any GWA signals with a p<1e-7 are considered as genetic signals. These "genetic" PCs are ignored and not regressed out from the methylation data. The maximum number of "non-genetic" PCs that is regressed out is set to 20 in the `config` file (`n_meth_pcs="20"`).
 
+It is important that you check the log file generated in 4c: 
+```
+head -n20 ./results/04/logs_c/log.txt
+tail ./results/04/logs_c/log.txt
+```
+If you get warning below, you need to change settings in your config file eg. increase `n_meth_pcs` to 30 if you have more than 20 PCs that explain 0.8 of methylation variance or increase `meth_pc_cutoff` to 0.9 if you have 20 PCs or less that explain 0.8 of methylation variance
+
+```
+Identified 20 out of 20 PCs with significant genetic component
+Error in main() : It appears that all the PCs have a genetic component
+This is a little worrying because it suggests family effects or stratification
+Please check that 04b is adjusting for these factors
+You could also try increasing the 'n_meth_pcs and/or meth_pc_cutoff' value in the config file.
+Execution halted
+```
+
+
 In order to run step 7, run the following:
 
     ./04d-methylation_adjustment2.sh
