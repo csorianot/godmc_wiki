@@ -10,7 +10,7 @@ Again, the procedure is exactly the same except it should be somewhat faster as 
 #PBS -o cnvmqtl-output
 #PBS -e cnvmqtl-error
 #PBS -l walltime=12:00:00
-#PBS -t 1-1000
+#PBS -t 1-500
 #PBS -l nodes=1:ppn=16
 #PBS -S /bin/bash
 
@@ -19,7 +19,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/
-./07-cnvmqtl.sh ${PBS_ARRAYID}
+./07-mcnv.sh ${PBS_ARRAYID}
 
 ```
 
@@ -27,7 +27,7 @@ then to submit to the cluster:
 
     qsub submit_cnvmqtl.sh
 
-And this will distribute the entire surface across 1000 nodes, each node parallelising across 16 cores.
+And this will distribute the entire surface across 500 nodes, each node parallelising across 16 cores.
 
 
 ### Upload the results
