@@ -1,6 +1,10 @@
 This page will show you how to use `R/meffil` for normalisation and post-normalisation QC after you following the [sample QC](Methylation-sample-QC)
 
-[Meffil](https://github.com/perishky/meffil) performs normalization and post normalization QC for data measured with Illumina 450k arrays. It uses multi-threading and reads `idat` files directly to maximise speed and minimise memory use. It is therefore much faster than minfi.
+[Meffil](https://github.com/perishky/meffil) performs normalization and post normalization QC for data measured with Illumina 450k arrays. It uses multi-threading and reads `idat` files directly to maximise speed and minimise memory use. It is therefore much faster than minfi. **Please make sure you have installed version 1.0.0 or higher.** You can check the version like this:
+
+```
+packageVersion("meffil")
+``` 
 
 
 ### Load in the QC objects
