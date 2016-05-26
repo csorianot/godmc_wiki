@@ -1,4 +1,10 @@
-We have developed an R package called [meffil](https://github.com/perishky/meffil) to perform QC for data measured with Illumina 450k arrays. It is using parallelization and reads `.idat` files directly. It is therefore much faster than `minfi` and uses much less memory. Please email [josine.min@bristol.ac.uk](josine.min@bristol.ac.uk) or [g.hemani@bristol.ac.uk](g.hemani@bristol.ac.uk) if you have any questions.
+We have developed an R package called [meffil](https://github.com/perishky/meffil) to perform QC for data measured with Illumina 450k arrays. **Please make sure you have installed version 1.0.0 or higher.** You can check the version like this:
+
+```
+packageVersion("meffil")
+``` 
+
+It is using parallelization and reads `.idat` files directly. It is therefore much faster than `minfi` and uses much less memory. Please email [josine.min@bristol.ac.uk](josine.min@bristol.ac.uk) or [g.hemani@bristol.ac.uk](g.hemani@bristol.ac.uk) if you have any questions.
 
 ### Installation
 
