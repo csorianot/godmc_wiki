@@ -14,7 +14,7 @@ Going through 1-500 sequentially is likely to take some time so it is recommende
 
 If you don't have access to a cluster you can parallelise your jobs using the package GNU parallel.
 ```
-seq 100 | parallel -j 10 --workdir $PWD ./05-mqtl.sh {}
+seq 500 | parallel -j 10 --workdir $PWD ./05-mqtl.sh {}
 ```
 If you have 
 If you have access to a cluster, you need to create a job submission script that will work on your cluster. For ~1800 samples, one chunk took 25 minutes to run using 16 cores. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_mqtl.sh`) like this:
