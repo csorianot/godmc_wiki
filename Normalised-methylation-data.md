@@ -16,6 +16,7 @@ Meffil has been optimised for speed and memory, and instructions on how to do th
 
 If you prefer to use your own normalisation then please ensure that the data you provide is as follows:
 - Beta values should be used to measure methylation levels.
+- We prefer that you would use functional normalisation.
 - The methylation data is an R matrix object where CpGs should be in rows and sample IDs should be columns. 
 - The rownames must be the `cg` identifiers and the column names the IDs that correspond to the samples, and that correspond to sample IDs in the other datasets. 
 - Please note that you should avoid underscores in your sample identifiers. 
