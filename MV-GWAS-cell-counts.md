@@ -8,7 +8,7 @@ Next, we need to generate the correct format for the multi-variate linear mixed 
 ### Running a multi-variate linear mixed model (MVLMM) on cell counts
 In order to perform the multi-variate linear mixed model (MVLMM) on cell counts it is likely necessary that you will need a cluster, as this is much slower to run than the standard LMM. The script is setup to split the data into `genetic_chunks` chunks (as specified in the `config` file), and to run you will need to create a submission script that works for your system. 
 
-**WARNING**: Some cohorts have experienced problems running this module. It might therefore useful to test the script on just one chunk: `./13-gwas_cellcounts_mvlmm.sh 1` and check the logfile here: `./results/13/logs/log.txt1`. If you see something like this: 
+**WARNING**: Some cohorts have experienced problems running this module. It might therefore useful to test the script on just one chunk: `./13-gwas_cellcounts_mvlmm.sh 1` and check the logfile here: `./results/13/logs/log.txt1`. If you see something like this, you probably can't fit the model and you won't be able to run this module.
 ```
 se(Ve): 
 0.0000	
