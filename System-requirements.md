@@ -35,6 +35,8 @@ biocLite("GENESIS")
 ```
 
 ###If you haven't installed meffil yet, here are some instructions:
+
+First install some of the dependencies:
 ```
 source("http://bioconductor.org/biocLite.R")
 biocLite("illuminaio")
@@ -45,6 +47,10 @@ biocLite("CopyNumber450kData")
 biocLite("DNAcopy")
 install.packages("markdown")
 install.packages("knitr")
+```
+
+##Then install meffil (option 1):
+```
 install.packages("devtools")
 library(devtools)
 install_github("perishky/meffil")
