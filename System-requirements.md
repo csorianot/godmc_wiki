@@ -49,9 +49,16 @@ install.packages("markdown")
 install.packages("knitr")
 ```
 
-##Then install meffil (option 1):
+##Then install meffil in R (option 1):
 ```
 install.packages("devtools")
 library(devtools)
 install_github("perishky/meffil")
+```
+
+##If it doesn't work you can try the following from the command line:
+```
+wget https://github.com/perishky/meffil/archive/v0.1.0.tar.gz
+mv v0.1.0 v0.1.0.tar.gz
+R CMD INSTALL v0.1.0.tar.gz
 ```
