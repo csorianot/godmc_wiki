@@ -56,7 +56,7 @@ library(devtools)
 install_github("perishky/meffil")
 ```
 
-####If it doesn't work you can try the following from the command line:
+####If it doesn't work you can try the following from the command line (option 2):
 ```
 wget https://github.com/perishky/meffil/archive/v0.1.0.tar.gz
 mv v0.1.0 v0.1.0.tar.gz
