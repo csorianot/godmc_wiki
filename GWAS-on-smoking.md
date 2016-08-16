@@ -4,13 +4,27 @@ To perform the predicted smoking GWAS on all samples:
 
 This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size.
 
-To perform the predicted smoking GWAS on subjects older than 25 years:
+**By default**, where age ranges are both above and below 25 years, to perform the predicted smoking GWAS on subjects older than 25 years:
 
     ./10-gwas_smoking.sh 2
 
 To perform the predicted smoking GWAS on subjects younger than 25 years:
 
     ./10-gwas_smoking.sh 3
+
+If there are fewer than 100 samples with age over 25 years or age younger than 25 years then those age-specific GWASs will not be run. To see the GWASs that are eligible at this stage check the `results/10/gwas_list.txt` file. e.g. If you see:
+
+```
+smoking_prediction
+smoking_prediction_ge25
+```
+
+then just run batches 1 and 2:
+
+```
+./10-gwas_smoking.sh 1
+./10-gwas_smoking.sh 2
+```
 
 ### Now upload the results
 
