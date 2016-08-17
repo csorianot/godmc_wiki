@@ -10,6 +10,8 @@ To perform the GWAS of each cell type, assuming we have 7 cell types, we need to
 ./12-gwas_cellcounts.sh 7
 ```
 
+**IMPORTANT:** We don't run this analysis on cord blood samples.
+
 In order to check how many cell types there are, you can check the following file:
 
 ```
