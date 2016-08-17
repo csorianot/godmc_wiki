@@ -1,6 +1,10 @@
 
 ### Convert to gemma format
-Next, we need to generate the correct format for the multi-variate linear mixed model (MVLMM) on cell counts that we run in GEMMA. To do this run the following script form your home directory:
+Next, we need to generate the correct format for the multi-variate linear mixed model (MVLMM) on cell counts that we run in GEMMA. 
+
+**IMPORTANT:** We don't run this analysis on cord blood samples.
+
+To do this run the following script form your home directory:
 ``` 
     ./13a-convert_gemma_format.sh
 ```
