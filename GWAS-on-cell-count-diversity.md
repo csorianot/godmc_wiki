@@ -3,7 +3,7 @@ To perform the GWAS on cell count diversity:
     ./11-gwas_cellcount_entropy.sh
 
 This takes approximately 2 minutes for sample size of 100, but time will increase quadratically with increasing sample size.
-*IMPORTANT: We don't run this analysis on cord blood samples.
+*IMPORTANT:* We don't run this analysis on cord blood samples.
 
 ### Now upload the results
 
