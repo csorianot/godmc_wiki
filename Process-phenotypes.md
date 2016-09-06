@@ -14,6 +14,7 @@ To do this, run:
 
 **IMPORTANT**: 
 - This script also generates plots of the phenotypes. Please check that the plots in `results/03/ewas_phenotypes.pdf` look sane.
+- If you have **cord blood samples**, you don't need to run this script.
 
 ### Test the genotype and phenotype quality
 
