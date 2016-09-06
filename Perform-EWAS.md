@@ -1,4 +1,4 @@
-An EWAS will be performed on each of the phenotypes provided in the `phenotypes` file. For example, if you have provided a file with `Height` and `BMI` columns, then each of these will be analysed with the scripts below. If you have only provided one of the phenotypes please run the script for `Height` or `BMI` only. It uses pre-normalised methylation levels and phenotypes and uses all covariates eg. age, sex, cell counts, study specific covariates eg. batch, slide etc., genetic pcs and non-genetic methylation pcs. 
+An EWAS will be performed on each of the phenotypes provided in the `phenotypes` file. For example, if you have provided a file with `Height` and `BMI` columns, then each of these will be analysed with the scripts below. If you have **cord blood samples**, you don't need to run this script. If you have only provided one of the phenotypes please run the script for `Height` or `BMI` only. It uses pre-normalised methylation levels and phenotypes and uses all covariates eg. age, sex, cell counts, study specific covariates eg. batch, slide etc., genetic pcs and non-genetic methylation pcs. 
 
 Please make sure you have the latest meffil version. In R:
 ```
