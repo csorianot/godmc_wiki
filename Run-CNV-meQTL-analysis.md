@@ -1,6 +1,6 @@
 We have now performed the standard meQTL analysis and the variance-meQTL analysis. We will now perform a CNV-meQTL analysis, whereby we are testing for associations between genetic copy number variants and methylation levels. 
 
-**WARNING** Several cohorts have analysed this script but ended with huge results files. We need to look at this in more depth and recommend to wait with running this script.
+**WARNING** Several cohorts have analysed this script but ended with huge results files. We need to look at this in more depth and recommend to wait with running this script. Please don't upload these huge files on the sftp.
 
 Again, the procedure is exactly the same except it should be somewhat faster as there are only ~480000 CNV positions to evaluate. The CNV data have been split into `genetic_chunks` chunks which can each be run independently on a different node on the cluster. An example job submission script (e.g. `submit_cnvmqtl.sh`) would be:
 
