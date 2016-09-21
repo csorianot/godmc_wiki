@@ -47,9 +47,9 @@ Set the number of PCs to use going forward, e.g. to use 10 PCs:
 pc <- 10
 ```
 
-### Perform quantile normalisation
+### Perform functional normalisation
 
-And now perform quantile normalization. Bad CpGs due to poor detection scores which we identified in the `qc.summary` are also removed.
+And now perform functional normalization. Bad CpGs due to poor detection scores which we identified in the `qc.summary` are also removed.
 
 ```r
 norm.objects <- meffil.normalize.quantiles(qc.objects, number.pcs=pc)
