@@ -141,7 +141,7 @@ The executive committee is currently developing application procedures for both 
 
 ## Publication policy
 
-There is a broad level publication policy written into the [Codes of conduct](http://www.godmc.org.uk/codesofconduct.pdf). The executive committee is currently writing a more detailed publication policy, and this will be posted soon.
+There is a broad level publication policy written into the [Codes of conduct](http://www.godmc.org.uk/codesofconduct.pdf). You can find a more detailed publication policy here: .
 
 
 ## Who is the lead person for the secondary analyses
@@ -179,7 +179,7 @@ Some cohorts will have collected data that ascertains for cases and controls for
 
 ## How should cord blood samples be handled
 
-For cord blood samples please set age to 0, and use a cord blood reference for cell count prediction. There are two cord blood references implemented in meffil or alternatively you can the reference provided in [Bakulski et al](http://www.ncbi.nlm.nih.gov/pubmed/27019159). Note - **please do not use Houseman for cell count prediction on cord blood samples**. 
+For cord blood samples please set age to 0, and use a cord blood reference for cell count prediction. There are three cord blood references implemented in meffil including the reference provided in [Bakulski et al](http://www.ncbi.nlm.nih.gov/pubmed/27019159). Note - **please do not use Houseman for cell count prediction on cord blood samples**. For cord blood samples you don't need to prepare phenotypes and you don't need to run script 03, 08 and 09.
 
 Please also add maternal smoking as covariate in the analysis if this is available.
 
