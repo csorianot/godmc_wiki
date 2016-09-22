@@ -141,7 +141,7 @@ The executive committee is currently developing application procedures for both 
 
 ## Publication policy
 
-There is a broad level publication policy written into the [Codes of conduct](http://www.godmc.org.uk/codesofconduct.pdf). You can find a more detailed publication policy here: .
+There is a broad level publication policy written into the [Codes of conduct](http://www.godmc.org.uk/codesofconduct.pdf). You can find a more detailed publication policy [here](https://github.com/MRCIEU/godmc/files/197447/GoDMCanalysisplan271116.docx).
 
 
 ## Who is the lead person for the secondary analyses
