@@ -26,5 +26,9 @@
 14. [Run meQTL analysis on females for chrX CpGs](Run meQTL analysis on females for chrX CpGs)
 15. [Run meQTL analysis on males for chrX CpGs](Run meQTL analysis on males for chrX CpGs)
 
+### Phase 2
+16. [Run meQTL analysis on candidate SNP-CpG list-testphase](Run meQTL analysis on candidate SNP-CpG list)
+
+
 ### Phase 2 Ideas
 1. [Phase 2 Ideas](ideas)
