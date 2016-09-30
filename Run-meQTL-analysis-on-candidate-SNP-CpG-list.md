@@ -7,7 +7,7 @@ Before running the methQTL associations we need to prepare the data for PLINK.
 ./17a-prepareplinkfiles.sh
 ```
 
-We have splitted the CpGs in 74 probesets. 
+We run PLINK only on the first probeset. 
 
     ./17-methQTL.plink.sh 1
 
