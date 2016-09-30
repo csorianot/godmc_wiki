@@ -27,7 +27,8 @@
 15. [Run meQTL analysis on males for chrX CpGs](Run meQTL analysis on males for chrX CpGs)
 
 ### Phase 2 - Testphase
-16. [Run meQTL analysis on candidate SNP-CpG list](Run meQTL analysis on candidate SNP-CpG list)
+16. [Run lmm meQTL analysis on candidate SNP-CpG list](Run meQTL analysis on candidate SNP-CpG list)
+17. [Run plink meQTL analysis on candidate SNP-CpG list](Run meQTL analysis on candidate SNP-CpG list)
 
 
 ### Phase 2 Ideas
