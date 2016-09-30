@@ -9,7 +9,7 @@ Before running the methQTL associations we need to:
 
 
 ```
-16a-preparegctafiles.sh
+./16a-preparegctafiles.sh
 ```
 
 We have splitted the CpGs in 74 probesets. 
