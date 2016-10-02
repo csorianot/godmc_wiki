@@ -1,3 +1,11 @@
+Before you move on, please make sure you have run:
+
+```
+git pull
+```
+
+It will download all phase 2 scripts.
+
 At this point we have generated a candidate SNP-CpG list across a phase 1 cohorts. We have defined cis as 1MB between SNP and CpG. For _cis_ SNP-CpG pairs we have included all SNP-CpG pairs on the candidate list with a pvalue <1e-5 found in at least one phase 1 cohort. For _trans_ we have included all SNP-CpG pairs that were found in at least 2 cohorts with a pvalue <1e-5.
 We are now going to perform the meQTL analysis on the candidate SNP-CPG list using a linear mixed model in GCTA.
 
