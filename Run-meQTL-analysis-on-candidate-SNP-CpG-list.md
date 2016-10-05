@@ -75,6 +75,8 @@ We are now ready to run some sensitivity analysis using PLINK. We will only run 
 16c-methQTL.plink.sh
 ```
 
+The analysis will generate a plot `./results/16/plinkvsgcta.cg0000[0-9].pdf`.
+
 ### Check and upload the results
 
 The results are in `results/16`.
