@@ -15,6 +15,7 @@ We need to format the data to get to run in GCTA:
 2. We generate 22 kinship matrices using PLINK (leave one chromosome out each time)
 3. Generate 74 subsets of the methylation beta matrix
 4. Generate GCTA covariate files, e.g. age, cell counts and predicted smoking as quantitative variables and Sex and other batch variables as categorical variables.
+5. Generate PLINK files for sensitivity analysis in 16c using pc adjusted methylation betas from phase 1.
 
 
 
