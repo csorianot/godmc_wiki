@@ -28,8 +28,6 @@
 
 ### Phase 2 - Testphase
 16. [Run lmm meQTL analysis on candidate SNP-CpG list](Run meQTL analysis on candidate SNP-CpG list)
-17. [Run plink meQTL analysis on candidate SNP-CpG list](Run plink meQTL analysis on candidate SNP-CpG list)
-
 
 ### Phase 2 Ideas
 1. [Phase 2 Ideas](ideas)
