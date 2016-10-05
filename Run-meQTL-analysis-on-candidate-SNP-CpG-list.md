@@ -68,6 +68,13 @@ Then, when this is submitted:
 
 it will create a batch of 74 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-74, and each individual job further parallelised across 2 threads. 
 
+### Run some sensitivity analysis
+We are now ready to run some sensitivity analysis using PLINK. We will only run the first set of probes in this analysis using the PC and covariate adjusted betas generated in script 04d.
+
+```
+16c-methQTL.plink.sh
+```
+
 ### Check and upload the results
 
 The results are in `results/16`.
