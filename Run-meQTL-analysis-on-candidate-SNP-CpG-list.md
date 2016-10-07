@@ -80,7 +80,7 @@ it will create a batch of 74 jobs, each running with the variable `$PBS_ARRAYID`
 We are now ready to run some sensitivity analysis using PLINK. We will only run the first set of probes in this analysis using the PC and covariate adjusted betas generated in script 04d.
 
 ```
-16c-methQTL.plink.sh
+16d-methQTL.plink.sh
 ```
 
 The analysis will generate a plot `./results/16/plinkvsgcta.cg0000[0-9].pdf`.
