@@ -13,7 +13,7 @@ We need to format the data to get to run in GCTA:
 
 1. Download SNP-CpG candidate lists and probe lists from sftp. 
 2. We generate 22 kinship matrices using PLINK (leave one chromosome out each time)
-3. Generate 74 subsets of the methylation beta matrix
+3. Generate 74 subsets of the methylation beta matrix. We remove outliers that are 10 SD from the mean using 3 iterations and conduct an inverse normal transformation on the methylation traits.
 4. Generate GCTA covariate files, e.g. age, cell counts and predicted smoking as quantitative variables and Sex and other batch variables as categorical variables.
 5. Generate PLINK files for sensitivity analysis in 16c using pc adjusted methylation betas from phase 1.
 
@@ -22,6 +22,14 @@ We need to format the data to get to run in GCTA:
 ```
 16a-preparegctafiles.sh
 ```
+
+Before we run the candidate SNP-CpG list we are running the same positive control as we did in 04f.
+
+```
+16b-perform_positive_control.sh
+```
+
+Please check the manhattan and qqplots which can be found in `./results/16`. Please check the lambdas. Any lambda above 1.08 is concerning.
 
 We are now ready to run the associations using GCTA. As this process is computationally expensive, it is performing an association of subsets of SNP against every probe. So the data has been setup to parallelise by splitting the methylation probes into 74 probesets. For each probe, each chromosome will run separately using one of the 22 generated kinship matrices.
 
