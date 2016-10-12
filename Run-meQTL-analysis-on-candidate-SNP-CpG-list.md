@@ -35,7 +35,7 @@ We are now ready to run the associations using GCTA. As this process is computat
 
 To run the first probeset:
 ```
-    ./16-gcta.sh 1
+    ./16c-gcta.sh 1
 ```
 The script will perform the meQTL analysis using probes from the first probeset, using `nthreads` threads in parallel (also specified in the `config` file). 
 
@@ -43,7 +43,7 @@ Going through 1-74 sequentially is likely to take some time so it is recommended
 
 If you don't have access to a cluster you can parallelise your jobs using the package GNU parallel.
 ```
-seq 74 | parallel -j 10 --workdir $PWD ./16-gcta.sh {}
+seq 74 | parallel -j 10 --workdir $PWD ./16c-gcta.sh {}
 ```
 
 If you have access to a cluster, you need to create a job submission script that will work on your cluster. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_16.sh`) like this:
@@ -56,7 +56,7 @@ If you have access to a cluster, you need to create a job submission script that
 #PBS -N gcta16
 #PBS -o gcta16-output
 #PBS -e gcta16-error
-#PBS -l walltime=12:00:00
+#PBS -l walltime=100:00:00
 #PBS -t 1-74
 #PBS -l nodes=1:ppn=2
 #PBS -S /bin/bash
@@ -66,7 +66,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/    #EDIT THIS LINE
-./16-gcta.sh ${PBS_ARRAYID}
+./16c-gcta.sh ${PBS_ARRAYID}
 
 ```
 
@@ -83,7 +83,7 @@ We are now ready to run some sensitivity analysis using PLINK. We will only run 
 16d-methQTL.plink.sh
 ```
 
-The analysis will generate a plot `./results/16/plinkvsgcta.cg0000[0-9].pdf`.
+The analysis will generate a plot `./results/16/plinkvsgcta.cg0000[0-9].pdf`. This plot compares SNP-CpG associations generated in phase1 against SNP-CpG associations generated in phase 2 (linear mixed model). Please contact us if you see large discrepancies.
 
 ### Check and upload the results
 
