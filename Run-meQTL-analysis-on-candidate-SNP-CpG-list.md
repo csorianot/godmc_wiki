@@ -31,7 +31,7 @@ Before we run the candidate SNP-CpG list we are running the same positive contro
 
 Please check the manhattan and qqplots which can be found in `./results/16`. Please check the lambdas. Any lambda above 1.08 is concerning.
 
-We are now ready to run the associations using GCTA. As this process is computationally expensive, it is performing an association of subsets of SNP against every probe. So the data has been setup to parallelise by splitting the methylation probes into 74 probesets. For each probe, each chromosome will run separately using one of the 22 generated kinship matrices.
+We are now ready to run the associations using GCTA. As this process is computationally expensive, it is performing an association of subsets of SNP against every probe. So the data has been setup to parallelise by splitting the methylation probes into 74 probesets. For each probe, each chromosome will run separately using one of the 22 generated kinship matrices. Probeset 1-12 and 74 are quite small and quick to run while the other probesets will take longer.
 
 To run the first probeset:
 ```
