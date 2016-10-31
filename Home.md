@@ -1,6 +1,6 @@
 Welcome to the GoDMC pipeline. This wiki will guide you through the analysis. The pipeline has been designed so that minimal coding is required by analysts, which hopefully ensures that it is quick to execute, avoids duplication of efforts, increases reproducibility and reduces potential for error. The main objectives of the pipeline are:
 
-### Perform an methQTL analysis
+### Perform a methQTL analysis
 
 Perform a GWAS on every methylation probe available in the sample. Variations of this analysis will be performed, including a standard methQTL using bestguess imputed SNPs, a CNV-methQTL analysis using CNVs inferred from methylation arrays, and a var-methQTL analysis which looks for SNPs that influence the variance of a probe. 
 
