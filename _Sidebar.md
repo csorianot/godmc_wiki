@@ -11,11 +11,12 @@
 
 ### The pipeline
 
+1. [Check data](Check data)
+
     ```
     Data setup
     ```
 
-1. [Check data](Check data)
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
 4. [Process methylation data](Process methylation data)
