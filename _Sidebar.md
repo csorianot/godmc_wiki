@@ -41,8 +41,8 @@
     Phase 2
     ```
 
-16. [Run analysis in phase 1 list of candidate associations](Run analysis in phase 1 list of candidate associations)
-17. [Run analysis of selected SNPs](Run analysis of selected SNPs)
+16. [Analysis of phase 1 list of candidate associations](Analysis of phase 1 candidate associations)
+17. [Analysis of selected SNPs](Analysis of selected SNPs)
 
 ### Future ideas
 - [Functional followup](ideas)
