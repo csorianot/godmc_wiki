@@ -9,16 +9,21 @@
     - [System requirements](System requirements)
     - [Install and setup](Install and setup)
 
-### Data setup
+### The pipeline
 
 1. [Check data](Check data)
+
+    ```
+    Data setup
+    ```
+
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
 4. [Process methylation data](Process methylation data)
 
-### Phase 1
-
-{:start="5"}
+    ```
+    Phase 1
+    ```
 
 5. [Run meQTL analysis](Run meQTL analysis)
 6. [Run variance meQTL analysis](Run variance meQTL analysis)
@@ -32,9 +37,9 @@
 14. [Run meQTL analysis on females for chrX CpGs](Run meQTL analysis on females for chrX CpGs)
 15. [Run meQTL analysis on males for chrX CpGs](Run meQTL analysis on males for chrX CpGs)
 
-### Phase 2
-
-{:start="16"}
+    ```
+    Phase 2
+    ```
 
 16. [Analysis of phase 1 list of candidate associations](Analysis of phase 1 candidate associations)
 17. [Analysis of selected SNPs](Analysis of selected SNPs)
