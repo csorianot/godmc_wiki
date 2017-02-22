@@ -1,21 +1,23 @@
 - [Home](Home)
 - [FAQ](FAQ)
 
-### Pre-requisites
-- [Imputed genetic data](Imputed genetic data)
-- [Normalised methylation data](Normalised methylation data)
-- [Phenotype and covariate data](Phenotype and covariate data)
-- [Structural variant data](Structural variant data)
-- [System requirements](System requirements)
-- [Install and setup](Install and setup)
+- **Pre-requisites**
+    - [Imputed genetic data](Imputed genetic data)
+    - [Normalised methylation data](Normalised methylation data)
+    - [Phenotype and covariate data](Phenotype and covariate data)
+    - [Structural variant data](Structural variant data)
+    - [System requirements](System requirements)
+    - [Install and setup](Install and setup)
 
-### Data setup
+### The pipeline
+
+    > **Data setup**
+
 1. [Check data](Check data)
 2. [Process SNP data](Process SNP data)
 3. [Process phenotypes](Process phenotypes)
 4. [Process methylation data](Process methylation data)
-
-### Phase 1
+    > **Phase 1**
 5. [Run meQTL analysis](Run meQTL analysis)
 6. [Run variance meQTL analysis](Run variance meQTL analysis)
 7. [Run CNV meQTL analysis](Run CNV meQTL analysis)
@@ -27,10 +29,9 @@
 13. [MV GWAS on cell counts](MV GWAS cell counts)
 14. [Run meQTL analysis on females for chrX CpGs](Run meQTL analysis on females for chrX CpGs)
 15. [Run meQTL analysis on males for chrX CpGs](Run meQTL analysis on males for chrX CpGs)
-
-### Phase 2
+    > **Phase 2**
 16. [Run analysis in phase 1 list of candidate associations](Run analysis in phase 1 list of candidate associations)
 17. [Run analysis of selected SNPs](Run analysis of selected SNPs)
 
 ### Future ideas
-1. [Functional followup](ideas)
+- [Functional followup](ideas)
