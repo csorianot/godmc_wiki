@@ -19,6 +19,7 @@
 ### Phase 1
 
 {:start="5"}
+
 5. [Run meQTL analysis](Run meQTL analysis)
 6. [Run variance meQTL analysis](Run variance meQTL analysis)
 7. [Run CNV meQTL analysis](Run CNV meQTL analysis)
@@ -34,6 +35,7 @@
 ### Phase 2
 
 {:start="16"}
+
 16. [Analysis of phase 1 list of candidate associations](Analysis of phase 1 candidate associations)
 17. [Analysis of selected SNPs](Analysis of selected SNPs)
 
