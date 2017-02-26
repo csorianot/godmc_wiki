@@ -16,7 +16,7 @@ For a sample size of 2000 this runs in about 15 minutes and doesn't require larg
 
 ### Running the analysis
 
-The CpG list has been split into 100 chunks which allows parallelisation across a cluster.
+The CpG list has been split into 300 chunks which allows parallelisation across a cluster.
 
 If we run
 
@@ -26,12 +26,12 @@ If we run
 
 The script will perform the meQTL analysis of the first batch of CpGs. It takes approximately 20 minutes for a sample size of 2000, and doesn't require large memory.
 
-Going through 1-100 sequentially could take some time so you can parallelise across a cluster or your server. 
+Going through 1-300 sequentially could take some time so you can parallelise across a cluster or your server. 
 
 If you don't have access to a cluster you can parallelise your jobs using the package GNU parallel.
 
 ```
-seq 100 | parallel -j 10 --workdir $PWD ./17b-run.sh {}
+seq 300 | parallel -j 10 --workdir $PWD ./17b-run.sh {}
 ```
 
 If you have access to a cluster, you need to create a job submission script that will work on your cluster. For ~2000 samples, one chunk took 20 minutes to run using a single core. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_17.sh`) like this:
@@ -45,7 +45,7 @@ If you have access to a cluster, you need to create a job submission script that
 #PBS -o godmc17-output
 #PBS -e godmc17-error
 #PBS -l walltime=12:00:00
-#PBS -t 1-100
+#PBS -t 1-300
 #PBS -l nodes=1:ppn=1
 #PBS -S /bin/bash
 
@@ -62,7 +62,7 @@ Then, when this is submitted:
 
     qsub submit_17.sh
 
-it will create a batch of 100 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-100. 
+it will create a batch of 300 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-300. 
 
 
 ### Check and upload the results
