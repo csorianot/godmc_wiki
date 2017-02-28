@@ -27,7 +27,7 @@ It generates Manhattan and Q-Q plots, located at `results/16/control`. Please ch
 
 ### Running the analysis
 
-There are more than 60 million putative associations to test. This list has been split into 500 chunks which allows parallelisation across a cluster.
+There are more than 82 million putative associations to test. This list has been split into 638 chunks which allows parallelisation across a cluster.
 
 If we run
 
@@ -35,12 +35,12 @@ If we run
 
 The script will perform the meQTL analysis of the first batch of candidate associations. 
 
-Going through 1-500 sequentially could take some time so you can parallelise across a cluster or your server. 
+Going through 1-638 sequentially could take some time so you can parallelise across a cluster or your server. 
 
 If you don't have access to a cluster you can parallelise your jobs using the package GNU parallel.
 
 ```
-seq 500 | parallel -j 10 --workdir $PWD ./16c-run.sh {}
+seq 638 | parallel -j 10 --workdir $PWD ./16c-run.sh {}
 ```
 
 If you have access to a cluster, you need to create a job submission script that will work on your cluster. For ~2000 samples, one chunk took 20 minutes to run using a single core. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_16.sh`) like this:
@@ -54,7 +54,7 @@ If you have access to a cluster, you need to create a job submission script that
 #PBS -o godmc16-output
 #PBS -e godmc16-error
 #PBS -l walltime=12:00:00
-#PBS -t 1-500
+#PBS -t 1-638
 #PBS -l nodes=1:ppn=1
 #PBS -S /bin/bash
 
@@ -71,7 +71,7 @@ Then, when this is submitted:
 
     qsub submit_16.sh
 
-it will create a batch of 500 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-500. 
+it will create a batch of 638 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-638. 
 
 
 ### Check and upload the results
