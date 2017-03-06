@@ -67,19 +67,7 @@ it will create a batch of 300 jobs, each running with the variable `$PBS_ARRAYID
 
 ### Check and upload the results
 
-The results are in `results/17/results_*.txt.gz`.
-
-Please check that these look ok (e.g. `zless results/16/results_1.txt.gz`, they should be in GWAMA format with the following headers:
-
-```
-MARKERNAME EA NEA EAF BETA SE
-1706_4145 C T 0.4936 0.741768 0.127785
-1082_4077 T C 0.3506 -0.837446 0.1562
-1082_7262 A C 0.3766 -0.800838 0.151384
-325_13470 T C 0.1908 -0.967334 0.184061
-```
-
-To check that everything ran successfully, please run:
+The results are in `results/17/results_*.txt.gz`. They are in a binary format so you can't check them by eye. To check that everything ran successfully, please run:
 
 ```
 ./check_upload.sh 17 check
