@@ -42,7 +42,7 @@
     ```
 
 16. [Analysis of phase 1 list of candidate associations](Analysis of phase 1 candidate associations)
-17. [Analysis of selected SNPs](Analysis of selected SNPs)
+17. [Analysis of selected SNPs](Analysis-of-selected-SNPs)
 
 ### Future ideas
 - [Functional followup](ideas)
