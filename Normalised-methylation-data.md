@@ -8,7 +8,7 @@ packageVersion("meffil")
 
 Meffil has been optimised for speed and memory, and instructions on how to do this can be found here:
 
-1. [Perform sample QC](Methylation sample QC)
+1. [Perform sample QC](https://github.com/MRCIEU/godmc/wiki/Methylation-sample-QC)
 2. [Normalise QC'd samples](Methylation normalisation)
 
 
