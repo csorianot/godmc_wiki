@@ -25,3 +25,5 @@ If you prefer to use your own normalisation then please ensure that the data you
         save(norm.beta, file="/path/to/godmc/input_data/methylation.RData")
 
 - You should avoid spaces in your file name.
+- You should keep chrx and chry probes.
+- You should keep nonspecific binding probes, probes with SNPs in their sequence, multimapping probes. We will filter out probes at the end.
