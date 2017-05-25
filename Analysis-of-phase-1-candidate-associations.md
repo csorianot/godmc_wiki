@@ -18,7 +18,7 @@ This performs a GWAS on a single CpG with a known large cis-effect. We check tha
 
     ./16b-control.sh
 
-For a sample size of 2000 this runs in about 15 minutes and doesn't require large memory.
+For a sample size of 2000 this runs in about 50 minutes and doesn't require large memory.
 
 **If you get an error about no strong association, please contact the developers.**
 
