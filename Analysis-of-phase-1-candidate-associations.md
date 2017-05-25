@@ -1,6 +1,6 @@
 In phase 1 each cohort returned a list of SNP-CpG associations that showed nominal evidence of association at threshold p < 1e-5. We used the lists from each cohort to create a combined list of putative associations. Now, each cohort needs to provide estimates of the effects for this list of putative associations so that they can be meta-analysed.
 
-This analysis is performed in three steps - setting up the analysis, performing a control test, and running the full analysis. 
+This analysis is performed in three steps - setting up the analysis, performing a control test, and running the full analysis. Please make sure you have finished module 1-4 before you start this analysis.
 
 
 ### Setup
