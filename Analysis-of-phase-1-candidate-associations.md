@@ -9,7 +9,7 @@ The setup will download the list of putative associations, and generate the geno
 
     ./16a-setup.sh
 
-For a sample size of 2000 this runs in about 15 minutes and doesn't require large memory.
+For a sample size of 2000 this runs in about 20 minutes and doesn't require large memory.
 
 
 ### Control
