@@ -54,7 +54,7 @@ set -e
 echo "Running on ${HOSTNAME}"
 
 cd /path/to/godmc/    #EDIT THIS LINE
-./16-run.sh ${PBS_ARRAYID}
+./17b-run.sh ${PBS_ARRAYID}
 
 ```
 
