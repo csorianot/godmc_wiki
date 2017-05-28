@@ -43,7 +43,7 @@ If you don't have access to a cluster you can parallelise your jobs using the pa
 seq 962 | parallel -j 10 --workdir $PWD ./16c-run.sh {}
 ```
 
-If you have access to a cluster, you need to create a job submission script that will work on your cluster. For ~2000 samples, one chunk took 20 minutes to run using a single core. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_16.sh`) like this:
+If you have access to a cluster, you need to create a job submission script that will work on your cluster. For ~2000 samples, one chunk took 7 minutes to run using a single core. Each cluster is different, but to show an example of how it works on our cluster (which uses a PBS scheduler), we would create a script (e.g. `submit_16.sh`) like this:
 
 
 ```bash
@@ -71,7 +71,7 @@ Then, when this is submitted:
 
     qsub submit_16.sh
 
-it will create a batch of 638 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-962. 
+it will create a batch of 962 jobs, each running with the variable `$PBS_ARRAYID` set to a value between 1-962. 
 
 
 ### Check and upload the results
