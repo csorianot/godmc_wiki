@@ -11,7 +11,7 @@ The setup will download the lists of selected SNPs and CpGs, and generate the ge
 
 	./17a-setup.sh
 
-For a sample size of 2000 this runs in about 15 minutes and doesn't require large memory.
+For a sample size of 2000 this runs in about 5 minutes and doesn't require large memory.
 
 
 ### Running the analysis
