@@ -24,7 +24,7 @@ If we run
 ./17b-run.sh 1
 ```
 
-The script will perform the meQTL analysis of the first batch of CpGs. It takes approximately 1 hour and 40 minutes for a sample size of 2000, and doesn't require large memory.
+The script will perform the meQTL analysis of the first batch of CpGs. It takes approximately 20 minutes for a sample size of 2000, and doesn't require large memory.
 
 Going through 1-300 sequentially could take some time so you can parallelise across a cluster or your server. 
 
