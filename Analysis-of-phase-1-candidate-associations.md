@@ -4,7 +4,7 @@ This analysis is performed in three steps - setting up the analysis, performing 
 
 ### Update pipeline
 
-Please run
+To get the scripts installed you need to run:
 
 `git pull`
 
