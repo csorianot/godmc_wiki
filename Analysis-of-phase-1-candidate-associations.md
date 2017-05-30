@@ -2,6 +2,11 @@ In phase 1 each cohort returned a list of SNP-CpG associations that showed nomin
 
 This analysis is performed in three steps - setting up the analysis, performing a control test, and running the full analysis. Please make sure you have finished module 1-4 before you start this analysis.
 
+### Update pipeline
+
+Please run
+
+`git pull`
 
 ### Setup
 
