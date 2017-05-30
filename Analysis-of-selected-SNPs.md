@@ -1,4 +1,4 @@
-This analysis calculates all associations between a subset of SNPs and a subset of CpGs. Please find the selection [here](https://github.com/MRCIEU/godmc/issues/17). Efforts have been made to minimise disk space usage but, it will still require approximately 35Gb of space. If this is an issue then please contact the developers.
+This analysis calculates all associations between a subset of SNPs and a subset of CpGs. Please find the selection [here](https://github.com/MRCIEU/godmc/issues/17). Efforts have been made to minimise disk space usage but, it will still require approximately 50Gb of space. If this is an issue then please contact the developers.
 
 **Background:** Mendelian randomisation can be used to evaluate the causal relationship between traits using genetic associations. In this analysis we will use selected SNPs known to influence specific complex traits to evaluate the causal influence of those complex traits on methylation levels. This requires obtaining summary data of the trait SNPs' associations with all relevant methylation levels.
 
