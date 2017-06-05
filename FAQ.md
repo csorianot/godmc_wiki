@@ -53,7 +53,7 @@ To circumvent these problems the analysis is split into two **phases**.
 
 **Phase 1**: Each cohort uses a fast approximation method (`matrixeqtl`) to perform the full cis and trans scan, storing only results with `p < 1e-5`. These *putative SNP-CpG* associations are collected from each cohort, and a **candidate list** of all unique putative associations from all cohorts is generated. 
 
-**Phase 2**: The **candidate list** is distributed to all cohorts, where a linear mixed model is used to calculate the association for every putative association. The meta analysis is then performed on the results from this analysis. 
+**Phase 2**: The **candidate list** is distributed to all cohorts, where a linear model is used to calculate the association for every putative association. The meta analysis is then performed on the results from this analysis. 
 
 This approach should guard against publication bias. For example, if we only meta analysed associations from phase 1 then supposing one cohort has an association at `p = 1e-10`, but the association isn't returned at `p < 1e-5` in any other cohorts then the meta analysis will be potentially unreliable. This approach should also improve power without having to store the entire surface, for example if one cohort identifies an association at `p = 1e-6` and the association is at `p = 1e-3` in all other cohorts, then the second phase allows the meta analysis to identify such scenarios which lead to significant associations where otherwise there would have been none. (Note, just using p-values for simplistic illustrative purposes here, the meta analysis of course will be performed on effect sizes and standard errors).
 
@@ -86,6 +86,7 @@ We request that analysts finish up to module `05` in the pipeline by **13th May 
 1. **We are very aware that this is not the primary work for most analysts** and we tried to set a deadline that reflected this, based on the experiences of having it already run in 4 different centres. However, we will continue to communicate with analysts about how realistic this deadline is and we may push it back if necessary.
 2. It is not necessary for every cohort to perform phase 1. If a sufficiently large number of cohorts have completed phase 1 then we will be able to create a comprehensive **candidate list** of SNP-CpG associations for phase 2. So if you can't complete by this deadline then the cohort can still be involved by contributing to phase 2.
 
+3. We would now like to invite you to contribute to the next phase of the analysis. We request that analysts finish 16 and 17 by **10th July 2017**. Module 16 will test candidate list of SNP-CpG associations from section 5. Module 17 will test a candidate list of SNP-CpG list using biologically interesting SNPs and CpGs. See here for the list.
 
 ## How long will it take to run the pipeline
 
