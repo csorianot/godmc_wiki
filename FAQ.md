@@ -24,6 +24,7 @@
 - [Can we use combat variables](#can-we-use-combat-variables)
 - [Are NAs allowed in the methylation matrix](#are-nas-allowed-in-the-methylation-matrix)
 - [Are X chromosome SNPs required](#are-x-chromosome-snps-required)
+- [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
 
 * * *
 
