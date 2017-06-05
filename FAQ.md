@@ -221,3 +221,7 @@ Note that the pipeline does set NAs itself - it iteratively sets values to NA if
 ## Are X chromosome SNPs required
 
 We have made the X chromosome optional as there are many groups who won't have this imputed yet, and the main imputation servers don't yet accommodate this. The pipeline does allow for X chromosome data though, and for some downstream analyses it could be a valuable resource (e.g. identifying sex differences).
+
+## Are X chromosome CpGs required
+
+The pipeline analyses X chromosome methylation data. In module 14 and 15 we examine chrX CpGs in females and males only. 
