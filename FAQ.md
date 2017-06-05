@@ -86,7 +86,7 @@ We request that analysts finish up to module `05` in the pipeline by **13th May 
 1. **We are very aware that this is not the primary work for most analysts** and we tried to set a deadline that reflected this, based on the experiences of having it already run in 4 different centres. However, we will continue to communicate with analysts about how realistic this deadline is and we may push it back if necessary.
 2. It is not necessary for every cohort to perform phase 1. If a sufficiently large number of cohorts have completed phase 1 then we will be able to create a comprehensive **candidate list** of SNP-CpG associations for phase 2. So if you can't complete by this deadline then the cohort can still be involved by contributing to phase 2.
 
-3. We would now like to invite you to contribute to the next phase of the analysis. We request that analysts finish 16 and 17 by **10th July 2017**. Module 16 will test candidate list of SNP-CpG associations from section 5. Module 17 will test a candidate list of SNP-CpG list using biologically interesting SNPs and CpGs. See here for the list.
+3. We would now like to invite you to contribute to the next phase of the analysis. We request that analysts finish 16 and 17 by **10th July 2017**. Module 16 will test candidate list of SNP-CpG associations from section 5. Module 17 will test a candidate list of SNP-CpG list using biologically interesting SNPs and CpGs. See [here](https://github.com/MRCIEU/godmc/issues/17) for the list.
 
 ## How long will it take to run the pipeline
 
@@ -110,6 +110,9 @@ Based on our experience with 2000 samples and approximately 100 cores, starting 
 | Run module 04 (with unrelated samples     | 2 hours      | 15 hours     |
 | Run module 04 (with related samples)      | 2 hours      | 25 hours     |
 | Run module 05                             | 30 minutes   | 35 hours     |
+| Run module 16                             | 20 minutes   | 35 hours     |
+| Run module 17                             | 20 minutes   | 35 hours     |
+
 
 *This step could potentially be more time consuming for the analyst - it is checking that the various datasets are in the correct format and won't complete until things have been fixed.
 
