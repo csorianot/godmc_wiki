@@ -110,8 +110,8 @@ Based on our experience with 2000 samples and approximately 100 cores, starting 
 | Run module 04 (with unrelated samples     | 2 hours      | 15 hours     |
 | Run module 04 (with related samples)      | 2 hours      | 25 hours     |
 | Run module 05                             | 30 minutes   | 35 hours     |
-| Run module 16                             | 20 minutes   | 35 hours     |
-| Run module 17                             | 20 minutes   | 35 hours     |
+| Run module 16                             | 20 minutes   | 10 hours     |
+| Run module 17                             | 20 minutes   | 10 hours     |
 
 
 *This step could potentially be more time consuming for the analyst - it is checking that the various datasets are in the correct format and won't complete until things have been fixed.
