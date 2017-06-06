@@ -23,7 +23,7 @@ awk 'NR>1 {print $1}' <data_chr${i}.info >data_chr${i}.keep
 done
 ```
 
-Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.08
+Then run the bash script below to convert your data to best guess and to filter out SNPs with MAF<0.01 and info<0.8
 
 ```
 #!/bin/bash
