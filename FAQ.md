@@ -227,3 +227,7 @@ We have made the X chromosome optional as there are many groups who won't have t
 ## Are X chromosome CpGs required
 
 The pipeline analyses X chromosome methylation data. In module 14 and 15 we examine chrX CpGs in females and males only. 
+
+## Which methylation arrays can be included
+
+We are focusing on Illumina HumanMethylation450 (HM450) BeadChip data. However, methylation data measured with MethylationEPIC (EPIC) BeadChips are also included. Meffil can deal with both 450k as EPIC data.
