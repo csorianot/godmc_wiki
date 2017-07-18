@@ -25,7 +25,7 @@
 - [Are NAs allowed in the methylation matrix](#are-nas-allowed-in-the-methylation-matrix)
 - [Are X chromosome SNPs required](#are-x-chromosome-snps-required)
 - [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
-- [Which methylation arrays can be included](#which-methylation-arrays can be included)
+- [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
 
 * * *
 
