@@ -26,7 +26,7 @@
 - [Are X chromosome SNPs required](#are-x-chromosome-snps-required)
 - [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
-- [How to run the pipeline on two different datasets](#running-multiple-datasets-with-the-pipeline). 
+- [How to run the pipeline on two different datasets](#running-multiple-datasets-with-the-pipeline) 
 
 * * *
 
@@ -232,3 +232,8 @@ The pipeline analyses X chromosome methylation data. In module 14 and 15 we exam
 ## Which methylation arrays can be included
 
 We are focusing on Illumina HumanMethylation450 (HM450) BeadChip data. However, methylation data measured with MethylationEPIC (EPIC) BeadChips are also included. Meffil can deal with both 450k as EPIC data.
+
+## How to run the pipeline on two different datasets
+
+You need to download the repository separately for each dataset. In the config file you need to specify the cohortname. All results that will be uploaded will have the following format {cohortname}_01.tgz. So you can use the same sftp details to upload results from multiple cohorts.
+
