@@ -26,6 +26,7 @@
 - [Are X chromosome SNPs required](#are-x-chromosome-snps-required)
 - [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
+- [How to run the pipeline on two different datasets](#running-multiple-datasets-with-the-pipeline). 
 
 * * *
 
