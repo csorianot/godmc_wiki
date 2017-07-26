@@ -4,7 +4,7 @@ Welcome to the GoDMC pipeline. This wiki will guide you through the analysis. Th
 
 Perform a GWAS on every methylation probe available in the sample. Variations of this analysis will be performed, including a standard methQTL using bestguess imputed SNPs, a CNV-methQTL analysis using CNVs inferred from methylation arrays, and a var-methQTL analysis which looks for SNPs that influence the variance of a probe. 
 
-**IMPORTANT: Please note in the first phase of GoDMC we are focusing on blood samples of Europeans only.** However, after we have established our methQTL catalogue we would definitely like to do a transethnic and intertissue comparison.
+**IMPORTANT: Please note in the first phase of GoDMC we are focusing on blood samples of Europeans only. Datasets should have at least 100 individuals.** However, after we have established our methQTL catalogue we would definitely like to do a transethnic and intertissue comparison.
 
 ### GWAS and GREML analysis
 We will be performing a GWAS on age accelerated residuals (AAR), smoking status as predicted by methylation, and cell count proportions.
