@@ -27,7 +27,7 @@
 - [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
 - [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
-- [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-probes-and-polymorphic-probes)
+- [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-and-polymorphic-probes)
 
 * * *
 
