@@ -26,7 +26,8 @@
 - [Are X chromosome SNPs required](#are-x-chromosome-snps-required)
 - [Are X chromosome CpGs required](#are-x-chromosome-cpgs-required)
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
-- [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets) 
+- [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
+- [Removal of cross-reactive probes and polymorphic probes](#Removal-of-cross-reactive-probes-and-polymorphic-probes)
 
 * * *
 
@@ -236,3 +237,7 @@ We are focusing on Illumina HumanMethylation450 (HM450) BeadChip data. However, 
 ## How to run the pipeline on two different datasets
 
 You need to download the repository separately for each dataset. In the config file you need to specify the cohortname. All results that will be uploaded will have the following format {cohortname}_01.tgz. So you can use the same sftp details to upload results from multiple cohorts.
+
+## Removal of cross-reactive probes and polymorphic probes
+
+The QC does not remove cross-reactive probes and polymorphic probes (Zhou 2016, Chen 2013) after normalization.  At the moment we are removing Zhou 2016 plus TwinsUK probe exclusions which are multimapping probes (bisulfite converted sequences allowing two mismatches at any position mapped to the hg19 primary assembly) and probes with variants (MAF >5%, UK10K) at the CpG dinucleotide or the extension base (for type I probes) from our analyses.
