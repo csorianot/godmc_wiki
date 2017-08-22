@@ -240,4 +240,4 @@ You need to download the repository separately for each dataset. In the config f
 
 ## Removal of crossreactive probes and polymorphic probes
 
-The QC does not remove cross-reactive probes and polymorphic probes (Zhou 2016, Chen 2013) after normalization.  At the moment we are removing Zhou 2016 plus TwinsUK probe exclusions which are multimapping probes (bisulfite converted sequences allowing two mismatches at any position mapped to the hg19 primary assembly) and probes with variants (MAF >5%, UK10K) at the CpG dinucleotide or the extension base (for type I probes) from our analyses.
+The QC does not remove cross-reactive probes and polymorphic probes (Zhou 2016, Chen 2013) after normalization.  At the moment we are removing Zhou 2016 plus TwinsUK probe exclusions which are multimapping probes (bisulfite converted sequences allowing two mismatches at any position mapped to the hg19 primary assembly) and probes with variants (MAF >5%, UK10K) at the CpG dinucleotide or the extension base (for type I probes) from our analyses. Please don't remove these probes from your methylation matrix.
