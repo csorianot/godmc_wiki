@@ -104,3 +104,11 @@ This should tell you that `Section 16 has been successfully completed!`. Now ple
 It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from section 16.
 
 This procedure will be repeated at the end of each section.
+
+### Upload of SNPflip check
+This script will upload the following file to the sftp server.
+processed_data/genetic_data/data.easyqc.flipped.SNPs.txt
+
+```
+ ./16d-flipcheck.sh
+```
