@@ -106,8 +106,8 @@ It will make sure everything looks correct and connect to the sftp server. It wi
 This procedure will be repeated at the end of each section.
 
 ### Upload of SNPflip check
-This script will upload the following file to the sftp server.
-processed_data/genetic_data/data.easyqc.flipped.SNPs.txt
+This script will upload the following file to the sftp server:
+`processed_data/genetic_data/data.easyqc.flipped.SNPs.txt`
 
 ```
  ./16d-flipcheck.sh
