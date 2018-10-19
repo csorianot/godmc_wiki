@@ -237,7 +237,7 @@ We are focusing on Illumina HumanMethylation450 (HM450) BeadChip data. However, 
 
 ## How to run the pipeline on two different datasets
 
-You need to download the repository separately for each dataset. In the config file you need to specify the cohortname. All results that will be uploaded will have the following format {cohortname}_01.tgz. So you can use the same sftp details to upload results from multiple cohorts.
+You need to download the repository separately for each dataset. In the config file you need to specify the cohortname. All results that will be uploaded will have the following format {cohortname}\_01.tgz. So you can use the same sftp details to upload results from multiple cohorts.
 
 ## Removal of crossreactive and polymorphic probes
 
