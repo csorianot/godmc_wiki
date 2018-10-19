@@ -28,7 +28,7 @@
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
 - [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
 - [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-and-polymorphic-probes)
-
+- [How can I generate my own modules](#how-can-I-generate-my-own-modules)
 * * *
 
 ## What are the main goals of the analysis?
@@ -241,3 +241,24 @@ You need to download the repository separately for each dataset. In the config f
 ## Removal of crossreactive and polymorphic probes
 
 The QC does not remove cross-reactive probes and polymorphic probes (Zhou 2016, Chen 2013) after normalization.  At the moment we are removing Zhou 2016 plus TwinsUK probe exclusions which are multimapping probes (bisulfite converted sequences allowing two mismatches at any position mapped to the hg19 primary assembly) and probes with variants (MAF >5%, UK10K) at the CpG dinucleotide or the extension base (for type I probes) from our analyses. Please don't remove these probes from your methylation matrix.
+
+## How can I generate my own modules
+
+1. Generate your own branch
+2. Ask Gib for developer permissions
+3. Identify software needed. Please do also check dependencies.
+4. Set up ./resources folder (contains reference files etc.)
+5. Add paths to parameters file in ./resources/parameters
+6. Write script a to generate inputfiles and save these files in processed_data (this can contain individual level data)
+7. Write script b to run analysis and save output files to results folder (everything here will be copied to sftp server, so it can't contain individual level data). Please parallelise as much as possible to save analyst time.
+8. Change resources/logs/check_logs.sh and check_upload.sh to check logfiles from your analysis.
+9. Change resources/logs/check_results.sh and check_upload.sh to check results files from your analysis.
+10. Change sftp_path in check_upload.sh if necessary or set up your own sftp server.
+11. Change wiki by cloning: git clone https://github.com/MRCIEU/godmc.wiki.git
+
+
+
+
+
+
+
