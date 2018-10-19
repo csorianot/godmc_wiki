@@ -254,7 +254,7 @@ The QC does not remove cross-reactive probes and polymorphic probes (Zhou 2016, 
 7. Write script b to run analysis and save output files to results folder (everything here will be copied to sftp server, so it can't contain individual level data). Please parallelise as much as possible to save analyst time.
 8. Change resources/logs/check_logs.sh and check_upload.sh to check logfiles from your analysis.
 9. Change resources/logs/check_results.sh and check_upload.sh to check results files from your analysis.
-10. Change sftp_path in check_upload.sh if necessary or set up your own sftp server.
+10. Change sftp_path in check_upload.sh if necessary or set up your own sftp server. Please make sure that there is enough space on the sftp server. The check_upload.sh script will automatically compile the files in the results folder to a tar.gz file.
 11. Change wiki by cloning: git clone https://github.com/MRCIEU/godmc.wiki.git
 
 
