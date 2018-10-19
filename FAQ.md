@@ -28,7 +28,7 @@
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
 - [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
 - [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-and-polymorphic-probes)
-- [How can I generate my own modules](#how-can-I-generate-my-own-modules)
+- [How can I generate my own modules](#how-can-i-generate-my-own-modules)
 
 * * *
 
@@ -119,7 +119,7 @@ Based on our experience with 2000 samples and approximately 100 cores, starting 
 | Run module 17                             | 20 minutes   | 10 hours     |
 
 
-*This step could potentially be more time consuming for the analyst - it is checking that the various datasets are in the correct format and won't complete until things have been fixed.
+* This step could potentially be more time consuming for the analyst - it is checking that the various datasets are in the correct format and won't complete until things have been fixed.
 
 If you find these numbers are unrealistic please do let us know and we will update to provide more accurate estimates.
 
