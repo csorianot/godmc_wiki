@@ -28,7 +28,7 @@
 - [Which methylation arrays can be included](#which-methylation-arrays-can-be-included)
 - [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
 - [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-and-polymorphic-probes)
-- [How can I generate my own modules](#how-can-I-generate-my-own-modules)
+- [How can I generate my own modules](#how-can-i-generate-my-own-modules)
 
 * * *
 
