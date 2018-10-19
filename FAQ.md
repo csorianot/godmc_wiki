@@ -29,6 +29,7 @@
 - [How to run the pipeline on two different datasets](#how-to-run-the-pipeline-on-two-different-datasets)
 - [Removal of crossreactive and polymorphic probes](#removal-of-crossreactive-and-polymorphic-probes)
 - [How can I generate my own modules](#how-can-I-generate-my-own-modules)
+
 * * *
 
 ## What are the main goals of the analysis?
