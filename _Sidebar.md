@@ -44,5 +44,14 @@
 16. [Analysis of phase 1 list of candidate associations](Analysis-of-phase-1-candidate-associations)
 17. [Analysis of selected SNPs](Analysis-of-selected-SNPs)
 
+### Chromosomal inversions
+
+[Overview](Chromosomal-inversions-analysis)
+
+20. [Genotype inversions](Genotype-inversions)
+21. [Run inversion meQTL](inversion-meQTL)
+22. [Run inversion GWAS](inversion-GWAS)
+
+
 ### Future ideas
 - [Functional followup](ideas)
