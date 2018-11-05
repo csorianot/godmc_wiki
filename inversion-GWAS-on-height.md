@@ -1,0 +1,22 @@
+To run the association between inversions and height:
+
+    ./26-inv_gwas_height.sh
+
+
+### Now upload the results
+
+To check that everything ran successfully, please run:
+
+```
+./check_upload.sh 26 check
+```
+
+This should tell you that `Section 26 has been successfully completed!`. Now please upload the results like this:
+
+```
+./check_upload.sh 26 upload
+```
+
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from `section 26`.
+
+This procedure will be repeated at the end of each section.

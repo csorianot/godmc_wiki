@@ -50,7 +50,12 @@
 
 20. [Genotype inversions](Genotype-inversions)
 21. [Run inversion meQTL](inversion-meQTL)
-22. [Run inversion GWAS](inversion-GWAS)
+22. [Run inversion GWAS on age acceleration](inversion-GWAS-on-age-acceleration)
+23. [Run inversion GWAS on smoking](inversion-GWAS-on-smoking)
+24. [Run inversion GWAS on cell count diversity](inversion-GWAS-on-cell-count-diversity)
+25. [Run inversion GWAS on cell counts](inversion-GWAS-on-cell-counts)
+26. [Run inversion GWAS on height](inversion-GWAS-on-height)
+27. [Run inversion GWAS on BMI](inversion-GWAS-on-BMI)
 
 
 ### Future ideas

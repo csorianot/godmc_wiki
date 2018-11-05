@@ -14,3 +14,22 @@ To do this, run the following script:
     ./20-genotypeInversion.sh
 
 For a sample size of 400 this script takes around 15 minutes to run on our computers. The relevant files should have been generated and saved in `processed_data/inversions`.
+
+
+### Now upload the results
+
+To check that everything ran successfully, please run:
+
+```
+./check_upload.sh 20 check
+```
+
+This should tell you that `Section 20 has been successfully completed!`. Now please upload the results like this:
+
+```
+./check_upload.sh 20 upload
+```
+
+It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from `section 20`.
+
+This procedure will be repeated at the end of each section.
