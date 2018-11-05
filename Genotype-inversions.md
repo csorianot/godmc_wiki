@@ -13,7 +13,9 @@ To do this, run the following script:
 
     ./20-genotypeInversion.sh
 
-For a sample size of 400 this script takes around 15 minutes to run on our computers. The relevant files should have been generated and saved in `processed_data/inversions`.
+For a sample size of 400 this script takes around 15 minutes to run on our computers using 7 cores. The relevant files should have been generated and saved in `processed_data/inversions`.
+
+**Important**: this step requires an intensive use of RAM memory. The analyst might need to reduce the number of cores set in config file to run this step. 
 
 
 ### Now upload the results

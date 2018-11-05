@@ -4,7 +4,7 @@ You can run this step with:
     
     ./21-inversionmeQTL.sh
 
-For a sample size of 400, this step took 12 hours to complete. 
+For a sample size of 400 and using 16 cores, this step took 1 hour to complete. 
 
 
 ### Now upload the results
