@@ -8,3 +8,12 @@ This analysis uses the same programs of the main GoDMC pipeline. The only except
     install.packages("devtools")
     library(devtools)
     install_github("isglobal-brge/scoreInvHap")
+	
+
+**Important**: the recommended way to install scoreInvHap is using the github repository. This ensures having the last version of the package with the latest updates. To install scoreInvHap from github, the server should have at least R3.4. If you have an older R version in your server, please, contact us. 
+
+	
+## Inversions module contact
+
+If you have any issues or questions about inversion pipeline then please contact us: [carlos.ruiz@isglobal.org](mailto:carlos.ruiz@isglobal.org)
+

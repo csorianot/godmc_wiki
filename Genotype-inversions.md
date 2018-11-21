@@ -13,7 +13,7 @@ To do this, run the following script:
 
     ./20-genotypeInversion.sh
 
-For a sample size of 400 this script takes around 15 minutes to run on our computers using 7 cores. The relevant files should have been generated and saved in `processed_data/inversions`.
+For a sample size of 400 this script takes around 15 minutes to run on our computers using 7 cores. For a sample size of 888 samples, this scripts takes 1 hour and 45 min using 8 cores. The relevant files should have been generated and saved in `processed_data/inversions`.
 
 **Important**: this step requires an intensive use of RAM memory. The analyst might need to reduce the number of cores set in config file to run this step. 
 
@@ -35,3 +35,8 @@ This should tell you that `Section 20 has been successfully completed!`. Now ple
 It will make sure everything looks correct and connect to the sftp server. It will request your password (this should have been provided to you along with your username). Once you have entered your password it will upload the results files from `section 20`.
 
 This procedure will be repeated at the end of each section.
+
+## Inversions module contact
+
+If you have any issues or questions about inversion pipeline then please contact us: [carlos.ruiz@isglobal.org](mailto:carlos.ruiz@isglobal.org)
+
